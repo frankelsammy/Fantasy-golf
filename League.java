@@ -17,7 +17,8 @@ public class League {
         ArrayList<Player> roster = new ArrayList<Player>();
         
         int i = 0;
-        while (i < 3) {
+        //Change this number based on how many players you want per team. 
+        while (i < 8) {
             Player a;
             String name = "";
             if (i == 0) {
@@ -116,8 +117,9 @@ public class League {
     System.out.println("How many teams are in this competition?");
     int numTeams = s.nextInt();
     s.nextLine();
-    League a = new League(2);
+    League a = new League(numTeams);
      
+    
     for (int i = 0; i < numTeams; i++) {
         a.addEntry();
         if (i != numTeams -1)
