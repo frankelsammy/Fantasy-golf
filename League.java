@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+//This is the file in which the League is created and executed. 
 public class League {
     private ArrayList<Entry> entries = new ArrayList<Entry>();
     private int NUMTEAMS;
