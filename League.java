@@ -1,13 +1,14 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-//This is the file in which the League is created and executed. 
+
 public class League {
     private ArrayList<Entry> entries = new ArrayList<Entry>();
-    private int NUMTEAMS;
+    private int NUMPLAYERS;
 
+    //Constructor to create a new competition
     public League(int n) {
-        NUMTEAMS = n;
+        NUMPLAYERS = n;
     }
 
     public void addEntry() {
@@ -17,8 +18,7 @@ public class League {
         ArrayList<Player> roster = new ArrayList<Player>();
         
         int i = 0;
-        //Change this number based on how many players you want per team. 
-        while (i < 8) {
+        while (i < NUMPLAYERS) {
             Player a;
             String name = "";
             if (i == 0) {
@@ -85,10 +85,10 @@ public class League {
                 } else
                     p.inputResults(finish, false);
 
-            
+                
             }
 
-
+            clearScreen();
 
 
         }
@@ -96,6 +96,7 @@ public class League {
 
         
     }
+    //Bonus points to team with worst ranked player to make the top 25
     private void bonus() {
         Scanner s = new Scanner(System.in);
         System.out.println("Which team gets the bonus? \n TYPE none if none");
@@ -109,29 +110,38 @@ public class League {
         }
 
     }
+    //Clears the terminal screen, to make inputting data much easier. 
+    public static void clearScreen() {  
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();  
+       }  
 
 
-
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws InterruptedException, IOException {
     Scanner s = new Scanner(System.in);
     System.out.println("How many teams are in this competition?");
     int numTeams = s.nextInt();
     s.nextLine();
-    League a = new League(numTeams);
+    System.out.println("How many players per team?");
+    int numPlayers= s.nextInt();
+    s.nextLine();
+    League a = new League(numPlayers);
      
-    
     for (int i = 0; i < numTeams; i++) {
         a.addEntry();
-        if (i != numTeams -1)
+        if (i != numTeams -1) {
+            clearScreen();
             System.out.println("NEXT PARTICIPANT");
-
+        }
     }
-    Runtime.getRuntime().exec("/bin/bash -c clear");
-    
+    clearScreen();
     a.inputResults();
+
+    clearScreen();
     a.getResults();       
     }
 
 
 
 }
+
