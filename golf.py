@@ -1,6 +1,11 @@
 import requests
 import pandas as pd 
-# masters_id = 279
+import json
+# 2022 season tournament ID's
+# Masters 456
+# PGA Championship 393
+# US Open 397
+# The open 403
 
 
 #change number at end of string to get results for specific tournament 
@@ -31,3 +36,14 @@ def get_result(name):
         return res.at[0, 'Position']
     else:
         return -1
+
+my_file = open("test_file.txt", "w")
+
+l = []
+for players in leaderboard:
+    l.append((players['last_name'], players['position']))
+
+json_string = json.dumps(l)
+
+with open('leaderboard.json', 'w') as outfile:
+    outfile.write(json_string)
