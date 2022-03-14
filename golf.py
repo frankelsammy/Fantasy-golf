@@ -9,7 +9,7 @@ import json
 
 
 #change number at end of string to get results for specific tournament 
-url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/279"
+url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/382"
 
 headers = {
     'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
@@ -43,7 +43,9 @@ l = []
 for players in leaderboard:
     l.append((players['last_name'], players['position']))
 
-json_string = json.dumps(l)
 
-with open('leaderboard.json', 'w') as outfile:
-    outfile.write(json_string)
+with open('leaderboard.txt', 'w') as outfile:
+    for item in l:
+        outfile.write(item[0] + ": " +  str(item[1]) + '\n')
+        
+        
