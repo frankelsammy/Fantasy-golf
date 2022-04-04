@@ -22,9 +22,11 @@ import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.util.Value;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.SheetsScopes;
+import com.google.api.services.sheets.v4.model.UpdateValuesResponse;
 import com.google.api.services.sheets.v4.model.ValueRange;
 public class Data {
     public static Sheets sheetsService;
@@ -56,6 +58,54 @@ public class Data {
 
     }
 
+    //returns the range in which the results should be added to sheet
+    private static String getColResult(int numPlayer, int row) {
+        switch(numPlayer) {
+            case 0:
+               return "D" + Integer.toString(row);
+            case 1:
+                return "H" + Integer.toString(row); 
+            case 2:
+                return "L" + Integer.toString(row);
+            case 3:
+                return "P" + Integer.toString(row);
+            case 4:
+                return "T"+ Integer.toString(row);
+            case 5:
+                return "X"+ Integer.toString(row);
+            case 6: 
+                return "AB"+ Integer.toString(row);
+            case 7:
+                return "AF"+ Integer.toString(row);
+            default:
+                return null;
+        }
+    
+    }
+    //returns the range for adding madeCut to sheet
+    private static String getColCut(int numPlayer, int row) {
+        switch(numPlayer) {
+            case 0:
+               return "E" + Integer.toString(row);
+            case 1:
+                return "I" + Integer.toString(row); 
+            case 2:
+                return "M" + Integer.toString(row);
+            case 3:
+                return "Q" + Integer.toString(row);
+            case 4:
+                return "U"+ Integer.toString(row);
+            case 5:
+                return "Y"+ Integer.toString(row);
+            case 6: 
+                return "AC"+ Integer.toString(row);
+            case 7:
+                return "AG"+ Integer.toString(row);
+            default:
+                return null;
+        }
+    
+    }
     public static void main(String[] args) throws IOException, GeneralSecurityException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Do you want the results in a file? y/n");
@@ -65,7 +115,9 @@ public class Data {
         }
 
         sheetsService = getSheetsService();
-        String range = "A2:AG5";
+        //First name of team to last made cut on bottom right 
+        String range = "A2:AG3";
+
         ValueRange response = sheetsService.spreadsheets().values().
                 get(SPREADSHEET_ID,range).execute();
         List<List<Object>> values = response.getValues();
@@ -74,6 +126,9 @@ public class Data {
             System.out.println("No values found");
         } else {
             League league = new League();
+            Results r = new Results();
+            r.inputResults();
+            int row = 2;
            for (List entry : values) {
                ArrayList<Player> roster = new ArrayList<Player>();
                //goes through the row, creates players, and inputs results
@@ -83,21 +138,36 @@ public class Data {
                        first = true;
                    if (i == 1)
                        second = true;
+
+                    //For every 4th column, create a player and add it to teams roster
                    Player p = new Player(entry.get(1 + (4*i)).toString(), Integer.parseInt(entry.get((4*i)+2).toString()),
                            first, second);
 
+                   //Upload finish for each player to Google Sheets
+                    int finish = r.getResult(p.getName());
+                    ValueRange body = new ValueRange().setValues(Arrays.asList(Arrays.asList(finish)));
 
+                    UpdateValuesResponse result = sheetsService.spreadsheets().values().update(SPREADSHEET_ID, getColResult(i, row), body).setValueInputOption("RAW").execute();
+                    System.out.println(getColCut(i,row));
+                    //Upload if they made cut or not
+                    //Number will need to be changed based on what place the cut is made at
+                    ValueRange body2 = new ValueRange().setValues(Arrays.asList(Arrays.asList(finish < 71 ? "y" : "n")));
+                    UpdateValuesResponse result2 = sheetsService.spreadsheets().values().update(SPREADSHEET_ID, getColCut(i, row), body2).setValueInputOption("RAW").execute();
+                    //get results from sheet, add it to player
+                    //finish, madeCut
                    p.inputResults(Integer.parseInt(entry.get((4*i)+3).toString()), (entry.get((4*i)+4).toString()
-                   .equals("yes")));
+                   .equals("y")));
 
                    roster.add(p);
+                   
                }
                Entry e = new Entry(entry.get(0).toString(), roster);
                league.addEntry(e);
+               row++;
 
            }
            //Print final results
-            league.score();
+            //league.score();
 
             //putting the results into a text file
             if (resultsInFile) {

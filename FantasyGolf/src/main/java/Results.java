@@ -1,3 +1,5 @@
+//This class will get the updated finishes of each player
+
 import java.util.LinkedList;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
@@ -10,6 +12,7 @@ public class Results {
         leaderboard = new LinkedList<>();
     }
 
+    //reads results from Python code which calls API to get real-time results
     public void inputResults() {
         try {
             File myObj = new File("leaderboard.txt");
@@ -29,6 +32,8 @@ public class Results {
 
     }
 
+    //retrurns place that player is in. Only works for last names
+    //If player is not present in the list, a -1 is returned. 
     public int getResult(String name) {
         for (Player p : leaderboard) {
             if (p.name.equalsIgnoreCase(name)) {
@@ -52,6 +57,6 @@ public class Results {
         Results a = new Results();
         a.inputResults();
 
-        System.out.println(a.getResult("Johnson"));
+        System.out.println(a.getResult("Knox"));
     }
 }
