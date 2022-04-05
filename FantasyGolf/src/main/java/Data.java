@@ -198,7 +198,7 @@ public class Data {
                     // get results from sheet, add it to player
                     // finish, madeCut
                     p.inputResults(finish,
-                            (finish > 71));
+                            (finish < 71));
 
                     roster.add(p);
                     try {
