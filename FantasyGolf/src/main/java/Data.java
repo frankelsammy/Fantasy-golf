@@ -202,7 +202,7 @@ public class Data {
 
                     roster.add(p);
                     try {
-                        TimeUnit.SECONDS.sleep(2);
+                        TimeUnit.SECONDS.sleep(3);
                     } catch (InterruptedException e1) {
                         // TODO Auto-generated catch block
                         e1.printStackTrace();
