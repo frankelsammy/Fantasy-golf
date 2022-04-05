@@ -10,9 +10,9 @@ import json
 # US Open 397
 # The open 403
 
-def resuts():
+def results():
     #change number at end of string to get results for specific tournament 
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/382"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/372"
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
@@ -77,5 +77,6 @@ def rankings():
             outfile.write(str(row[0]) + ": " + row[1] + '\n')
      
           
-#results() 
+results() 
 rankings()
+print("Done")

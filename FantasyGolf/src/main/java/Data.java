@@ -214,11 +214,11 @@ public class Data {
 
             }
             // Print final results
-            // league.score();
+            league.score();
 
             // putting the results into a text file
             if (resultsInFile) {
-                String fileName = "/Users/sammyfrankel/IdeaProjects/FantasyGolf/src/main/results";
+                String fileName = "/Users/sammyfrankel/FantasyGolf/Results";
                 File f = new File(fileName);
 
                 try {
