@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import javax.imageio.IIOException;
 
@@ -107,6 +108,29 @@ public class Data {
         }
 
     }
+    private static String getcolRank(int numPlayer, int row) {
+        switch (numPlayer) {
+            case 0:
+                return "C" + Integer.toString(row);
+            case 1:
+                return "G" + Integer.toString(row);
+            case 2:
+                return "K" + Integer.toString(row);
+            case 3:
+                return "O" + Integer.toString(row);
+            case 4:
+                return "S" + Integer.toString(row);
+            case 5:
+                return "W" + Integer.toString(row);
+            case 6:
+                return "AA" + Integer.toString(row);
+            case 7:
+                return "AE" + Integer.toString(row);
+            default:
+                return null;
+        }
+
+    }
 
     public static void main(String[] args) throws IOException, GeneralSecurityException {
         Scanner scanner = new Scanner(System.in);
@@ -118,8 +142,8 @@ public class Data {
 
         sheetsService = getSheetsService();
         // First name of team to last made cut on bottom right
-        String range = "A2:AG3";
-
+        String range = "A2:AG6";
+        int writes = 0;
         ValueRange response = sheetsService.spreadsheets().values().get(SPREADSHEET_ID, range).execute();
         List<List<Object>> values = response.getValues();
 
@@ -128,7 +152,7 @@ public class Data {
         } else {
             League league = new League();
             Results r = new Results();
-            r.inputResults();
+            r.inputResultsAndRankings();
             int row = 2;
             for (List entry : values) {
                 ArrayList<Player> roster = new ArrayList<Player>();
@@ -141,8 +165,19 @@ public class Data {
                         second = true;
 
                     // For every 4th column, create a player and add it to teams roster
-                    Player p = new Player(entry.get(1 + (4 * i)).toString(),
-                            Integer.parseInt(entry.get((4 * i) + 2).toString()), first, second);
+                    Player p = new Player(entry.get(1 + (4 * i)).toString().replaceAll(" ", ""),
+                            first, second);
+                    
+                    
+                    //Upload player ranking to sheet
+                    int ranking = r.getRanking(p.getName());
+                    ValueRange body3 = new ValueRange()
+                            .setValues(Arrays.asList(Arrays.asList(ranking)));
+                    
+                    UpdateValuesResponse result3 = sheetsService.spreadsheets().values()
+                            .update(SPREADSHEET_ID, getcolRank(i, row), body3).setValueInputOption("RAW").execute();
+                    p.setRanking(ranking);
+                    System.out.println(++writes);
 
                     // Upload finish for each player to Google Sheets
                     int finish = r.getResult(p.getName());
@@ -150,20 +185,28 @@ public class Data {
 
                     UpdateValuesResponse result = sheetsService.spreadsheets().values()
                             .update(SPREADSHEET_ID, getColResult(i, row), body).setValueInputOption("RAW").execute();
-                    System.out.println(getColCut(i, row));
+                    System.out.println(++writes);
                     // Upload if they made cut or not
                     // Number will need to be changed based on what place the cut is made at
                     ValueRange body2 = new ValueRange()
                             .setValues(Arrays.asList(Arrays.asList(finish < 71 ? "y" : "n")));
                     UpdateValuesResponse result2 = sheetsService.spreadsheets().values()
                             .update(SPREADSHEET_ID, getColCut(i, row), body2).setValueInputOption("RAW").execute();
+                    System.out.println(++writes);
+                    
+                    
                     // get results from sheet, add it to player
                     // finish, madeCut
-                    p.inputResults(Integer.parseInt(entry.get((4 * i) + 3).toString()),
-                            (entry.get((4 * i) + 4).toString().equals("y")));
+                    p.inputResults(finish,
+                            (finish > 71));
 
                     roster.add(p);
-
+                    try {
+                        TimeUnit.SECONDS.sleep(2);
+                    } catch (InterruptedException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
                 }
                 Entry e = new Entry(entry.get(0).toString(), roster);
                 league.addEntry(e);

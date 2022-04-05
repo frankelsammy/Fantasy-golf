@@ -7,13 +7,47 @@ import java.util.Scanner; // Import the Scanner class to read text files
 
 public class Results {
     LinkedList<Player> leaderboard;
-
+    LinkedList<String> rankings;
     Results() {
         leaderboard = new LinkedList<>();
+        rankings = new LinkedList<>();
+    }
+
+    public void inputResultsAndRankings() {
+        inputRankings();
+        inputResults();
+    }
+
+    //reads rankings from text file
+    private void inputRankings() {
+        try {
+            File myObj = new File("rankings.txt");
+            Scanner myReader = new Scanner(myObj);
+
+            while (myReader.hasNextLine()) {
+                String [] s = myReader.nextLine().split(": ");
+                rankings.addLast(s[1]);
+            }
+            myReader.close();
+        } catch(FileNotFoundException e) {
+            System.out.println("File not found");
+            e.printStackTrace();
+        }
+    }
+
+    public int getRanking(String s) {
+        int index = -1;
+        for (String player : rankings) {
+            if (player.equalsIgnoreCase(s)) {
+                index = rankings.indexOf(player);
+            }
+
+        }
+        return index == -1 ? 100 : 1 + index;
     }
 
     //reads results from Python code which calls API to get real-time results
-    public void inputResults() {
+    private void inputResults() {
         try {
             File myObj = new File("leaderboard.txt");
             Scanner myReader = new Scanner(myObj);
@@ -40,7 +74,7 @@ public class Results {
                 return p.place;
             }
         }
-        return -1;
+        return 1000;
     }
 
 
@@ -55,8 +89,8 @@ public class Results {
     }
     public static void main(String[] args) {
         Results a = new Results();
-        a.inputResults();
+        a.inputResultsAndRankings();
 
-        System.out.println(a.getResult("Knox"));
+        System.out.println(a.getRanking("rahm"));
     }
 }

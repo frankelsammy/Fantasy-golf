@@ -1,6 +1,6 @@
 public class Player {
     private String name;
-    private int ranking;
+    private int ranking = -1;
     private boolean first;
     private boolean second;
     private int finish;
@@ -9,10 +9,9 @@ public class Player {
 
     //A player is created. Entering name, ranking, true/false
     // if first choice. false/true if second. false/fase if neither
-    public Player(String name, int ranking, boolean first,
+    public Player(String name, boolean first,
                   boolean second) {
         this.name = name;
-        this.ranking = ranking;
         if (first && second) {
             throw new IllegalArgumentException("Can't be first and second choice!");
         }
@@ -23,6 +22,9 @@ public class Player {
     public void inputResults(int finish, boolean madeCut) {
         this.finish = finish;
         this.madeCut = madeCut;
+    }
+    public void setRanking(int ranking) {
+        this.ranking = ranking;
     }
 
     public void score() {
