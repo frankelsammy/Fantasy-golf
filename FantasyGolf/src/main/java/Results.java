@@ -91,6 +91,6 @@ public class Results {
         Results a = new Results();
         a.inputResultsAndRankings();
 
-        System.out.println(a.getRanking("rahm"));
+        System.out.println(a.getRanking("mcilroy"));
     }
 }

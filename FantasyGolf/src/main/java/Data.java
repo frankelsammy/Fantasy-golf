@@ -141,8 +141,8 @@ public class Data {
         }
 
         sheetsService = getSheetsService();
-        // First name of team to last made cut on bottom right
-        String range = "A2:AG6";
+        // Range from first name of team to last made cut on bottom right
+        String range = "A2:AG7";
         int writes = 0;
         ValueRange response = sheetsService.spreadsheets().values().get(SPREADSHEET_ID, range).execute();
         List<List<Object>> values = response.getValues();

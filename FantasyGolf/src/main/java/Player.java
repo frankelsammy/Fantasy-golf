@@ -5,7 +5,7 @@ public class Player {
     private boolean second;
     private int finish;
     private boolean madeCut;
-    private float points;
+    private double points;
 
     //A player is created. Entering name, ranking, true/false
     // if first choice. false/true if second. false/fase if neither
@@ -28,59 +28,54 @@ public class Player {
     }
 
     public void score() {
-        this.bonus();
-        float score = 0;
-        //made the cut
-        if (madeCut)
-            score += 3;
-        //top 25
-        if (finish <= 25)
-            score += 4;
-        //top 15
-        if (finish <= 15)
-            score += 4;
-        //top 10
+        double currentPoints = 0;
+        if (madeCut) {
+            currentPoints += 3;
+        }
+        if (finish <= 25) {
+            currentPoints += 4;
+        } 
+        if (finish <= 15) {
+            currentPoints += 4;
+        }
         if (finish <= 10) {
-            int top10 =  11 - finish;
-            score += top10;
-
+            currentPoints += (11 - finish);
         }
-        //bonus for winning
-        if (finish == 1)
-            score += 5;
 
-        this.points += score;
+        //10 bonus points if winner 
+        if (finish == 1) {
+            currentPoints += 10;
+        }
 
-        //bonus points for first and second choices
+        currentPoints += top25bonus();
+
+        //First and Second choice players bonus
         if (first) {
-            if (ranking <= 8)
-                this.points = this.points*2;
-            else
-                this.points *= 3;
+            if (ranking  > 15) {
+                currentPoints = currentPoints*3;
+            } else {
+                currentPoints = currentPoints*2;
+            }
         }
-
         if (second) {
-            this.points *= 1.5;
-
+            currentPoints = currentPoints * 1.5;
         }
 
-    }
-    public float getPoints() {
-        return this.points;
+        this.points = currentPoints;
     }
 
-    //A special bonus for players who weren't in the top 5, but still finished in top 25
-    private void bonus() {
-        if (ranking >= 6 && ranking <= 10 && finish <=25) {
-
-            this.points = 4;
-
+    //Bonus for high ranked players making top25
+    private int top25bonus() {
+        if (ranking < 11 && ranking > 5 && finish <= 25) {
+            return 3;
         }
-        else if (ranking >= 11 && ranking <= 20 && finish <=25){
-            this.points += 8;
+        if (ranking < 21 && ranking > 10 && finish <= 25) {
+            return 5;
+        } 
+        if (ranking > 20 && finish <= 25) {
+            return 8; 
         }
-        if (ranking > 20 && finish <= 25)
-            this.points += 11;
+        return 0;
 
     }
     public int getRanking() {
@@ -93,7 +88,16 @@ public class Player {
     public String getName() {
         return this.name;
     }
+    public double getPoints() {
+        return this.points;
+    }
 
-
+public static void main(String[] args) {
+    Player p = new Player("Rahm", false, false);
+    p.inputResults(90, false);
+    p.setRanking(15);
+    p.score();
+    System.out.println(p.points);
+}
 
 }
