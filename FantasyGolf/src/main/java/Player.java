@@ -92,6 +92,10 @@ public class Player {
         return this.points;
     }
 
+    public int getFinish() {
+        return finish;
+    }
+
 public static void main(String[] args) {
     Player p = new Player("Rahm", false, false);
     p.inputResults(90, false);

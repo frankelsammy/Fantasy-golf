@@ -144,7 +144,7 @@ public class Data {
 
         sheetsService = getSheetsService();
         // Range from first name of team to last made cut on bottom right
-        String range = "A2:AG7";
+        String range = "A2:AG2";
         int writes = 0;
         ValueRange response = sheetsService.spreadsheets().values().get(SPREADSHEET_ID, range).execute();
         List<List<Object>> values = response.getValues();
@@ -171,25 +171,11 @@ public class Data {
                             first, second);
                     
                     
-                    //Upload player ranking to sheet
-                    boolean rankingsPresent = false;
-                    try {
-                        entry.get(4*i + 2);
-                        rankingsPresent = true;
-
-                    } catch (Exception e) {
-                        rankingsPresent = false;
-                    }
-                    if (!rankingsPresent) {
+                   
+                    
                         int ranking = r.getRanking(p.getName());
-                        ValueRange body3 = new ValueRange()
-                                .setValues(Arrays.asList(Arrays.asList(ranking)));
-                        
-                        UpdateValuesResponse result3 = sheetsService.spreadsheets().values()
-                                .update(SPREADSHEET_ID, getcolRank(i, row), body3).setValueInputOption("RAW").execute();
-                        p.setRanking(ranking);
                         System.out.println(++writes);
-                    }
+                    
                     
 
                     // Upload finish for each player to Google Sheets
@@ -201,11 +187,7 @@ public class Data {
                     System.out.println(++writes);
                     // Upload if they made cut or not
                     // Number will need to be changed based on what place the cut is made at
-                    ValueRange body2 = new ValueRange()
-                            .setValues(Arrays.asList(Arrays.asList(finish < cutPlace ? "y" : "n")));
-                    UpdateValuesResponse result2 = sheetsService.spreadsheets().values()
-                            .update(SPREADSHEET_ID, getColCut(i, row), body2).setValueInputOption("RAW").execute();
-                    System.out.println(++writes);
+
                     
                     
                     // get results from sheet, add it to player
@@ -215,9 +197,9 @@ public class Data {
 
                     roster.add(p);
 
-                    //Add a delay so number of writes doesn't exceed Google Quota
+                    // Add a delay so number of writes doesn't exceed Google Quota
                     try {
-                        TimeUnit.SECONDS.sleep(3);
+                        TimeUnit.SECONDS.sleep(1);
                     } catch (InterruptedException e1) {
                         e1.printStackTrace();
                     }
@@ -258,7 +240,7 @@ public class Data {
                         bw.write(e.getName() + ":\n");
                         ArrayList<Player> roster = e.getEntry();
                         for (int i = 0; i < 8; i++) {
-                            bw.write(i + 1 + "." + roster.get(i).getName() + ": " + roster.get(i).getPoints()
+                            bw.write(i + 1 + "." + roster.get(i).getName() + " (" + roster.get(i).getFinish() + ")" + ": " + roster.get(i).getPoints()
                                     + " pts \n");
 
                         }
