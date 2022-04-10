@@ -144,8 +144,8 @@ public class Data {
 
         sheetsService = getSheetsService();
         // Range from first name of team to last made cut on bottom right
-        String range = "A2:AG30";
-        int writes = 0;
+        String range = "A27:AG30";
+        int teamsDone = 0;
         ValueRange response = sheetsService.spreadsheets().values().get(SPREADSHEET_ID, range).execute();
         List<List<Object>> values = response.getValues();
 
@@ -171,7 +171,7 @@ public class Data {
                             first, second);
                 
                         int ranking = r.getRanking(p.getName());
-                        System.out.println(++writes);
+                        
                         p.setRanking(ranking);
                     
 
@@ -181,7 +181,7 @@ public class Data {
 
                     UpdateValuesResponse result = sheetsService.spreadsheets().values()
                             .update(SPREADSHEET_ID, getColResult(i, row), body).setValueInputOption("RAW").execute();
-                    System.out.println(++writes);
+                    
                     // Upload if they made cut or not
                     // Number will need to be changed based on what place the cut is made at
 
@@ -201,6 +201,7 @@ public class Data {
                         e1.printStackTrace();
                     }
                 }
+                System.out.println(++teamsDone);
                 Entry e = new Entry(entry.get(0).toString(), roster);
                 league.addEntry(e);
                 row++;

@@ -15,11 +15,15 @@ public class Entry {
         this.name = name;
         this.roster = roster;
     }
-    public void score() {
+    public void score(String worstIn25) {
         boolean allCut = true;
         float score = 0;
 
         for (Player p : roster) {
+            if (p.getName().equalsIgnoreCase(worstIn25)) {
+                WORST_IN_25 = true;
+                score += 15;
+            }
             p.score();
             score += p.getPoints();
             allCut = allCut && p.getCut();
@@ -31,13 +35,6 @@ public class Entry {
             score += 10;
         }
         this.score = score;
-    }
-
-    //15 bonus points for worst ranked player who made it to the top 25
-    //Command line will ask you who gets this
-    public void bonus() {
-        this.score += 15;
-        WORST_IN_25 = true;
     }
 
     public ArrayList<Player> getEntry () {
@@ -59,7 +56,7 @@ public class Entry {
         r.add(p);
 
         Entry e = new Entry("sammy", r);
-        e.score();
+       
         System.out.println(e.getScore());
     }
 

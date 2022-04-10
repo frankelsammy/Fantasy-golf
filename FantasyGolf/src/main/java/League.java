@@ -19,16 +19,13 @@ public class League {
     }
     public void score() {
         Scanner s = new Scanner(System.in);
-        System.out.println("Which team gets the Bonus?");
-        String bonus = s.nextLine().toLowerCase();
         System.out.println("Which player was that?");
         this.worstPlayer = s.nextLine();
         
 
         for (Entry e: teams) {
-            e.score();
-            if (e.getName().toLowerCase().equals(bonus))
-                e.bonus();
+            e.score(worstPlayer);
+            
 
         }
         //Sort the teams based on points scored
