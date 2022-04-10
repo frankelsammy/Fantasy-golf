@@ -29,6 +29,15 @@ public class Player {
 
     public void score() {
         double currentPoints = 0;
+        if (ranking < 11 && ranking > 5 && finish <= 25) {
+            currentPoints += 3;
+        }
+        if (ranking < 21 && ranking > 10 && finish <= 25) {
+            currentPoints += 5;
+        } 
+        if (ranking > 20 && finish <= 25) {
+            currentPoints += 8; 
+        }
         if (madeCut) {
             currentPoints += 3;
         }
@@ -47,7 +56,7 @@ public class Player {
             currentPoints += 10;
         }
 
-        currentPoints += top25bonus();
+        
 
         //First and Second choice players bonus
         if (first) {
@@ -97,11 +106,11 @@ public class Player {
     }
 
 public static void main(String[] args) {
-    Player p = new Player("Rahm", false, false);
-    p.inputResults(90, false);
-    p.setRanking(15);
+    Player p = new Player("Lowry", false, false);
+    p.inputResults(4, true);
+    p.setRanking(30);
     p.score();
-    System.out.println(p.points);
+    System.out.println(p.getPoints());
 }
 
 }

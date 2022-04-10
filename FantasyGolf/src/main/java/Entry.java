@@ -51,5 +51,16 @@ public class Entry {
     public String getName() {
         return this.name;
     }
+    public static void main(String[] args) {
+        ArrayList<Player> r = new ArrayList<>();
+        Player p = new Player("lowry",false, false);
+        p.inputResults(4, true);
+        p.setRanking(35);
+        r.add(p);
+
+        Entry e = new Entry("sammy", r);
+        e.score();
+        System.out.println(e.getScore());
+    }
 
 }

@@ -1,5 +1,8 @@
 //This class will get the updated finishes of each player
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
@@ -77,6 +80,24 @@ public class Results {
         return 1000;
     }
 
+    //returns a list of the top25 players, sorted by ranking
+    //helpful for finding worst-ranked player to make top 25
+    public LinkedList<Player> top25ByRanking() {
+        LinkedList<Player> top25 = new LinkedList<>();
+
+        for (Player p : leaderboard) {
+            if (getResult(p.name) < 26) {
+                top25.add(p);
+            }
+        }
+        Collections.sort(top25, new Comparator<Player>() {
+            public int compare(Player o1, Player o2) {
+                return getRanking(o2.name) - getRanking(o1.name);
+            }
+        });
+        return top25;
+    }
+
 
     class Player {
         String name;
@@ -90,7 +111,9 @@ public class Results {
     public static void main(String[] args) {
         Results a = new Results();
         a.inputResultsAndRankings();
-
-        System.out.println(a.getRanking("mcilroy"));
+        LinkedList<Player> top25 = a.top25ByRanking();
+        for (Player p : top25) {
+            System.out.println(p.name);
+        }
     }
 }

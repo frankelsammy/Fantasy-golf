@@ -144,7 +144,7 @@ public class Data {
 
         sheetsService = getSheetsService();
         // Range from first name of team to last made cut on bottom right
-        String range = "A2:AG2";
+        String range = "A2:AG30";
         int writes = 0;
         ValueRange response = sheetsService.spreadsheets().values().get(SPREADSHEET_ID, range).execute();
         List<List<Object>> values = response.getValues();
@@ -169,13 +169,10 @@ public class Data {
                     // For every 4th column, create a player and add it to teams roster
                     Player p = new Player(entry.get(1 + (4 * i)).toString().replaceAll(" ", ""),
                             first, second);
-                    
-                    
-                   
-                    
+                
                         int ranking = r.getRanking(p.getName());
                         System.out.println(++writes);
-                    
+                        p.setRanking(ranking);
                     
 
                     // Upload finish for each player to Google Sheets
@@ -188,7 +185,7 @@ public class Data {
                     // Upload if they made cut or not
                     // Number will need to be changed based on what place the cut is made at
 
-                    
+                
                     
                     // get results from sheet, add it to player
                     // finish, madeCut
@@ -240,7 +237,7 @@ public class Data {
                         bw.write(e.getName() + ":\n");
                         ArrayList<Player> roster = e.getEntry();
                         for (int i = 0; i < 8; i++) {
-                            bw.write(i + 1 + "." + roster.get(i).getName() + " (" + roster.get(i).getFinish() + ")" + ": " + roster.get(i).getPoints()
+                            bw.write(i + 1 + "." + roster.get(i).getName() + " (Finish:" + roster.get(i).getFinish() + ")" + ": " + roster.get(i).getPoints()
                                     + " pts \n");
 
                         }
