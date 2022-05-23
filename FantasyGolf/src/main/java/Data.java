@@ -144,7 +144,7 @@ public class Data {
 
         sheetsService = getSheetsService();
         // Range from first name of team to last made cut on bottom right
-        String range = "A27:AG30";
+        String range = "A2:AG31";
         int teamsDone = 0;
         ValueRange response = sheetsService.spreadsheets().values().get(SPREADSHEET_ID, range).execute();
         List<List<Object>> values = response.getValues();
@@ -179,8 +179,8 @@ public class Data {
                     int finish = r.getResult(p.getName());
                     ValueRange body = new ValueRange().setValues(Arrays.asList(Arrays.asList(finish)));
 
-                    UpdateValuesResponse result = sheetsService.spreadsheets().values()
-                            .update(SPREADSHEET_ID, getColResult(i, row), body).setValueInputOption("RAW").execute();
+                    // UpdateValuesResponse result = sheetsService.spreadsheets().values()
+                            // .update(SPREADSHEET_ID, getColResult(i, row), body).setValueInputOption("RAW").execute();
                     
                     // Upload if they made cut or not
                     // Number will need to be changed based on what place the cut is made at

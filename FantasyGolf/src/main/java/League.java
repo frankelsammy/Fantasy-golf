@@ -19,7 +19,7 @@ public class League {
     }
     public void score() {
         Scanner s = new Scanner(System.in);
-        System.out.println("Which player was that?");
+        System.out.println("Lowest ranked player to make top 25?");
         this.worstPlayer = s.nextLine();
         
 
