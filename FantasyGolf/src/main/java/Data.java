@@ -190,7 +190,7 @@ public class Data {
                     // get results from sheet, add it to player
                     // finish, madeCut
                     p.inputResults(finish,
-                            (finish < cutPlace));
+                            (finish <= cutPlace));
 
                     roster.add(p);
 
