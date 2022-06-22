@@ -5,7 +5,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'building the application'
-                sh 'java -version'
+                sh 'python3 golf.py'
             }
         }
     }

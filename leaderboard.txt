@@ -25,7 +25,7 @@ Hughes: 24
 Schenk: 24
 Johnson: 24
 Pieters: 27
-WooLee: 27
+Lee: 27
 Wise: 27
 Burns: 27
 Daffue: 31
@@ -90,7 +90,7 @@ Taylor: 89
 Fox: 90
 Kim: 91
 Berger: 92
-Varner: 93
+Varner III: 93
 Kim: 94
 Grace: 95
 Kodaira: 96
