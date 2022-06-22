@@ -5,7 +5,8 @@ pipeline {
         stage('build') {
             steps {
                 echo 'building the application'
-                sh 'python3 golf.py; cat rankings.py'
+                sh 'python3 golf.py'
+                sh 'cat rankings.py'
             }
         }
     }
