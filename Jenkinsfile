@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'building the application'
                 sh 'python3 golf.py'
-                sh 'cat rankings.py'
+                sh 'cat rankings.txt'
             }
         }
     }
