@@ -12,8 +12,8 @@ pipeline {
         stage('run') {
             steps {
                 echo 'running the program'
-                sh '''/usr/bin/env /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java -Dfile.encoding=UTF-8 @/var/folders/ch/sxhxbs9565x95rpfg11fq3y00000gn/T/cp_73f7ocnrbxrm80wjnsizx1rff.argfile Data'''
-                sh 'y'
+                sh '''/usr/bin/env /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java -Dfile.encoding=UTF-8 @/var/folders/ch/sxhxbs9565x95rpfg11fq3y00000gn/T/cp_73f7ocnrbxrm80wjnsizx1rff.argfile Data y 6 rose'''
+                
             }
         }
     }

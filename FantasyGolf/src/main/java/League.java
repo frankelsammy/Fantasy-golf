@@ -6,7 +6,10 @@ import java.util.Scanner;
 public class League {
     private ArrayList<Entry> teams = new ArrayList<Entry>();
     public static String worstPlayer;
-
+    private String [] args;
+    public League(String [] args) {
+        this.args = args;
+    }
    
 
     public void addEntry(Entry e) {
@@ -18,9 +21,13 @@ public class League {
 
     }
     public void score() {
+        if (args.length == 0) {
         Scanner s = new Scanner(System.in);
         System.out.println("Lowest ranked player to make top 25?");
         this.worstPlayer = s.nextLine();
+        } else {
+            this.worstPlayer = args[2];
+        }
         
 
         for (Entry e: teams) {

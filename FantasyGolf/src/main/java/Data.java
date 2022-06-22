@@ -134,13 +134,20 @@ public class Data {
 
     public static void main(String[] args) throws IOException, GeneralSecurityException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Do you want the results in a file? y/n");
-        String ans = scanner.next();
-        if (ans.equals("y")) {
-            resultsInFile = true;
+        int cutPlace;
+        
+        if (args.length == 0) {
+            System.out.println("Do you want the results in a file? y/n");
+            String ans = scanner.next();
+            if (ans.equals("y")) {
+                resultsInFile = true;
+            }
+            System.out.println("What place was the cut made at?");
+            cutPlace = scanner.nextInt();
+        } else {
+            String ans = args[0];
+            cutPlace = Integer.parseInt(args[1]);
         }
-        System.out.println("What place was the cut made at?");
-        int cutPlace = scanner.nextInt();
 
         sheetsService = getSheetsService();
         // Range from first name of team to last made cut on bottom right
@@ -152,7 +159,7 @@ public class Data {
         if (values == null || values.isEmpty()) {
             System.out.println("No values found");
         } else {
-            League league = new League();
+            League league = new League(args);
             Results r = new Results();
             r.inputResultsAndRankings();
             int row = 2;
