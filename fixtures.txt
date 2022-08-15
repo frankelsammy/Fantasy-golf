@@ -18,15 +18,13 @@ AT&T Pebble Beach Pro-Am: 376
 WM Phoenix Open: 377
 The Genesis Invitational: 378
 The Honda Classic: 379
-Arnold Palmer Invitational presented by Mastercard: 381
 Puerto Rico Open: 380
+Arnold Palmer Invitational presented by Mastercard: 381
 THE PLAYERS Championship: 382
 Valspar Championship: 383
 World Golf Championships-Dell Technologies Match Play: 385
 Corales Puntacana Championship: 458
-Corales Puntacana Championship: 384
 Valero Texas Open: 386
-Masters Tournament: 387
 Masters Tournament: 456
 RBC Heritage: 388
 Zurich Classic of New Orleans: 389

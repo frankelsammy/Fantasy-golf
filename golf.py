@@ -12,7 +12,7 @@ import json
 
 def results():
     #change number at end of string to get results for specific tournament 
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/457"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/403"
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
@@ -78,5 +78,5 @@ def rankings():
      
           
 results() 
-rankings()
+#rankings()
 print("Done")
