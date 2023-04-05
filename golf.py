@@ -4,15 +4,15 @@
 import requests
 import pandas as pd 
 import json
-# 2022 season tournament ID's
-# Masters 456
-# PGA Championship 393
-# US Open 397
-# The open 403
+# 2023 season tournament ID's
+# Masters 501
+# PGA Championship 507
+# US Open 511
+# The open 518
 
 def results():
     #change number at end of string to get results for specific tournament 
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/403"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/501"
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
@@ -78,5 +78,5 @@ def rankings():
      
           
 results() 
-#rankings()
+rankings()
 print("Done")
