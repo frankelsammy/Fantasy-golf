@@ -38,11 +38,16 @@ public class Player {
         if (ranking > 20 && finish <= 25) {
             currentPoints += 8; 
         }
-        if (madeCut) {
-            currentPoints += 3;
+        if (madeCut && finish > 5) {
+            currentPoints += 4;
         }
         if (finish <= 25) {
-            currentPoints += 4;
+            currentPoints += 3;
+            if (ranking > 20) {
+                currentPoints += 9;
+            } else if (ranking <= 20 && ranking > 10) {
+                currentPoints += 5;
+            }
         } 
         if (finish <= 15) {
             currentPoints += 4;
@@ -53,7 +58,7 @@ public class Player {
 
         //10 bonus points if winner 
         if (finish == 1) {
-            currentPoints += 10;
+            currentPoints += 15;
         }
 
         

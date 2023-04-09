@@ -40,7 +40,6 @@ def results():
         else:
             return -1
 
-    my_file = open("test_file.txt", "w")
 
     l = []
     for players in leaderboard:
@@ -78,5 +77,5 @@ def rankings():
      
           
 results() 
-rankings()
+#rankings()
 print("Done")

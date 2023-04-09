@@ -32,7 +32,7 @@ public class Entry {
         //If every player on the team makes the cut, you get a bonus
         if (allCut) {
             this.ALLCUT = true;
-            score += 10;
+            score += 15;
         }
         this.score = score;
     }
