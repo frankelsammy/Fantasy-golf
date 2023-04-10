@@ -9,8 +9,10 @@ import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+import java.io.*;
 
 import javax.imageio.IIOException;
 
@@ -59,83 +61,10 @@ public class Data {
 
     }
 
-    // returns the range in which the results should be added to sheet
-    private static String getColResult(int numPlayer, int row) {
-        switch (numPlayer) {
-            case 0:
-                return "D" + Integer.toString(row);
-            case 1:
-                return "H" + Integer.toString(row);
-            case 2:
-                return "L" + Integer.toString(row);
-            case 3:
-                return "P" + Integer.toString(row);
-            case 4:
-                return "T" + Integer.toString(row);
-            case 5:
-                return "X" + Integer.toString(row);
-            case 6:
-                return "AB" + Integer.toString(row);
-            case 7:
-                return "AF" + Integer.toString(row);
-            default:
-                return null;
-        }
-
-    }
-
-    // returns the range for adding madeCut to sheet
-    private static String getColCut(int numPlayer, int row) {
-        switch (numPlayer) {
-            case 0:
-                return "E" + Integer.toString(row);
-            case 1:
-                return "I" + Integer.toString(row);
-            case 2:
-                return "M" + Integer.toString(row);
-            case 3:
-                return "Q" + Integer.toString(row);
-            case 4:
-                return "U" + Integer.toString(row);
-            case 5:
-                return "Y" + Integer.toString(row);
-            case 6:
-                return "AC" + Integer.toString(row);
-            case 7:
-                return "AG" + Integer.toString(row);
-            default:
-                return null;
-        }
-
-    }
-    private static String getcolRank(int numPlayer, int row) {
-        switch (numPlayer) {
-            case 0:
-                return "C" + Integer.toString(row);
-            case 1:
-                return "G" + Integer.toString(row);
-            case 2:
-                return "K" + Integer.toString(row);
-            case 3:
-                return "O" + Integer.toString(row);
-            case 4:
-                return "S" + Integer.toString(row);
-            case 5:
-                return "W" + Integer.toString(row);
-            case 6:
-                return "AA" + Integer.toString(row);
-            case 7:
-                return "AE" + Integer.toString(row);
-            default:
-                return null;
-        }
-
-    }
-
     public static void main(String[] args) throws IOException, GeneralSecurityException {
         Scanner scanner = new Scanner(System.in);
         int cutPlace;
-        
+
         if (args.length == 0) {
             System.out.println("Do you want the results in a file? y/n");
             String ans = scanner.next();
@@ -148,124 +77,110 @@ public class Data {
             String ans = args[0];
             cutPlace = Integer.parseInt(args[1]);
         }
+        int numTeams = 0;
+        System.out.println("How many teams in competition?");
+        numTeams = scanner.nextInt();
 
-        sheetsService = getSheetsService();
-        // Range from first name of team to last made cut on bottom right
-        String range = "A2:AG31";
         int teamsDone = 0;
-        ValueRange response = sheetsService.spreadsheets().values().get(SPREADSHEET_ID, range).execute();
-        List<List<Object>> values = response.getValues();
+        League league = new League(args);
+        Results r = new Results();
+        r.inputResultsAndRankings();
 
-        if (values == null || values.isEmpty()) {
-            System.out.println("No values found");
-        } else {
-            League league = new League(args);
-            Results r = new Results();
-            r.inputResultsAndRankings();
-            int row = 2;
-            for (List entry : values) {
-                ArrayList<Player> roster = new ArrayList<Player>();
-                // goes through the row, creates players, and inputs results
-                for (int i = 0; i < 8; i++) {
-                    boolean first = false, second = false;
-                    if (i == 0)
-                        first = true;
-                    if (i == 1)
-                        second = true;
+        Scanner sc = new Scanner(new File("FantasyGolf/src/main/java/teams.csv"));
+        sc.useDelimiter(","); // sets the delimiter pattern
 
-                    // For every 4th column, create a player and add it to teams roster
-                    Player p = new Player(entry.get(1 + (4 * i)).toString().replaceAll(" ", ""),
-                            first, second);
-                
-                        int ranking = r.getRanking(p.getName());
-                        
-                        p.setRanking(ranking);
-                    
+        List<List<String>> entries = new LinkedList<>();
+        for (int teams = 0; teams < 31; teams++) {
+            List<String> team = new LinkedList<>();
+            for (int player = 0; player < 9; player++) {
+                if (sc.hasNext())
+                    team.add(sc.next());
+            }
+            entries.add(team);
 
-                    // Upload finish for each player to Google Sheets
-                    int finish = r.getResult(p.getName());
-                    ValueRange body = new ValueRange().setValues(Arrays.asList(Arrays.asList(finish)));
+        }
+        sc.close();
+        System.out.println("Done");
 
-                    // UpdateValuesResponse result = sheetsService.spreadsheets().values()
-                            // .update(SPREADSHEET_ID, getColResult(i, row), body).setValueInputOption("RAW").execute();
-                    
-                    // Upload if they made cut or not
-                    // Number will need to be changed based on what place the cut is made at
+        for (List entry : entries) {
+            ArrayList<Player> roster = new ArrayList<Player>();
 
-                
-                    
-                    // get results from sheet, add it to player
-                    // finish, madeCut
-                    p.inputResults(finish,
+            int j = 1;
+            for (int i = 0; i < 8; i++) {
+                boolean first = false, second = false;
+                if (i == 0)
+                    first = true;
+                if (i == 1)
+                    second = true;
+
+                Player p = new Player(entry.get(j++).toString().replaceAll(" ", ""), first, second);
+
+                int ranking = r.getRanking(p.getName());
+
+                p.setRanking(ranking);
+                int finish = r.getResult(p.getName());
+                p.inputResults(finish,
                             (finish <= cutPlace));
-
-                    roster.add(p);
-
-                    // Add a delay so number of writes doesn't exceed Google Quota
-                    try {
-                        TimeUnit.SECONDS.sleep(1);
-                    } catch (InterruptedException e1) {
-                        e1.printStackTrace();
-                    }
-                }
-                System.out.println(++teamsDone);
-                Entry e = new Entry(entry.get(0).toString(), roster);
-                league.addEntry(e);
-                row++;
+                roster.add(p);
 
             }
-            // Print final results
-            league.score();
+            // System.out.println(++teamsDone);
+            Entry e = new Entry(entry.get(0).toString(), roster);
+            league.addEntry(e);
 
-            // putting the results into a text file
-            if (resultsInFile) {
-                String fileName = "/Users/sammyfrankel/FantasyGolf/Results";
-                File f = new File(fileName);
+        }
+        // Print final results
+        league.score();
 
-                try {
+        // putting the results into a text file
+        if (resultsInFile) {
+            String fileName = "/Users/sammyfrankel/FantasyGolf/Results";
+            File f = new File(fileName);
 
-                    if (!f.createNewFile()) {
-                        try {
-                            f.delete();
-                            f.createNewFile();
+            try {
 
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                if (!f.createNewFile()) {
+                    try {
+                        f.delete();
+                        f.createNewFile();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-                try {
-                    FileWriter edit = new FileWriter(fileName, true);
-                    BufferedWriter bw = new BufferedWriter(edit);
+            try {
+                FileWriter edit = new FileWriter(fileName, true);
+                BufferedWriter bw = new BufferedWriter(edit);
+                int team = 1;
+                for (Entry e : league.getEntries()) {
+                    
+                    bw.write(team++ + ": " + e.getName() + ":\n");
+                    ArrayList<Player> roster = e.getEntry();
+                    for (int i = 0; i < 8; i++) {
+                        bw.write(i + 1 + "." + roster.get(i).getName() + " (Finish:" + roster.get(i).getFinish() + ")"
+                                + ": " + roster.get(i).getPoints() + " pts \n");
 
-                    for (Entry e : league.getEntries()) {
-                        bw.write(e.getName() + ":\n");
-                        ArrayList<Player> roster = e.getEntry();
-                        for (int i = 0; i < 8; i++) {
-                            bw.write(i + 1 + "." + roster.get(i).getName() + " (Finish:" + roster.get(i).getFinish() + ")" + ": " + roster.get(i).getPoints()
-                                    + " pts \n");
-
-                        }
-                        if (e.ALLCUT) {
-                            bw.write("Bonus for all players making the cut: 10.0 pts\n");
-                        }
-                        if (e.WORST_IN_25) {
-                            bw.write("Bonus for having the worst ranked player in top 25 " + "(" + league.worstPlayer
-                                    + "):  15.0 pts \n");
-                        }
-                        bw.write("TOTAL POINTS: " + e.getScore() + "\n\n");
                     }
-                    bw.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    if (e.ALLCUT) {
+                        bw.write("Bonus for all players making the cut: 15.0 pts\n");
+                    }
+                    if (e.WORST_IN_25) {
+                        bw.write("Bonus for having the worst ranked player in top 25 " + "(" + league.worstPlayer
+                                + "):  15.0 pts \n");
+                    }
+                    bw.write("TOTAL POINTS: " + e.getScore() + "\n\n");
                 }
-
+                bw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
         }
 
     }
+
 }

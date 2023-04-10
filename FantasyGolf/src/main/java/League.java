@@ -35,6 +35,7 @@ public class League {
             
 
         }
+        
         //Sort the teams based on points scored
         Collections.sort(teams,new Comparator<Entry>() {
             public int compare(Entry a, Entry b) {

@@ -29,16 +29,9 @@ public class Player {
 
     public void score() {
         double currentPoints = 0;
-        if (ranking < 11 && ranking > 5 && finish <= 25) {
-            currentPoints += 3;
-        }
-        if (ranking < 21 && ranking > 10 && finish <= 25) {
-            currentPoints += 5;
-        } 
-        if (ranking > 20 && finish <= 25) {
-            currentPoints += 8; 
-        }
-        if (madeCut && finish > 5) {
+
+        //4 points if made cut and ranking outside top 5
+        if (madeCut && ranking > 5) {
             currentPoints += 4;
         }
         if (finish <= 25) {
@@ -49,6 +42,8 @@ public class Player {
                 currentPoints += 5;
             }
         } 
+
+        //4 points to top 15
         if (finish <= 15) {
             currentPoints += 4;
         }
@@ -56,19 +51,17 @@ public class Player {
             currentPoints += (11 - finish);
         }
 
-        //10 bonus points if winner 
+        //15 bonus points if winner 
         if (finish == 1) {
             currentPoints += 15;
         }
 
-        
-
         //First and Second choice players bonus
         if (first) {
-            if (ranking  > 15) {
-                currentPoints = currentPoints*3;
-            } else {
+            if (ranking  > 5) {
                 currentPoints = currentPoints*2;
+            } else {
+                currentPoints = currentPoints*1.5;
             }
         }
         if (second) {

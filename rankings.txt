@@ -66,7 +66,7 @@
 66: Stallings
 67: Putnam
 68: Spaun
-69: Johnson
+69: D.Johnson
 70: Reed
 71: Thompson
 72: Bezuidenhout

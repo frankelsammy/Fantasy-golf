@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5b679a6e-a8b2-4c08-b31c-531e877d38c1" name="Default Changelist" comment="auto">
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/bin/main/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/bin/main/Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/bin/main/League$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/bin/main/League$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/bin/main/League.class" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/bin/main/League.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/bin/main/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/bin/main/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/bin/main/credentials.json" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/bin/main/credentials.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/src/main/java/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/src/main/java/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/src/main/java/League.java" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/src/main/java/League.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FantasyGolf/src/main/resources/credentials.json" beforeDir="false" afterPath="$PROJECT_DIR$/FantasyGolf/src/main/resources/credentials.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Results" beforeDir="false" afterPath="$PROJECT_DIR$/Results" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leaderboard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/leaderboard.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2OAY3OfKBSG7MzzkShmCczvmKYf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b679a6e-a8b2-4c08-b31c-531e877d38c1" name="Default Changelist" comment="" />
+      <created>1681004659383</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681004659383</updated>
+    </task>
+    <task id="LOCAL-00001" summary="auto">
+      <created>1681004747637</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681004747637</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="auto" />
+    <option name="LAST_COMMIT_MESSAGE" value="auto" />
+  </component>
+</project>
