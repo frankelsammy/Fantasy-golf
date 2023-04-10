@@ -30,7 +30,7 @@ David Scoular:
 2.scheffler (Finish:10): 12.0 pts 
 3.smith (Finish:34): 4.0 pts 
 4.Mcilroy (Finish:61): 0.0 pts 
-5.D.johnson (Finish:34): 4.0 pts 
+5.johnson (Finish:34): 4.0 pts 
 6.Koepka (Finish:2): 29.0 pts 
 7.burns (Finish:29): 4.0 pts 
 8.schauffele (Finish:10): 12.0 pts 
@@ -45,7 +45,7 @@ Paul Costa:
 4.rahm (Finish:1): 32.0 pts 
 5.mcilroy (Finish:61): 0.0 pts 
 6.finau (Finish:26): 4.0 pts 
-7.willet (Finish:1000): 0.0 pts 
+7.willett (Finish:65): 0.0 pts 
 8.Morikawa (Finish:10): 17.0 pts 
 TOTAL POINTS: 126.0
 
@@ -165,7 +165,7 @@ Ralston Welch:
 2.scheffler (Finish:10): 12.0 pts 
 3.Mcilroy (Finish:61): 0.0 pts 
 4.day (Finish:39): 4.0 pts 
-5.D.johnson (Finish:34): 4.0 pts 
+5.johnson (Finish:34): 4.0 pts 
 6.Koepka (Finish:2): 29.0 pts 
 7.rahm (Finish:1): 32.0 pts 
 8.hoge (Finish:56): 0.0 pts 
@@ -186,7 +186,7 @@ TOTAL POINTS: 95.0
 
 16: 
 Nick Iachino:
-1.D.Johnson (Finish:34): 8.0 pts 
+1.Johnson (Finish:34): 8.0 pts 
 2.Thomas (Finish:58): 0.0 pts 
 3.Scheffler (Finish:10): 8.0 pts 
 4.Mcilroy (Finish:61): 0.0 pts 
@@ -292,6 +292,18 @@ George Monastra:
 TOTAL POINTS: 73.0
 
 25: 
+Chad Yoshinaka:
+1.Homa (Finish:43): 0.0 pts 
+2.Scheffler (Finish:10): 12.0 pts 
+3.Matsuyama (Finish:16): 16.0 pts 
+4.Finau (Finish:26): 4.0 pts 
+5.Spieth (Finish:4): 23.0 pts 
+6.Mcilroy (Finish:61): 0.0 pts 
+7.Morikawa (Finish:10): 17.0 pts 
+8.Thomas (Finish:58): 0.0 pts 
+TOTAL POINTS: 72.0
+
+26: 
 Donald Campbell:
 1.Smith (Finish:34): 8.0 pts 
 2.scheffler (Finish:10): 12.0 pts 
@@ -302,18 +314,6 @@ Donald Campbell:
 7.burns (Finish:29): 4.0 pts 
 8.thomas (Finish:58): 0.0 pts 
 TOTAL POINTS: 71.0
-
-26: 
-Chad Yoshinaka:
-1.Homa (Finish:43): 0.0 pts 
-2.Scheffler (Finish:10): 12.0 pts 
-3.Matsuyama (Finish:16): 16.0 pts 
-4.Fianu (Finish:1000): 0.0 pts 
-5.Spieth (Finish:4): 23.0 pts 
-6.Mcilroy (Finish:61): 0.0 pts 
-7.Morikawa (Finish:10): 17.0 pts 
-8.Thomas (Finish:58): 0.0 pts 
-TOTAL POINTS: 68.0
 
 27: 
 Noah Frankel:
@@ -335,35 +335,23 @@ Bill Mayer:
 4.Day (Finish:39): 4.0 pts 
 5.Thomas (Finish:58): 0.0 pts 
 6.Morikawa (Finish:10): 17.0 pts 
-7.D.Johnson (Finish:34): 4.0 pts 
+7.Johnson (Finish:34): 4.0 pts 
 8.Finau (Finish:26): 4.0 pts 
 TOTAL POINTS: 53.0
 
 29: 
-Bill Mayer:
-1.Mcilroy (Finish:61): 0.0 pts 
-2.scheffler (Finish:10): 12.0 pts 
-3.Im (Finish:16): 12.0 pts 
-4.finau (Finish:26): 4.0 pts 
-5.thomas (Finish:58): 0.0 pts 
-6.morikawa (Finish:10): 17.0 pts 
-7.D.johnson (Finish:34): 4.0 pts 
-8.Day (Finish:39): 4.0 pts 
-TOTAL POINTS: 53.0
-
-30: 
 Shaun Stoll:
 1.Mcilroy (Finish:61): 0.0 pts 
 2.Scheffler (Finish:10): 12.0 pts 
 3.Smith (Finish:34): 4.0 pts 
-4.D.Johnson (Finish:34): 4.0 pts 
+4.Johnson (Finish:34): 4.0 pts 
 5.Conners (Finish:74): 0.0 pts 
 6.Day (Finish:39): 4.0 pts 
 7.Hovland (Finish:7): 15.0 pts 
 8.Burns (Finish:29): 4.0 pts 
 TOTAL POINTS: 43.0
 
-31: 
+30: 
 Jonathan Sprayegen:
 1.Day (Finish:39): 8.0 pts 
 2.McIlroy (Finish:61): 0.0 pts 
