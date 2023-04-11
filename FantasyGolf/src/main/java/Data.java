@@ -44,7 +44,7 @@ public class Data {
         System.out.println("How many teams in competition?");
         numTeams = scanner.nextInt();
 
-        int teamsDone = 0;
+        
         League league = new League(args);
         Results r = new Results();
         r.inputResultsAndRankings();
@@ -68,8 +68,8 @@ public class Data {
         sc.close();
         
         //Creates classes for players and teams
-        for (List entry : entries) {
-            ArrayList<Player> roster = new ArrayList<Player>();
+        for (List<String> entry : entries) {
+            ArrayList<Player> roster = new ArrayList<>();
 
             int j = 1;
             for (int i = 0; i < 8; i++) {
@@ -91,7 +91,7 @@ public class Data {
 
             }
             
-            Entry e = new Entry(entry.get(0).toString(), roster);
+            Entry e = new Entry(entry.get(0), roster);
             league.addEntry(e);
 
         }
@@ -100,6 +100,7 @@ public class Data {
 
         // putting the results into a text file
         if (resultsInFile) {
+            //This will need to be changed if working on a different computer
             String fileName = "/Users/sammyfrankel/FantasyGolf/Results";
             File f = new File(fileName);
 
@@ -131,6 +132,9 @@ public class Data {
                                 + ": " + roster.get(i).getPoints() + " pts \n");
 
                     }
+
+                    //Printing of bonus points 
+                    // THESE WILL NEED TO BE UPDATED IF VALUES CHANGE
                     if (e.ALLCUT) {
                         bw.write("Bonus for all players making the cut: 15.0 pts\n");
                     }
