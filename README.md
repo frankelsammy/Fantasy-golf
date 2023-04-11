@@ -4,3 +4,5 @@ the competition, with special bonus points given out for various accomplishments
 scores in a file. 
 
 The code for this project can be found in the src/java directory, with the main method of the project being found in Data.java
+
+After the program is run, final scores will be present in the file titled Results. 
