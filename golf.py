@@ -47,7 +47,7 @@ def results():
         l.append((players['last_name'], players['position']))
 
 
-    with open('leaderboard.txt', 'w') as outfile:
+    with open('leaderboard', 'w') as outfile:
         for item in l:
             outfile.write(item[0] + ": " +  str(item[1]) + '\n')
 
@@ -72,7 +72,7 @@ def rankings():
             break;
         i = i + 1
     
-    with open('rankings.txt', 'w') as outfile:
+    with open('rankings', 'w') as outfile:
         for row in l:
             outfile.write(str(row[0]) + ": " + row[1] + '\n')
      

@@ -24,7 +24,7 @@ public class Results {
     //reads rankings from text file
     private void inputRankings() {
         try {
-            File myObj = new File("rankings.txt");
+            File myObj = new File("rankings");
             Scanner myReader = new Scanner(myObj);
 
             while (myReader.hasNextLine()) {
@@ -53,7 +53,7 @@ public class Results {
     //reads results from Python code which calls API to get real-time results
     private void inputResults() {
         try {
-            File myObj = new File("leaderboard.txt");
+            File myObj = new File("leaderboard");
             Scanner myReader = new Scanner(myObj);
             
             while (myReader.hasNextLine()) {
