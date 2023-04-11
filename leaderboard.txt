@@ -45,7 +45,7 @@ Homa: 43
 Pereira: 43
 Straka: 46
 Power: 46
-D.Johnson: 48
+Johnson: 48
 Pieters: 48
 Schwartzel: 50
 Couples: 50
@@ -64,7 +64,7 @@ Kisner: 63
 Champ: 64
 Willett: 65
 Singh: 66
-WooLee: 67
+Lee: 67
 Higa: 68
 Potgieter: 69
 Harman: 70
@@ -82,7 +82,7 @@ Olazabal: 81
 Svensson: 82
 Mize: 83
 Lyle: 84
-Woods: 53
+Woods: 85
 Oosthuizen: 86
 Na: 87
 Zalatoris: 88

@@ -4,6 +4,7 @@
 import requests
 import pandas as pd 
 import json
+import SECRET
 # 2023 season tournament ID's
 # Masters 501
 # PGA Championship 507
@@ -16,7 +17,7 @@ def results():
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
-        'x-rapidapi-key': "cd2f78eee0msh57d5ae1e1810fa2p1d0880jsn872939440f2c"
+        'x-rapidapi-key': SECRET.API_KEY
         }
 
     response = requests.request("GET", url, headers=headers)
