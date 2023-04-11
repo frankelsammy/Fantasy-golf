@@ -51,7 +51,8 @@ public class Data {
 
 
         //Reads the teams from the CSV
-        Scanner sc = new Scanner(new File("FantasyGolf/src/main/java/teams.csv"));
+        //Make sure commas are added to end of every line
+        Scanner sc = new Scanner(new File("FantasyGolf/src/main/resources/teams.csv"));
         sc.useDelimiter(","); 
 
         List<List<String>> entries = new LinkedList<>();
