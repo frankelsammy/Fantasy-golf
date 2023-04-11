@@ -38,6 +38,7 @@ public class Results {
         }
     }
 
+    
     public int getRanking(String s) {
         int index = -1;
         for (String player : rankings) {
@@ -112,6 +113,7 @@ public class Results {
         Results a = new Results();
         a.inputResultsAndRankings();
         LinkedList<Player> top25 = a.top25ByRanking();
+        
         for (Player p : top25) {
             System.out.println(p.name);
         }
