@@ -18,17 +18,16 @@ import javax.imageio.IIOException;
 
 public class Data {
     
-    // This is the ID of the google sheets page
+    
    
     public static boolean resultsInFile = false;
-
-
 
     public static void main(String[] args) throws IOException, GeneralSecurityException {
         Scanner scanner = new Scanner(System.in);
         int cutPlace;
 
         if (args.length == 0) {
+            System.out.println("Remember to add commas to last player in every line");
             System.out.println("Do you want the results in a file? y/n");
             String ans = scanner.next();
             if (ans.equals("y")) {
