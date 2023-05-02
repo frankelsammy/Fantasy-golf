@@ -77,6 +77,6 @@ def rankings():
             outfile.write(str(row[0]) + ": " + row[1] + '\n')
      
           
-results() 
-#rankings()
+#results() 
+rankings()
 print("Done")
