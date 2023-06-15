@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.imageio.IIOException;
 
@@ -122,6 +124,11 @@ public class Data {
                 FileWriter edit = new FileWriter(fileName, true);
                 BufferedWriter bw = new BufferedWriter(edit);
                 int team = 1;
+                LocalDateTime currentDateTime = LocalDateTime.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE h:mm a");
+                String formattedDateTime = currentDateTime.format(formatter);
+                bw.write("Last updated: " + formattedDateTime + "\n");
+                bw.write("\n");
                 for (Entry e : league.getEntries()) {
                     
                     bw.write(team++ + ": " + e.getName() + ":\n");

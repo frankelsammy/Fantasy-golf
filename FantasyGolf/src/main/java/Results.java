@@ -113,9 +113,9 @@ public class Results {
         Results a = new Results();
         a.inputResultsAndRankings();
         LinkedList<Player> top25 = a.top25ByRanking();
-        
+        int i = 1;
         for (Player p : top25) {
-            System.out.println(p.name);
+            System.out.println(i++ + ":" + p.name);
         }
     }
 }
