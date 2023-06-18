@@ -53,8 +53,8 @@ public class Results {
     //reads results from Python code which calls API to get real-time results
     private void inputResults() {
         try {
-            File myObj = new File("data/leaderboard");
-            Scanner myReader = new Scanner(myObj);
+            File file = new File("data/leaderboard");
+            Scanner myReader = new Scanner(file);
             
             while (myReader.hasNextLine()) {
                 String [] s = myReader.nextLine().split(": ");
@@ -64,7 +64,6 @@ public class Results {
             }
             myReader.close();
           } catch (FileNotFoundException e) {
-            System.out.println("File not found");
             e.printStackTrace();
           }
 
