@@ -52,31 +52,23 @@ def results():
             outfile.write(item[0] + ": " +  str(item[1]) + '\n')
 
 def rankings():
-    url = "https://golf-leaderboard-data.p.rapidapi.com/world-rankings"
-    
-    headers = {
-	"X-RapidAPI-Host": "golf-leaderboard-data.p.rapidapi.com",
-	"X-RapidAPI-Key": "cd2f78eee0msh57d5ae1e1810fa2p1d0880jsn872939440f2c"
-    }
-    
-    response = requests.request("GET", url, headers=headers)
-    
-    rankings = response.json()['results']['rankings']
-    
+    url = "App/FantasyGolf/src/main/resources/si.html"
+
+    data = pd.read_html(url)
+    rankings = data[0]
+
     l = []
-    i = 1
-    for player in rankings:
-        last_name = player['player_name'].split(" ")[1]
-        l.append((player['position'], last_name))
-        if i == 200:
-            break;
-        i = i + 1
-    
-    with open('data/rankings', 'w') as outfile:
-        for row in l:
-            outfile.write(str(row[0]) + ": " + row[1] + '\n')
+    for index, row in rankings.iterrows():
+        last_name = row['Name'].split(" ")[1]
+        rank = row['SI Rank'].split(" ")[0]
+        l.append((rank, last_name))
+
+    with open('App/data/rankings', 'w') as outfile:
+            for row in l:
+                outfile.write(str(row[0]) + ": " + row[1] + '\n')
+
      
           
-results() 
-#rankings()
+#results() 
+rankings()
 print("Done")
