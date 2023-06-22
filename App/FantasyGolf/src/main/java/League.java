@@ -1,16 +1,19 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class League {
     private ArrayList<Entry> teams = new ArrayList<Entry>();
-    public static String worstPlayer;
-    private String [] args;
-    public League(String [] args) {
+    public String worstPlayer;
+    private String[] args;
+    private ArrayList<String> listOfPlayers;
+
+    public League(String[] args) {
         this.args = args;
+        listOfPlayers = new ArrayList<>();
     }
-   
 
     public void addEntry(Entry e) {
         teams.add(e);
@@ -20,18 +23,33 @@ public class League {
         return this.teams;
 
     }
+
+
     public void score() {
-        if (args.length == 0) {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Lowest ranked player to make top 25?");
-        this.worstPlayer = s.nextLine();
-        } else {
-            this.worstPlayer = args[2];
+        
+        for (Entry e: teams) {
+            for (Player p : e.getEntry()) {
+                listOfPlayers.add(p.getName());
+            }
         }
+
+        //find lowest ranked player to make top 25
+        Results r = new Results();
+        r.inputResultsAndRankings();
+        LinkedList<Results.Player> top25 = r.top25ByRanking();
+        String worst =  "n/a";
+        for (int i = top25.size()-1; i >= 0; i--) {
+            if (listOfPlayers.contains(top25.get(i).name)) {
+                worst = top25.get(i).name;
+            }
+        }
+        this.worstPlayer = worst;
+
         
 
+
         for (Entry e: teams) {
-            e.score(worstPlayer);
+            e.score(worst);
             
 
         }
