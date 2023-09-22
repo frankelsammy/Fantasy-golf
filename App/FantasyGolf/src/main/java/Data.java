@@ -41,9 +41,9 @@ public class Data {
             String ans = args[0];
             cutPlace = Integer.parseInt(args[1]);
         }
-        int numTeams = 0;
-        System.out.println("How many teams in competition?");
-        numTeams = scanner.nextInt();
+        int numTeams = CSVLineCounter.numLinesCSV("App/FantasyGolf/src/main/resources/teams.csv");
+        // System.out.println("How many teams in competition?");
+        // numTeams = scanner.nextInt();
 
         
         League league = new League(args);
@@ -53,7 +53,7 @@ public class Data {
 
         //Reads the teams from the CSV
         //Make sure commas are added to end of every line
-        Scanner sc = new Scanner(new File("FantasyGolf/src/main/resources/teams.csv"));
+        Scanner sc = new Scanner(new File("App/FantasyGolf/src/main/resources/teams.csv"));
         sc.useDelimiter(","); 
 
         List<List<String>> entries = new LinkedList<>();
@@ -101,6 +101,7 @@ public class Data {
 
         // putting the results into a text file
         if (resultsInFile) {
+            
             //This will need to be changed if working on a different computer
             String fileName = "/Users/sammyfrankel/FantasyGolf/Results";
             File f = new File(fileName);
@@ -138,7 +139,7 @@ public class Data {
                                 + ": " + roster.get(i).getPoints() + " pts \n");
 
                     }
-
+                    
                     //Printing of bonus points 
                     // THESE WILL NEED TO BE UPDATED IF VALUES CHANGE
                     if (e.ALLCUT) {

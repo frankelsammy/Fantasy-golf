@@ -102,13 +102,4 @@ public class Player {
     public int getFinish() {
         return finish;
     }
-
-public static void main(String[] args) {
-    Player p = new Player("Lowry", false, false);
-    p.inputResults(4, true);
-    p.setRanking(30);
-    p.score();
-    System.out.println(p.getPoints());
-}
-
 }
