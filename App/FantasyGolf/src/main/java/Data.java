@@ -15,8 +15,6 @@ import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import javax.imageio.IIOException;
-
 
 public class Data {
     
@@ -42,10 +40,6 @@ public class Data {
             cutPlace = Integer.parseInt(args[1]);
         }
         int numTeams = CSVLineCounter.numLinesCSV("App/FantasyGolf/src/main/resources/teams.csv");
-        // System.out.println("How many teams in competition?");
-        // numTeams = scanner.nextInt();
-
-        
         League league = new League(args);
         Results r = new Results();
         r.inputResultsAndRankings();
@@ -157,7 +151,6 @@ public class Data {
             }
 
         }
-
+        League.makeJSONObject();
     }
-
 }

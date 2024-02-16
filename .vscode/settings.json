@@ -1,0 +1,8 @@
+{
+	"java.debug.settings.onBuildFailureProceed": true,
+	"java.compile.nullAnalysis.mode": "disabled",
+	"java.project.referencedLibraries": [
+		"~/App/FantasyGolf/src/main/java/json.jar"
+	],
+	"java.configuration.updateBuildConfiguration": "interactive"
+}
