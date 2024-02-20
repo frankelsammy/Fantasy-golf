@@ -2,11 +2,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.Scanner;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import netscape.javascript.JSObject;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -69,29 +68,54 @@ public class League {
         }
     }
 
-    public static void makeJSONObject() {
-        // Create a JSON object
+    public String makeJSONObject() {
         JSONObject jsonObject = new JSONObject();
 
+        // Create an array of JSON objects that will be the teams
+        JSONArray entries = new JSONArray();
+        
         try {
-            jsonObject.put("name", "John");
-            jsonObject.put("age", 30);
-            jsonObject.put("city", "New York");
+            //Go through each team's roster
+            int place = 1;
+            for (Entry team : this.getEntries()) {
+                JSONObject entry = new JSONObject();
+                entry.put("Name", team.getName());
+                entry.put("Total Score", team.getScore());
+                entry.put("Place", place++);
+                JSONArray roster = new JSONArray();
+
+                //Goes through each player and adds them to array of players
+                for (Player p : team.getEntry()) {
+                    JSONObject player = new JSONObject();
+                    player.put("Name", p.getName());
+                    player.put("Points scored", p.getPoints());
+                    player.put("Finish", p.getFinish());
+                    roster.put(player);
+                }
+                entry.put("Roster",roster);
+                entry.put("AllCut", team.ALLCUT);
+                entry.put("Worst25", team.WORST_IN_25);
+                entries.put(entry);   
+            }
+            jsonObject.put("Teams",entries);
+            
+            
+            
         } catch (JSONException e) {
             e.printStackTrace();
-            return; // Or handle the exception as appropriate for your application
+            return "Failed to make JSON Object"; 
         }
 
         // Specify the file path
-        String filePath = "output.json";
+        String filePath = "App/Database/Results.json";
 
         try (FileWriter fileWriter = new FileWriter(filePath)) {
             // Write the JSON object to the file
             fileWriter.write(jsonObject.toString());
-            System.out.println("JSON file created successfully.");
         } catch (IOException e) {
             e.printStackTrace();
+            return "Failed to make JSON file";
         }
+    return "JSON file created successfully!";
     }
-
 }

@@ -1,6 +1,7 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import SECRET
+import json
 
 user = SECRET.DB_USER
 password = SECRET.DB_PASSWORD
@@ -9,9 +10,16 @@ cluster = MongoClient(f"mongodb+srv://{user}:{password}@cluster0.zbfrr36.mongodb
 db = cluster["FantasyGolf"]
 collection = db["League"]
 
-post = {"name": "Sammy",
-        "Players": [{"name":"Scottie Scheffler", "Score": 50},
-                    {"name":"Tiger Woods", "Score": 150}], 
-        "Score": 200}
+# Load JSON data from file
+json_file_path = 'Results.json'  # Replace with the path to your JSON file
+with open(json_file_path, 'r') as file:
+    json_data = json.load(file)
 
-collection.insert_one(post)
+# Insert JSON data into MongoDB
+result = collection.insert_one(json_data)
+
+# Check the result
+if result.inserted_id:
+    print(f"Data inserted successfully with document ID: {result.inserted_id}")
+else:
+    print("Failed to insert data into MongoDB")

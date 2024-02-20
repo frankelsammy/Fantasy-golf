@@ -1,10 +1,3 @@
-import java.io.IOException;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.PrintWriter;
-import java.io.FileWriter;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +8,8 @@ import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-
 public class Data {
-    
-    
-   
+
     public static boolean resultsInFile = false;
 
     public static void main(String[] args) throws IOException, GeneralSecurityException {
@@ -44,11 +34,10 @@ public class Data {
         Results r = new Results();
         r.inputResultsAndRankings();
 
-
-        //Reads the teams from the CSV
-        //Make sure commas are added to end of every line
+        // Reads the teams from the CSV
+        // Make sure commas are added to end of every line
         Scanner sc = new Scanner(new File("App/FantasyGolf/src/main/resources/teams.csv"));
-        sc.useDelimiter(","); 
+        sc.useDelimiter(",");
 
         List<List<String>> entries = new LinkedList<>();
         for (int teams = 0; teams < numTeams; teams++) {
@@ -61,8 +50,8 @@ public class Data {
 
         }
         sc.close();
-        
-        //Creates classes for players and teams
+
+        // Creates classes for players and teams
         for (List<String> entry : entries) {
             ArrayList<Player> roster = new ArrayList<>();
 
@@ -81,11 +70,11 @@ public class Data {
                 p.setRanking(ranking);
                 int finish = r.getResult(p.getName());
                 p.inputResults(finish,
-                            (finish <= cutPlace));
+                        (finish <= cutPlace));
                 roster.add(p);
 
             }
-            
+
             Entry e = new Entry(entry.get(0), roster);
             league.addEntry(e);
 
@@ -95,8 +84,8 @@ public class Data {
 
         // putting the results into a text file
         if (resultsInFile) {
-            
-            //This will need to be changed if working on a different computer
+
+            // This will need to be changed if working on a different computer
             String fileName = "/Users/sammyfrankel/FantasyGolf/Results";
             File f = new File(fileName);
 
@@ -125,7 +114,7 @@ public class Data {
                 bw.write("Last updated: " + formattedDateTime + "\n");
                 bw.write("\n");
                 for (Entry e : league.getEntries()) {
-                    
+
                     bw.write(team++ + ": " + e.getName() + ":\n");
                     ArrayList<Player> roster = e.getEntry();
                     for (int i = 0; i < 8; i++) {
@@ -133,8 +122,8 @@ public class Data {
                                 + ": " + roster.get(i).getPoints() + " pts \n");
 
                     }
-                    
-                    //Printing of bonus points 
+
+                    // Printing of bonus points
                     // THESE WILL NEED TO BE UPDATED IF VALUES CHANGE
                     if (e.ALLCUT) {
                         bw.write("Bonus for all players making the cut: 15.0 pts\n");
@@ -151,6 +140,35 @@ public class Data {
             }
 
         }
-        League.makeJSONObject();
+        System.out.println(league.makeJSONObject());
+
+        try {
+            // Replace "path/to/your/script.py" with the actual path to your Python script
+            String pythonScriptPath = "/Users/sammyfrankel/FantasyGolf/App/Database/updateDB.py";
+
+            // Create a ProcessBuilder for running the Python script
+            ProcessBuilder processBuilder = new ProcessBuilder("python3", pythonScriptPath);
+
+            // Redirect error stream to standard output
+            processBuilder.redirectErrorStream(true);
+
+            // Start the process
+            Process process = processBuilder.start();
+
+            // Read the output from the Python script
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            // Wait for the process to finish
+            int exitCode = process.waitFor();
+            System.out.println("Python script exited with code: " + exitCode);
+
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }

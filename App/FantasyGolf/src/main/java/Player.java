@@ -95,6 +95,10 @@ public class Player {
     public String getName() {
         return this.name;
     }
+    /**
+     * 
+     * @return the amount of points a player scored
+     */
     public double getPoints() {
         return this.points;
     }
