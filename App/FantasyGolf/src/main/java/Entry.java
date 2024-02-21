@@ -12,7 +12,9 @@ public class Entry {
     public boolean WORST_IN_25 = false;
 
     public Entry(String name, ArrayList<Player> roster) {
-        this.name = name;
+        //remove newline characters
+        String cleanedName = name.replace("\n", "").replace("\r", "");
+        this.name = cleanedName;
         this.roster = roster;
     }
     public void score(String worstIn25) {
@@ -37,6 +39,10 @@ public class Entry {
         this.score = score;
     }
 
+    /**
+     * Returns the roster of players on a team
+     * @return Array list of players
+     */
     public ArrayList<Player> getEntry () {
         return this.roster;
     }
