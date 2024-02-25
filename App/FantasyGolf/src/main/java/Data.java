@@ -9,10 +9,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Data {
-
     public static boolean resultsInFile = false;
 
     public static void main(String[] args) throws IOException, GeneralSecurityException {
+        // Calls python script to update the leaderboard
+        CallPython.updateLeaderboard();
+
         Scanner scanner = new Scanner(System.in);
         int cutPlace;
 
@@ -140,35 +142,7 @@ public class Data {
             }
 
         }
-        System.out.println(league.makeJSONObject());
 
-        try {
-            // Replace "path/to/your/script.py" with the actual path to your Python script
-            String pythonScriptPath = "/Users/sammyfrankel/FantasyGolf/App/Database/updateDB.py";
-
-            // Create a ProcessBuilder for running the Python script
-            ProcessBuilder processBuilder = new ProcessBuilder("python3", pythonScriptPath);
-
-            // Redirect error stream to standard output
-            processBuilder.redirectErrorStream(true);
-
-            // Start the process
-            Process process = processBuilder.start();
-
-            // Read the output from the Python script
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-
-            // Wait for the process to finish
-            int exitCode = process.waitFor();
-            System.out.println("Python script exited with code: " + exitCode);
-
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        CallPython.updateDatabase();
     }
 }
