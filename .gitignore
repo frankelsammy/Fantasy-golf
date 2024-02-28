@@ -1,3 +1,4 @@
 SECRET.py
 .DS_Store
-App/FantasyGolf/src/main/resources/Teams Example.cvs
+App/FantasyGolf/src/main/resources/Teams\ Example.csv
+*.pyc
