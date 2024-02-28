@@ -14,12 +14,17 @@ collection = db["League"]
 json_file_path = 'Results.json'  # Replace with the path to your JSON file
 with open(json_file_path, 'r') as file:
     json_data = json.load(file)
+    
+#remove old results
+result = collection.delete_many({})
 
-# Insert JSON data into MongoDB
+# Insert new JSON data into MongoDB
 result = collection.insert_one(json_data)
+
 
 # Check the result
 if result.inserted_id:
     print(f"Data inserted successfully with document ID: {result.inserted_id}")
 else:
     print("Failed to insert data into MongoDB")
+
