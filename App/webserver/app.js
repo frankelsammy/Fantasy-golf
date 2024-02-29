@@ -4,8 +4,9 @@ const port = 3000
 const path = require('path');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const fs = require('fs');
-const uri = "mongodb+srv://frankels:H9cNIg8ZnugpoiFS@cluster0.zbfrr36.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
+require('dotenv').config();
+const uri = process.env.MONGODB_URI;
+console.log(uri)
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {

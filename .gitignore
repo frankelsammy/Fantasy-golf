@@ -2,3 +2,4 @@ SECRET.py
 .DS_Store
 App/FantasyGolf/src/main/resources/Teams\ Example.csv
 *.pyc
+.env
