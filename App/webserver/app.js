@@ -7,6 +7,8 @@ const fs = require('fs');
 require('dotenv').config();
 const uri = process.env.MONGODB_URI;
 console.log(uri)
+app.set("views", path.resolve(__dirname, "templates"));
+app.set("view engine", "ejs");
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
@@ -17,7 +19,7 @@ const client = new MongoClient(uri, {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.render("index")
 })
 
 app.listen(port, () => {
@@ -44,4 +46,4 @@ async function retrieveResults() {
     await client.close();
   }
 }
-retrieveResults().catch(console.dir);
+//retrieveResults().catch(console.dir);
