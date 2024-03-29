@@ -16,24 +16,18 @@ public class Data {
         CallPython.updateLeaderboard();
 
         Scanner scanner = new Scanner(System.in);
-        int cutPlace;
 
-        if (args.length == 0) {
-            System.out.println("Remember to add commas to last player in every line");
-            System.out.println("Do you want the results in a file? y/n");
-            String ans = scanner.next();
-            if (ans.equals("y")) {
-                resultsInFile = true;
-            }
-            System.out.println("What place was the cut made at (inclusive)?");
-            cutPlace = scanner.nextInt();
-        } else {
-            String ans = args[0];
-            cutPlace = Integer.parseInt(args[1]);
+        System.out.println("Remember to add commas to last player in every line");
+        System.out.println("Do you want the results in a file? y/n");
+        String ans = scanner.next();
+        if (ans.equals("y")) {
+            resultsInFile = true;
         }
+
         int numTeams = CSVLineCounter.numLinesCSV("App/FantasyGolf/src/main/resources/teams.csv");
-        League league = new League(args);
+        League league = new League();
         Results r = new Results();
+
         r.inputResultsAndRankings();
 
         // Reads the teams from the CSV
@@ -71,8 +65,9 @@ public class Data {
 
                 p.setRanking(ranking);
                 int finish = r.getResult(p.getName());
+                boolean cut = r.madeCut(p.getName());
                 p.inputResults(finish,
-                        (finish <= cutPlace));
+                        cut);
                 roster.add(p);
 
             }

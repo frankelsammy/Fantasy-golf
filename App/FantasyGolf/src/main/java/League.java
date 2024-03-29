@@ -13,11 +13,9 @@ import java.io.IOException;
 public class League {
     private ArrayList<Entry> teams = new ArrayList<Entry>();
     public String worstPlayer;
-    private String[] args;
     private ArrayList<String> listOfPlayers;
 
-    public League(String[] args) {
-        this.args = args;
+    public League() {
         listOfPlayers = new ArrayList<>();
     }
 

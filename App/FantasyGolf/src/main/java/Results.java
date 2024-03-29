@@ -58,7 +58,7 @@ public class Results {
             
             while (myReader.hasNextLine()) {
                 String [] s = myReader.nextLine().split(": ");
-                Player p = new Player(s[0], Integer.parseInt(s[1]));
+                Player p = new Player(s[0], Integer.parseInt(s[1]), !s[2].equals("cut"));
                 leaderboard.add(p);
 
             }
@@ -78,6 +78,15 @@ public class Results {
             }
         }
         return 1000;
+    }
+
+    public boolean madeCut(String name) {
+        for (Player p : leaderboard) {
+            if (p.name.equalsIgnoreCase(name)) {
+                return p.cut;
+            }
+        }
+        return false;
     }
 
     //returns a list of the top25 players, sorted by ranking
@@ -102,10 +111,12 @@ public class Results {
     class Player {
         String name;
         int place;
+        boolean cut;
 
-        Player(String name, int place) {
+        Player(String name, int place, boolean cut) {
             this.name = name;
             this.place = place;
+            this.cut = cut;
         }
     }
     public static void main(String[] args) {
