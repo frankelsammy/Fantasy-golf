@@ -85,6 +85,7 @@ public class League {
         // Format the current date and time using the formatter
         String formattedDateTime = currentDateTime.format(formatter);
         jsonObject.put("Date", formattedDateTime);
+        jsonObject.put("worstTop25", this.worstPlayer);
 
         // Create an array of JSON objects that will be the teams
         JSONArray entries = new JSONArray();
@@ -97,6 +98,7 @@ public class League {
                 entry.put("Name", team.getName());
                 entry.put("Total Score", team.getScore());
                 entry.put("Place", place++);
+                entry.put("WorstRankedBonus",team.WORST_IN_25);
                 JSONArray roster = new JSONArray();
 
                 //Goes through each player and adds them to array of players
