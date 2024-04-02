@@ -3,6 +3,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -66,8 +69,22 @@ public class League {
         }
     }
 
+    /**
+     * Takes the results of the tournament out creates a json file with all the results
+     * @return String specifying whether the operation was done succesfully
+     */
     public String makeJSONObject() {
         JSONObject jsonObject = new JSONObject();
+        
+        // Get the current date and time using Java 8 Date-Time API
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        
+        // Define the desired date and time format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM d h:mm a");
+
+        // Format the current date and time using the formatter
+        String formattedDateTime = currentDateTime.format(formatter);
+        jsonObject.put("Date", formattedDateTime);
 
         // Create an array of JSON objects that will be the teams
         JSONArray entries = new JSONArray();

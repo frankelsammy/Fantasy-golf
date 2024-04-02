@@ -11,7 +11,7 @@ db = cluster["FantasyGolf"]
 collection = db["League"]
 
 # Load JSON data from file
-json_file_path = 'Results.json'  # Replace with the path to your JSON file
+json_file_path = 'App/Database/Results.json'  # Replace with the path to your JSON file
 with open(json_file_path, 'r') as file:
     json_data = json.load(file)
     

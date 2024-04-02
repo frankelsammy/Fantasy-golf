@@ -137,7 +137,7 @@ public class Data {
             }
 
         }
-
+        league.makeJSONObject();
         CallPython.updateDatabase();
     }
 }
