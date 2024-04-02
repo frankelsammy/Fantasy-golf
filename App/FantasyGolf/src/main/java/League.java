@@ -105,6 +105,7 @@ public class League {
                     player.put("Name", p.getName());
                     player.put("Points scored", p.getPoints());
                     player.put("Finish", p.getFinish());
+                    player.put("Cut", !p.getCut());
                     roster.put(player);
                 }
                 entry.put("Roster",roster);
