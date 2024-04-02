@@ -71,6 +71,6 @@ def rankings():
 
      
           
-results() 
-#rankings()
-print("Done")
+#results() 
+print("Not updating results currently")
+print("Uncomment code during actual competition")
