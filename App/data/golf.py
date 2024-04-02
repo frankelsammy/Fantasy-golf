@@ -13,7 +13,7 @@ import SECRET
 
 def results():
     #change number at end of string to get results for specific tournament 
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/518"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/511"
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
@@ -71,6 +71,6 @@ def rankings():
 
      
           
-results() 
-#rankings()
-print("Done")
+#results() 
+print("Not updating results currently")
+print("Uncomment code during actual competition")

@@ -3,6 +3,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -66,8 +69,23 @@ public class League {
         }
     }
 
+    /**
+     * Takes the results of the tournament out creates a json file with all the results
+     * @return String specifying whether the operation was done succesfully
+     */
     public String makeJSONObject() {
         JSONObject jsonObject = new JSONObject();
+        
+        // Get the current date and time using Java 8 Date-Time API
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        
+        // Define the desired date and time format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM d h:mm a");
+
+        // Format the current date and time using the formatter
+        String formattedDateTime = currentDateTime.format(formatter);
+        jsonObject.put("Date", formattedDateTime);
+        jsonObject.put("worstTop25", this.worstPlayer);
 
         // Create an array of JSON objects that will be the teams
         JSONArray entries = new JSONArray();
@@ -75,11 +93,15 @@ public class League {
         try {
             //Go through each team's roster
             int place = 1;
+            double prevScore = Double.NEGATIVE_INFINITY;
             for (Entry team : this.getEntries()) {
                 JSONObject entry = new JSONObject();
                 entry.put("Name", team.getName());
                 entry.put("Total Score", team.getScore());
+                if (team.getScore() == prevScore) {place--;}
+                prevScore = team.getScore();
                 entry.put("Place", place++);
+                entry.put("WorstRankedBonus",team.WORST_IN_25);
                 JSONArray roster = new JSONArray();
 
                 //Goes through each player and adds them to array of players
@@ -88,6 +110,7 @@ public class League {
                     player.put("Name", p.getName());
                     player.put("Points scored", p.getPoints());
                     player.put("Finish", p.getFinish());
+                    player.put("Cut", !p.getCut());
                     roster.put(player);
                 }
                 entry.put("Roster",roster);
