@@ -93,10 +93,13 @@ public class League {
         try {
             //Go through each team's roster
             int place = 1;
+            double prevScore = Double.NEGATIVE_INFINITY;
             for (Entry team : this.getEntries()) {
                 JSONObject entry = new JSONObject();
                 entry.put("Name", team.getName());
                 entry.put("Total Score", team.getScore());
+                if (team.getScore() == prevScore) {place--;}
+                prevScore = team.getScore();
                 entry.put("Place", place++);
                 entry.put("WorstRankedBonus",team.WORST_IN_25);
                 JSONArray roster = new JSONArray();
