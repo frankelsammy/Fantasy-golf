@@ -18,11 +18,6 @@ public class Data {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Remember to add commas to last player in every line");
-        System.out.println("Do you want the results in a file? y/n");
-        String ans = scanner.next();
-        if (ans.equals("y")) {
-            resultsInFile = true;
-        }
 
         int numTeams = CSVLineCounter.numLinesCSV("App/FantasyGolf/src/main/resources/teams.csv");
         League league = new League();
