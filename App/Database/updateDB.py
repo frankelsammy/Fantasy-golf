@@ -15,8 +15,8 @@ json_file_path = 'App/Database/Results.json'  # Replace with the path to your JS
 with open(json_file_path, 'r') as file:
     json_data = json.load(file)
     
-#remove old results
-result = collection.delete_many({})
+# Remove the old leaderboard
+result = collection.delete_one({"title": "leaderboard"})
 
 # Insert new JSON data into MongoDB
 result = collection.insert_one(json_data)

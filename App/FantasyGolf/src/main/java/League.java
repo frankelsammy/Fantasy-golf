@@ -70,41 +70,46 @@ public class League {
     }
 
     /**
-     * Takes the results of the tournament out creates a json file with all the results
+     * Takes the results of the tournament out creates a json file with all the
+     * results
+     * 
      * @return String specifying whether the operation was done succesfully
      */
     public String makeJSONObject() {
         JSONObject jsonObject = new JSONObject();
-        
+
         // Get the current date and time using Java 8 Date-Time API
         LocalDateTime currentDateTime = LocalDateTime.now();
-        
+
         // Define the desired date and time format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM d h:mm a");
 
         // Format the current date and time using the formatter
         String formattedDateTime = currentDateTime.format(formatter);
+        jsonObject.put("title", "leaderboard");
         jsonObject.put("Date", formattedDateTime);
         jsonObject.put("worstTop25", this.worstPlayer);
 
         // Create an array of JSON objects that will be the teams
         JSONArray entries = new JSONArray();
-        
+
         try {
-            //Go through each team's roster
+            // Go through each team's roster
             int place = 1;
             double prevScore = Double.NEGATIVE_INFINITY;
             for (Entry team : this.getEntries()) {
                 JSONObject entry = new JSONObject();
                 entry.put("Name", team.getName());
                 entry.put("Total Score", team.getScore());
-                if (team.getScore() == prevScore) {place--;}
+                if (team.getScore() == prevScore) {
+                    place--;
+                }
                 prevScore = team.getScore();
                 entry.put("Place", place++);
-                entry.put("WorstRankedBonus",team.WORST_IN_25);
+                entry.put("WorstRankedBonus", team.WORST_IN_25);
                 JSONArray roster = new JSONArray();
 
-                //Goes through each player and adds them to array of players
+                // Goes through each player and adds them to array of players
                 for (Player p : team.getEntry()) {
                     JSONObject player = new JSONObject();
                     player.put("Name", p.getName());
@@ -113,18 +118,16 @@ public class League {
                     player.put("Cut", !p.getCut());
                     roster.put(player);
                 }
-                entry.put("Roster",roster);
+                entry.put("Roster", roster);
                 entry.put("AllCut", team.ALLCUT);
                 entry.put("Worst25", team.WORST_IN_25);
-                entries.put(entry);   
+                entries.put(entry);
             }
-            jsonObject.put("Teams",entries);
-            
-            
-            
+            jsonObject.put("Teams", entries);
+
         } catch (JSONException e) {
             e.printStackTrace();
-            return "Failed to make JSON Object"; 
+            return "Failed to make JSON Object";
         }
 
         // Specify the file path
@@ -137,6 +140,6 @@ public class League {
             e.printStackTrace();
             return "Failed to make JSON file";
         }
-    return "JSON file created successfully!";
+        return "JSON file created successfully!";
     }
 }
