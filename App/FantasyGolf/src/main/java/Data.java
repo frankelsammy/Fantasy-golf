@@ -9,13 +9,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Data {
-    public static boolean resultsInFile = false;
-
     public static void main(String[] args) throws IOException, GeneralSecurityException {
         // Calls python script to update the leaderboard
         CallPython.updateLeaderboard();
-
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Remember to add commas to last player in every line");
 
@@ -71,68 +67,11 @@ public class Data {
             league.addEntry(e);
 
         }
-        // Print final results
+
         league.score();
 
-        // putting the results into a text file
-        if (resultsInFile) {
-
-            // This will need to be changed if working on a different computer
-            String fileName = "/Users/sammyfrankel/FantasyGolf/Results";
-            File f = new File(fileName);
-
-            try {
-
-                if (!f.createNewFile()) {
-                    try {
-                        f.delete();
-                        f.createNewFile();
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                FileWriter edit = new FileWriter(fileName, true);
-                BufferedWriter bw = new BufferedWriter(edit);
-                int team = 1;
-                LocalDateTime currentDateTime = LocalDateTime.now();
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE h:mm a");
-                String formattedDateTime = currentDateTime.format(formatter);
-                bw.write("Last updated: " + formattedDateTime + "\n");
-                bw.write("\n");
-                for (Entry e : league.getEntries()) {
-
-                    bw.write(team++ + ": " + e.getName() + ":\n");
-                    ArrayList<Player> roster = e.getEntry();
-                    for (int i = 0; i < 8; i++) {
-                        bw.write(i + 1 + "." + roster.get(i).getName() + " (Finish:" + roster.get(i).getFinish() + ")"
-                                + ": " + roster.get(i).getPoints() + " pts \n");
-
-                    }
-
-                    // Printing of bonus points
-                    // THESE WILL NEED TO BE UPDATED IF VALUES CHANGE
-                    if (e.ALLCUT) {
-                        bw.write("Bonus for all players making the cut: 15.0 pts\n");
-                    }
-                    if (e.WORST_IN_25) {
-                        bw.write("Bonus for having the worst ranked player in top 25 " + "(" + league.worstPlayer
-                                + "):  15.0 pts \n");
-                    }
-                    bw.write("TOTAL POINTS: " + e.getScore() + "\n\n");
-                }
-                bw.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }
         league.makeJSONObject();
+
         CallPython.updateDatabase();
     }
 }

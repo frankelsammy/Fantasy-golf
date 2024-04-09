@@ -4,3 +4,5 @@ App/FantasyGolf/src/main/resources/Teams\ Example.csv
 *.pyc
 .env
 Results.json
+Results
+FantasyGolf.jar
