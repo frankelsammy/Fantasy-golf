@@ -2,7 +2,8 @@
 #as current world rankings. Uploads results to text files
 
 import requests
-import pandas as pd 
+import pandas as pd
+import csv 
 import json
 import SECRET
 # 2023 season tournament ID's
@@ -54,23 +55,28 @@ def results():
             outfile.write(item[0] + ": " +  str(item[1]) + ": " + item[2] + '\n')
 
 def rankings():
-    url = "App/FantasyGolf/src/main/resources/si.html"
-
-    data = pd.read_html(url)
-    rankings = data[0]
-
-    l = []
-    for index, row in rankings.iterrows():
-        last_name = row['Name'].split(" ")[1]
-        rank = row['SI Rank'].split(" ")[0]
-        l.append((rank, last_name))
-
-    with open('App/data/rankings', 'w') as outfile:
-            for row in l:
-                outfile.write(str(row[0]) + ": " + row[1] + '\n')
+    # Open the CSV file in read mode
+    with open('/Users/sammyfrankel/FantasyGolf/App/FantasyGolf/src/main/resources/powerRankings.csv', newline='') as csvfile:
+        # Create a CSV reader object
+        reader = csv.reader(csvfile)
+        # Loop through each row in the CSV file
+        i = 0
+        rankings = []
+        for row in reader:
+            if (i > 0):
+                name = row[0].split(",")
+                rankings.append(name[0])
+            i = i+1    
+        
+        with open('rankings', 'w') as outfile:
+            place = 1
+            for player in rankings:
+                outfile.write(f"{place}" + ": " + player + "\n")
+                place = place + 1
 
      
           
-#results() 
+#results()
+#rankings() 
 print("Not updating results currently")
 print("Uncomment code during actual competition")
