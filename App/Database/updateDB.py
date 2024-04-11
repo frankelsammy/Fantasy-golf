@@ -2,7 +2,6 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import SECRET
 import json
-
 user = SECRET.DB_USER
 password = SECRET.DB_PASSWORD
 
