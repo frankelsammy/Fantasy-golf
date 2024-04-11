@@ -4,13 +4,16 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.io.File; // Import the File class
+import java.io.FileNotFoundException; // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 
 public class Results {
     LinkedList<Player> leaderboard;
     LinkedList<String> rankings;
+
     Results() {
         leaderboard = new LinkedList<>();
         rankings = new LinkedList<>();
@@ -21,24 +24,23 @@ public class Results {
         inputResults();
     }
 
-    //reads rankings from text file
+    // reads rankings from text file
     private void inputRankings() {
         try {
             File myObj = new File("App/data/rankings");
             Scanner myReader = new Scanner(myObj);
 
             while (myReader.hasNextLine()) {
-                String [] s = myReader.nextLine().split(": ");
+                String[] s = myReader.nextLine().split(": ");
                 rankings.addLast(s[1]);
             }
             myReader.close();
-        } catch(FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             System.out.println("File not found");
             e.printStackTrace();
         }
     }
 
-    
     public int getRanking(String s) {
         int index = -1;
         for (String player : rankings) {
@@ -50,27 +52,32 @@ public class Results {
         return index == -1 ? 100 : 1 + index;
     }
 
-    //reads results from Python code which calls API to get real-time results
+    // reads results from Python code which calls API to get real-time results
     private void inputResults() {
         try {
             File file = new File("App/data/leaderboard");
             Scanner myReader = new Scanner(file);
-            
+
             while (myReader.hasNextLine()) {
-                String [] s = myReader.nextLine().split(": ");
+                String[] s = myReader.nextLine().split(": ");
                 Player p = new Player(s[0], Integer.parseInt(s[1]), !s[2].equals("cut"));
+                LocalDate currentDate = LocalDate.now();
+                DayOfWeek currentDayOfWeek = currentDate.getDayOfWeek();
+                if (currentDayOfWeek != DayOfWeek.SATURDAY || currentDayOfWeek != DayOfWeek.SUNDAY) {
+                    p.cut = p.place < 71;
+                }
                 leaderboard.add(p);
 
             }
             myReader.close();
-          } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-          }
+        }
 
     }
 
-    //retrurns place that player is in. Only works for last names
-    //If player is not present in the list, a -1 is returned. 
+    // retrurns place that player is in. Only works for last names
+    // If player is not present in the list, a -1 is returned.
     public int getResult(String name) {
         for (Player p : leaderboard) {
             if (p.name.equalsIgnoreCase(name)) {
@@ -89,8 +96,8 @@ public class Results {
         return false;
     }
 
-    //returns a list of the top25 players, sorted by ranking
-    //helpful for finding worst-ranked player to make top 25
+    // returns a list of the top25 players, sorted by ranking
+    // helpful for finding worst-ranked player to make top 25
     public LinkedList<Player> top25ByRanking() {
         LinkedList<Player> top25 = new LinkedList<>();
 
@@ -107,7 +114,6 @@ public class Results {
         return top25;
     }
 
-
     class Player {
         String name;
         int place;
@@ -119,6 +125,7 @@ public class Results {
             this.cut = cut;
         }
     }
+
     public static void main(String[] args) {
         Results a = new Results();
         a.inputResultsAndRankings();

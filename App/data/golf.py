@@ -6,15 +6,13 @@ import pandas as pd
 import csv 
 import json
 import SECRET
-# 2023 season tournament ID's
-# Masters 501
-# PGA Championship 507
-# US Open 511
-# The open 518
+# 2024 season tournament ID's
+# Masters 651
+# PGA Championship 658
 
 def results():
     #change number at end of string to get results for specific tournament 
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/511"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/651"
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
@@ -36,18 +34,16 @@ def results():
     df = pd.DataFrame(list(zip(leaders,place)))
     df.columns = ["Name", "Position"]
 
-    def get_result(name):
-        res = df.query(f"Name == @name")
-        res = res.reset_index()
-        if (not df.empty):
-            return res.at[0, 'Position']
-        else:
-            return -1
-
-
     l = []
     for players in leaderboard:
-        l.append([players['last_name'], players['position'], players['status']])
+        if players['last_name'] == "Kim" or players['last_name'] == "Smith":
+            name = players["first_name"][0] + "." + players["last_name"]
+        else:
+            name = players["last_name"]
+        if players['last_name'] == "Åberg":
+            name = "Aberg"
+        
+        l.append([name, players['position'], players['status']])
 
 
     with open('/Users/sammyfrankel/FantasyGolf/App/data/leaderboard', 'w') as outfile:
@@ -65,7 +61,11 @@ def rankings():
         for row in reader:
             if (i > 0):
                 name = row[0].split(",")
-                rankings.append(name[0])
+                if name[0] == 'Kim' or name[0] == 'Smith':
+                    name = name[1][1] + "." + name[0]
+                else:
+                    name = name[0]
+                rankings.append(name)
             i = i+1    
         
         with open('rankings', 'w') as outfile:
@@ -76,7 +76,5 @@ def rankings():
 
      
           
-#results()
+results()
 #rankings() 
-print("Not updating results currently")
-print("Uncomment code during actual competition")
