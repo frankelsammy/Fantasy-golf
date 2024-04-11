@@ -36,10 +36,12 @@ def results():
 
     l = []
     for players in leaderboard:
-        if players['last_name'] == "Kim":
+        if players['last_name'] == "Kim" or players['last_name'] == "Smith":
             name = players["first_name"][0] + "." + players["last_name"]
         else:
             name = players["last_name"]
+        if players['last_name'] == "Åberg":
+            name = "Aberg"
         
         l.append([name, players['position'], players['status']])
 
@@ -59,7 +61,7 @@ def rankings():
         for row in reader:
             if (i > 0):
                 name = row[0].split(",")
-                if name[0] == 'Kim':
+                if name[0] == 'Kim' or name[0] == 'Smith':
                     name = name[1][1] + "." + name[0]
                 else:
                     name = name[0]
