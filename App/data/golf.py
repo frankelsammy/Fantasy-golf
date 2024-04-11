@@ -76,5 +76,5 @@ def rankings():
 
      
           
-results()
+#results()
 #rankings() 
