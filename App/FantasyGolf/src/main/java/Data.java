@@ -73,5 +73,17 @@ public class Data {
         league.makeJSONObject();
 
         CallPython.updateDatabase();
+
+        // Get the current date and time
+        LocalDateTime currentDateTime = LocalDateTime.now();
+
+        // Define a format for the date and time
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        // Format the date and time using the formatter
+        String formattedDateTime = currentDateTime.format(formatter);
+
+        // Print the formatted date and time
+        System.out.println("Last Updated" + formattedDateTime);
     }
 }
