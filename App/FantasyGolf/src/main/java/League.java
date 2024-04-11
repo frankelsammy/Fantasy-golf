@@ -96,6 +96,7 @@ public class League {
         try {
             // Go through each team's roster
             int place = 1;
+            int numTies = 0;
             double prevScore = Double.NEGATIVE_INFINITY;
             for (Entry team : this.getEntries()) {
                 JSONObject entry = new JSONObject();
@@ -103,6 +104,12 @@ public class League {
                 entry.put("Total Score", team.getScore());
                 if (team.getScore() == prevScore) {
                     place--;
+                    numTies++;
+                } else {
+                    if (numTies > 0) {
+                        place = place + numTies;
+                        numTies = 0;
+                    }
                 }
                 prevScore = team.getScore();
                 entry.put("Place", place++);
