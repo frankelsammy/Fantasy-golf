@@ -6,15 +6,13 @@ import pandas as pd
 import csv 
 import json
 import SECRET
-# 2023 season tournament ID's
-# Masters 501
-# PGA Championship 507
-# US Open 511
-# The open 518
+# 2024 season tournament ID's
+# Masters 651
+# PGA Championship 658
 
 def results():
     #change number at end of string to get results for specific tournament 
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/511"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/651"
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",

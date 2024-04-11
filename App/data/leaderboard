@@ -1,156 +1,89 @@
-Clark: 1: complete
-McIlroy: 2: complete
-Scheffler: 3: complete
-Smith: 4: complete
-Fleetwood: 5: complete
-Lee: 5: complete
-Fowler: 5: complete
-T.Kim: 8: complete
-English: 8: complete
-Eckroat: 10: complete
-Rahm: 10: complete
-Schauffele: 10: complete
-Johnson: 10: complete
-Henley: 14: complete
-Morikawa: 14: complete
-Cantlay: 14: complete
-Koepka: 17: complete
-Fitzpatrick: 17: complete
-Hovland: 19: complete
-Smith: 20: complete
-Hardy: 20: complete
-McCarthy: 20: complete
-Mitchell: 20: complete
-Lowry: 20: complete
-DeChambeau: 20: complete
-Nagano: 20: complete
-Theegala: 27: complete
-Garcia: 27: complete
-Suh: 27: complete
-Hatton: 27: complete
-Harrington: 27: complete
-Wu: 32: complete
-Rodgers: 32: complete
-Burns: 32: complete
-Niemann: 32: complete
-Young: 32: complete
-Finau: 32: complete
-Matsuyama: 32: complete
-Puig: 39: complete
-Sargent: 39: complete
-Cole: 39: complete
-S.Kim: 39: complete
-Bennett: 43: complete
-Putnam: 43: complete
-Stevens: 43: complete
-Horschel: 43: complete
-Fox: 43: complete
-Harman: 43: complete
-Hughes: 49: complete
-Muñoz: 49: complete
-Hoffman: 49: complete
-Streelman: 49: complete
-Woodland: 49: complete
-Langasque: 54: complete
-Ancer: 54: complete
-Reed: 56: complete
-Gerard: 56: complete
-Katsuragawa: 58: complete
-Hadwin: 59: complete
-Solomon: 60: complete
-Svensson: 60: complete
-Carr: 62: complete
-Ishikawa: 63: complete
-Potgieter: 64: complete
-Moldovan: 65: complete
-Echavarria: 66: cut
-Norrman: 67: cut
-Lawrence: 68: cut
-Mickelson: 69: cut
-Meronk: 70: cut
-Pereira: 71: cut
-Noren: 72: cut
-Spieth: 73: cut
-Thompson: 74: cut
-Moore: 75: cut
-Cover: 76: cut
-Barjon: 77: cut
-Mueller: 78: cut
-Svoboda: 79: cut
-Forsström: 80: cut
-Schenk: 81: cut
-Kirk: 82: cut
-Taylor: 83: cut
-Grey: 84: cut
-Pieters: 85: cut
-Hoge: 86: cut
-Straka: 87: cut
-Rose: 88: cut
-Conners: 89: cut
-Homa: 90: cut
-Power: 91: cut
-Fisher: 92: cut
-Pendrith: 93: cut
-Nienaber: 94: cut
-Grillo: 95: cut
-Kitayama: 96: cut
-Truslow: 97: cut
-Germishuys: 98: cut
-Stallings: 99: cut
-Herbert: 100: cut
-Sloan: 101: cut
-Molinari: 102: cut
-Poston: 103: cut
-Scott: 104: cut
-Cink: 105: cut
-Meissner: 106: cut
-Brown: 107: cut
-Grant: 108: cut
-List: 109: cut
-Bradley: 110: cut
-Montgomery: 111: cut
-Summerhays: 112: cut
-Im: 113: cut
-Kuchar: 114: cut
-Kaymer: 115: cut
-Thorbjornsen: 116: cut
-Gumberg: 117: cut
-Amat: 118: cut
-Del Rey: 119: cut
-Nyfjall: 120: cut
-Browne Jr.: 121: cut
-Pereira: 122: cut
-M.Kim: 123: cut
-Dantorp: 124: cut
-Armour: 125: cut
-Charoenkul: 126: cut
-Schutte: 127: cut
-Dunlap: 128: cut
-Fernandez de Oliveira: 129: cut
-Larrazabal: 130: cut
-Lee: 131: cut
-Haley II: 132: cut
-Ortiz: 133: cut
-Vilips: 134: cut
-Cavaliere: 135: cut
-Morales: 136: cut
-Ding: 137: cut
-Brennan: 138: cut
-Pavon: 139: cut
-Day: 140: cut
-Henson: 141: cut
-Young: 142: cut
-Wise: 143: cut
-Perez: 144: cut
-Davis: 145: cut
-Capan III: 146: cut
-Schaake: 147: cut
-Buckley: 148: cut
-McClean: 149: cut
-Dahmen: 150: cut
-Yang: 151: cut
-Simmons: 152: cut
-Thomas: 153: cut
-Horsey: 154: cut
-Valdes: 155: cut
-Lebioda: 156: cut
+van Rooyen: 1: not started
+Knapp: 2: not started
+Olazábal: 3: not started
+Moore: 4: not started
+De la Fuente: 5: not started
+Willett: 6: not started
+Eckroat: 7: not started
+Jaeger: 8: not started
+Schwartzel: 9: not started
+List: 10: not started
+Lamprecht: 11: not started
+Woodland: 12: not started
+Olesen: 13: not started
+DeChambeau: 14: not started
+Johnson: 15: not started
+Conners: 16: not started
+Stubbs: 17: not started
+Garcia: 18: not started
+Kirk: 19: not started
+Fox: 20: not started
+Glover: 21: not started
+An: 22: not started
+English: 23: not started
+Mickelson: 24: not started
+Straka: 25: not started
+Finau: 26: not started
+Taylor: 27: not started
+Niemann: 28: not started
+Henley: 29: not started
+Cantlay: 30: not started
+Lee: 31: not started
+Fowler: 32: not started
+Matsuyama: 33: not started
+Zalatoris: 34: not started
+Thomas: 35: not started
+Rahm: 36: not started
+Fitzpatrick: 37: not started
+Dunlap: 38: not started
+Scheffler: 39: not started
+McIlroy: 40: not started
+Schauffele: 41: not started
+Clark: 42: not started
+Hovland: 43: not started
+Smith: 44: not started
+Hodges: 45: not started
+Meronk: 46: not started
+Murray: 47: not started
+Villegas: 48: not started
+McCarthy: 49: not started
+Davis: 50: not started
+Weir: 51: not started
+Hisatsune: 52: not started
+Shipley: 53: not started
+Singh: 54: not started
+S.Kim: 55: not started
+Grillo: 56: not started
+Couples: 57: not started
+Hadwin: 58: not started
+Hagestad: 59: not started
+Rose: 60: not started
+Cole: 61: not started
+Malnati: 62: not started
+Bhatia: 63: not started
+Poston: 64: not started
+Lowry: 65: not started
+Watson: 66: not started
+Højgaard: 67: not started
+Schenk: 68: not started
+Reed: 69: not started
+Im: 70: not started
+Kitayama: 71: not started
+Bradley: 72: not started
+Pavon: 73: not started
+Hatton: 74: not started
+Scott: 75: not started
+Burns: 76: not started
+Young: 77: not started
+Woods: 78: not started
+Day: 79: not started
+Homa: 80: not started
+Harman: 81: not started
+Koepka: 82: not started
+T.Kim: 83: not started
+Spieth: 84: not started
+Åberg: 85: not started
+Theegala: 86: not started
+Johnson: 87: not started
+Morikawa: 88: not started
+Fleetwood: 89: not started
