@@ -64,7 +64,7 @@ public class Results {
                 LocalDate currentDate = LocalDate.now();
                 DayOfWeek currentDayOfWeek = currentDate.getDayOfWeek();
                 if (currentDayOfWeek != DayOfWeek.SATURDAY || currentDayOfWeek != DayOfWeek.SUNDAY) {
-                    p.cut = p.place < 71;
+                    p.cut = p.place < 51;
                 }
                 leaderboard.add(p);
 
