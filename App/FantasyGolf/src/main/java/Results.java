@@ -60,12 +60,13 @@ public class Results {
 
             while (myReader.hasNextLine()) {
                 String[] s = myReader.nextLine().split(": ");
-                Player p = new Player(s[0], Integer.parseInt(s[1]), !s[2].equals("cut") || !s[2].equals("withdrawn"));
+                Player p = new Player(s[0], Integer.parseInt(s[1]), !s[2].equals("cut"));
                 LocalDate currentDate = LocalDate.now();
                 DayOfWeek currentDayOfWeek = currentDate.getDayOfWeek();
-                if (currentDayOfWeek != DayOfWeek.SATURDAY || currentDayOfWeek != DayOfWeek.SUNDAY) {
-                    p.cut = p.place < 51;
-                }
+                // if (currentDayOfWeek != DayOfWeek.SATURDAY || currentDayOfWeek !=
+                // DayOfWeek.SUNDAY) {
+                // p.cut = p.place < 51;
+                // }
                 leaderboard.add(p);
 
             }
