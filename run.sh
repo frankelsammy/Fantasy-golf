@@ -6,4 +6,4 @@ export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/3.9/lib/python3
 # Run Java command with specified environment variables
 /usr/bin/env \
 PYTHONPATH="$PYTHONPATH" \
-/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java @/var/folders/ch/sxhxbs9565x95rpfg11fq3y00000gn/T/cp_divc1tgi003ja4k9i4wcmv7bt.argfile Data 
+/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java @/var/folders/ch/sxhxbs9565x95rpfg11fq3y00000gn/T/cp_divc1tgi003ja4k9i4wcmv7bt.argfile Data

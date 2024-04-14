@@ -15,7 +15,7 @@ with open(json_file_path, 'r') as file:
     json_data = json.load(file)
     
 # Remove the old leaderboard
-result = collection.delete_one({"title": "leaderboard"})
+result = collection.delete_many({})
 
 # Insert new JSON data into MongoDB
 result = collection.insert_one(json_data)
