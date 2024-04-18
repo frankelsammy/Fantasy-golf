@@ -84,6 +84,6 @@ public class Data {
         String formattedDateTime = currentDateTime.format(formatter);
 
         // Print the formatted date and time
-        System.out.println("Last Updated" + formattedDateTime);
+        System.out.println("Last Updated: " + formattedDateTime);
     }
 }
