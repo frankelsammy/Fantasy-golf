@@ -22,33 +22,22 @@ def results():
     response = requests.request("GET", url, headers=headers)
 
     leaderboard = response.json()['results']['leaderboard']
-
-    leaders = [] 
-    place = []
-    status = []
-    for player in leaderboard:
-        leaders.append(player['first_name'] + " " +  player['last_name'])
-        place.append(player['position'])
-        status.append(player['status'])
-
-    df = pd.DataFrame(list(zip(leaders,place)))
-    df.columns = ["Name", "Position"]
-
+        
     l = []
     for players in leaderboard:
-        if players['last_name'] == "Kim" or players['last_name'] == "Smith" or players['last_name'] == "Johnson":
-            name = players["first_name"][0] + "." + players["last_name"]
-        else:
-            name = players["last_name"]
-        if players['last_name'] == "Åberg":
-            name = "Aberg"
-        
-        l.append([name, players['position'], players['status']])
+        last_name = players["last_name"]
+        if last_name == "Åberg":
+            last_name = "Aberg"
+        l.append([players["first_name"], last_name, players['position'], players['status']])
 
 
     with open('/Users/sammyfrankel/FantasyGolf/App/data/leaderboard', 'w') as outfile:
         for item in l:
-            outfile.write(item[0] + ": " +  str(item[1]) + ": " + item[2] + '\n')
+            outfile.write(item[0] + " " + item[1] + ": " +  str(item[2]) + ": " + item[3] + '\n')
+    with open('/Users/sammyfrankel/FantasyGolf/App/data/listOfPlayers', 'w') as outfile:
+        for item in l:
+            outfile.write(item[0] + " " + item[1]+'\n')
+            
 
 def rankings():
     # Open the CSV file in read mode
@@ -61,17 +50,14 @@ def rankings():
         for row in reader:
             if (i > 0):
                 name = row[0].split(",")
-                if name[0] == 'Kim' or name[0] == 'Smith' or name[0] == 'Johnson':
-                    name = name[1][1] + "." + name[0]
-                else:
-                    name = name[0]
+                name = name[1] + " " + name[0] 
                 rankings.append(name)
             i = i+1    
         
         with open('rankings', 'w') as outfile:
             place = 1
             for player in rankings:
-                outfile.write(f"{place}" + ": " + player + "\n")
+                outfile.write(f"{place}" + ":" + player + "\n")
                 place = place + 1
 
      
