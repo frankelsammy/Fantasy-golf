@@ -7,3 +7,6 @@ Results.json
 Results
 FantasyGolf.jar
 App/FantasyGolf/bin/main/*.class
+App/data/listOfPlayers
+App/data/leaderboard
+App/data/rankings

@@ -50,7 +50,7 @@ public class Data {
                 if (i == 1)
                     second = true;
 
-                Player p = new Player(entry.get(j++).toString().replaceAll(" ", ""), first, second);
+                Player p = new Player(entry.get(j++).toString(), first, second);
 
                 int ranking = r.getRanking(p.getName());
 
@@ -72,6 +72,7 @@ public class Data {
 
         league.makeJSONObject();
 
+        // Avoding updating the databse during testing new features
         CallPython.updateDatabase();
 
         // Get the current date and time
