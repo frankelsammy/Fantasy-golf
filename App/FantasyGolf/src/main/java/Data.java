@@ -31,7 +31,7 @@ public class Data {
             List<String> team = new LinkedList<>();
             for (int player = 0; player < 9; player++) {
                 if (sc.hasNext())
-                    team.add(sc.next());
+                    team.add(sc.next().replace("\"", ""));
             }
             entries.add(team);
 
