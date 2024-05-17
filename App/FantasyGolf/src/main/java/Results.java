@@ -19,6 +19,9 @@ public class Results {
         rankings = new LinkedList<>();
     }
 
+    /**
+     * Reads the rankings and current leaderboard
+     */
     public void inputResultsAndRankings() {
         inputRankings();
         inputResults();
@@ -81,8 +84,11 @@ public class Results {
 
     }
 
-    // retrurns place that player is in. Only works for last names
-    // If player is not present in the list, a -1 is returned.
+    /**
+     * 
+     * @param Player's name
+     * @return position the player is in in the leaderboard
+     */
     public int getResult(String name) {
         for (Player p : leaderboard) {
             if (p.name.equalsIgnoreCase(name)) {
@@ -101,8 +107,10 @@ public class Results {
         return false;
     }
 
-    // returns a list of the top25 players, sorted by ranking
-    // helpful for finding worst-ranked player to make top 25
+    /**
+     * 
+     * @return a list of the top25 players, sorted by ranking
+     */
     public LinkedList<Player> top25ByRanking() {
         LinkedList<Player> top25 = new LinkedList<>();
 
