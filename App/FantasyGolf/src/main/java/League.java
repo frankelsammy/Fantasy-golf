@@ -61,11 +61,11 @@ public class League {
                 return (Float.valueOf(b.getScore()).compareTo(Float.valueOf(a.getScore())));
             }
         });
+    }
 
-        // Print results
+    public void printResults() {
         for (Entry e : teams) {
             System.out.println(e.getName() + ": " + e.getScore());
-
         }
     }
 

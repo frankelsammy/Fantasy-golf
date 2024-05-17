@@ -10,10 +10,10 @@ import java.time.format.DateTimeFormatter;
 
 public class Data {
     public static void main(String[] args) throws IOException, GeneralSecurityException {
+        System.out.println("Remember to add commas to last player in every line");
+
         // Calls python script to update the leaderboard
         CallPython.updateLeaderboard();
-
-        System.out.println("Remember to add commas to last player in every line");
 
         int numTeams = CSVLineCounter.numLinesCSV("App/FantasyGolf/src/main/resources/teams.csv");
         League league = new League();
@@ -69,6 +69,7 @@ public class Data {
         }
 
         league.score();
+        // league.printResults();
 
         league.makeJSONObject();
 
@@ -86,5 +87,6 @@ public class Data {
 
         // Print the formatted date and time
         System.out.println("Last Updated: " + formattedDateTime);
+        System.out.println("---------------------------------");
     }
 }
