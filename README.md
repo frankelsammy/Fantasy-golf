@@ -1,8 +1,22 @@
-# Fantasy-golf
-This is code for a Fantasy golf competition for the PGA Majors. Each team selects 8 players, and recieves points based on how those players finish in 
-the competition, with special bonus points given out for various accomplishments. The program reads data from google sheets, and puts the final 
-scores in a file. 
+# Fantasy Golf Competition
+Welcome to the Fantasy Golf Competition! This project allows users to create teams by selecting golfers, with scores determined by their performance in real-life tournaments.
 
-The code for this project can be found in the src/java directory, with the main method of the project being found in Data.java
+## Project Overview
+The Fantasy Golf Competition is a web application where users can form fantasy teams consisting of real golfers. The scores of the teams are based on the golfers' actual performance in ongoing tournaments. The application provides real-time updates, leveraging APIs to fetch live scores and standings.
 
-After the program is run, final scores will be present in the file titled Results. 
+Check out the live application [here](https://golf-competition-193e590fabff.herokuapp.com/)
+
+## Features
+- Create and manage fantasy golf teams
+- Real-time updates of scores based on golfers' tournament performance
+- Leaderboards to track team standings
+- Responsive and user-friendly interface
+## Technologies Used
+### Backend
+- Java and Python: Used for backend processing and API integrations to fetch real-time data.
+- APIs: Used golf leaderboard data API on RAPIDAPI to get live updates during tournaments 
+### Frontend
+- Node.js and Express: For server-side scripting and handling API routes.
+- HTML/CSS: For structuring and styling the web pages.
+### Hosting
+-Heroku: Used for deploying the application.
