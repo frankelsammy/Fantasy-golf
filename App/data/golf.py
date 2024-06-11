@@ -9,10 +9,10 @@ import SECRET
 # 2024 season tournament ID's
 # Masters 651
 # PGA Championship 658
-
+# US open 662
 def results():
     #change number at end of string to get results for specific tournament 
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/658"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/662"
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
