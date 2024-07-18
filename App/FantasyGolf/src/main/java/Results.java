@@ -30,7 +30,7 @@ public class Results {
     // reads rankings from text file
     private void inputRankings() {
         try {
-            File myObj = new File("App/data/rankings");
+            File myObj = new File("rankings");
             Scanner myReader = new Scanner(myObj);
 
             while (myReader.hasNextLine()) {
@@ -70,7 +70,7 @@ public class Results {
                     p = new Player(s[0], Integer.parseInt(s[1]), !s[2].equals("cut"));
                 } else {
                     p = new Player(s[0], Integer.parseInt(s[1]), Integer.parseInt(s[1]) < 61);
-                    if (s[2].equals("not started")) {
+                    if (s[2].equals("not started") || s[2].equals("active")) {
                         p = new Player(s[0], 1000, false);
                     }
                 }
