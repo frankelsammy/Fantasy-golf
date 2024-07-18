@@ -10,9 +10,10 @@ import SECRET
 # Masters 651
 # PGA Championship 658
 # US open 662
+# Open championship: 701 
 def results():
     #change number at end of string to get results for specific tournament 
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/662"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/701"
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
@@ -26,9 +27,12 @@ def results():
     l = []
     for players in leaderboard:
         last_name = players["last_name"]
+        first_name = players["first_name"]
         if last_name == "Åberg":
             last_name = "Aberg"
-        l.append([players["first_name"], last_name, players['position'], players['status']])
+        if last_name == "Fitzpatrick":
+            first_name = "Matt"
+        l.append([first_name, last_name, players['position'], players['status']])
 
 
     with open('/Users/sammyfrankel/FantasyGolf/App/data/leaderboard', 'w') as outfile:
