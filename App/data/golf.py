@@ -13,7 +13,7 @@ import SECRET
 # Open championship: 701 
 def results():
     #change number at end of string to get results for specific tournament 
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/701"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/668"
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
@@ -34,6 +34,8 @@ def results():
             first_name = "Matt"
         if last_name == "Smith" and first_name == "Cam":
             first_name = "Cameron"
+        if last_name == "Højgaard":
+            last_name = "Hojgaard"
         l.append([first_name, last_name, players['position'], players['status']])
 
 

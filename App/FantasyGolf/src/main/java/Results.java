@@ -69,8 +69,8 @@ public class Results {
                 if (currentDayOfWeek == DayOfWeek.SATURDAY || currentDayOfWeek == DayOfWeek.SUNDAY) {
                     p = new Player(s[0], Integer.parseInt(s[1]), !s[2].equals("cut"));
                 } else {
-                    p = new Player(s[0], Integer.parseInt(s[1]), Integer.parseInt(s[1]) < 61);
-                    if (s[2].equals("not started") || s[2].equals("active")) {
+                    p = new Player(s[0], Integer.parseInt(s[1]), Integer.parseInt(s[1]) < 71);
+                    if (currentDayOfWeek == DayOfWeek.THURSDAY && s[2].equals("not started")) {
                         p = new Player(s[0], 1000, false);
                     }
                 }
