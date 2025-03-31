@@ -46,31 +46,25 @@ def results():
         for item in l:
             outfile.write(item[0] + " " + item[1]+'\n')
     print("Updated Results")
+
+def format_name(name):
+    parts = name.split(", ")
+    if len(parts) == 2:
+        return f"{parts[1]} {parts[0]}"  # "First Last"
+    return name  # Return as is if there's no comma
             
 
 def rankings():
-    # Open the CSV file in read mode
-    with open('/Users/sammyfrankel/FantasyGolf/App/FantasyGolf/src/main/resources/powerRankings.csv', newline='') as csvfile:
-        # Create a CSV reader object
-        reader = csv.reader(csvfile)
-        # Loop through each row in the CSV file
-        i = 0
-        rankings = []
-        for row in reader:
-            if (i > 0):
-                name = row[0].split(",")
-                name = name[1] + " " + name[0] 
-                rankings.append(name)
-            i = i+1    
-        
-        with open('rankings', 'w') as outfile:
-            place = 1
-            for player in rankings:
-                outfile.write(f"{place}" + ":" + player + "\n")
-                place = place + 1
+    rankings_df = pd.read_csv('resources/powerRankings.csv')
+    rankings_df["player_name"] = rankings_df["player_name"].apply(format_name)
+    rankings_df = rankings_df.rename(columns={"dg_rank": "rank"})
+    return rankings_df
+
+
     print("Updated Rankings")
 
      
           
-results()
-#rankings() 
+#results()
+rankings() 
+print("Done")
