@@ -15,7 +15,7 @@ def main():
     # retrieve the rankings 
     rankings_df = rankings() 
     # Update the leaderboard
-
+    
     # Calculate score for every player in the field, and create a dictionary of name to Player
     
     competition = League()

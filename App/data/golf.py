@@ -13,7 +13,7 @@ import SECRET
 # Open championship: 701 
 def results():
     #change number at end of string to get results for specific tournament 
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/668"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/746"
 
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
@@ -39,13 +39,14 @@ def results():
         l.append([first_name, last_name, players['position'], players['status']])
 
 
-    with open('/Users/sammyfrankel/FantasyGolf/App/data/leaderboard', 'w') as outfile:
+    with open('leaderboard', 'w') as outfile:
         for item in l:
             outfile.write(item[0] + " " + item[1] + ": " +  str(item[2]) + ": " + item[3] + '\n')
-    with open('/Users/sammyfrankel/FantasyGolf/App/data/listOfPlayers', 'w') as outfile:
+    with open('listOfPlayers', 'w') as outfile:
         for item in l:
             outfile.write(item[0] + " " + item[1]+'\n')
     print("Updated Results")
+    ## Change this to also return a dataframe 
 
 def format_name(name):
     parts = name.split(", ")
@@ -65,6 +66,6 @@ def rankings():
 
      
           
-#results()
-rankings() 
+results()
+#rankings() 
 print("Done")
