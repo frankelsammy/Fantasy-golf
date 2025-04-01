@@ -1,7 +1,7 @@
 # Utilities
 import os
 import sys
-sys.path.append('../../../data') 
+sys.path.append('../../data') 
 import subprocess
 import pandas as pd
 
