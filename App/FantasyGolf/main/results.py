@@ -1,11 +1,11 @@
-from config import HOME_DIR, DATA_DIR
+from player import Player
 
-def create_player_dict():
+def create_player_dict(results_df, rankings):
     '''
     Goes through every player in the field and creates a Player object for them,
     calculating their score based on their results
     '''
-    with open(DATA_DIR + "/listOfPlayers", "r") as file:
-        for line in file:
-            name = line.strip()
-            print(name)
+    for index, row in results_df.iterrows():
+       name = row["player_name"]
+       rank = rankings.get(name, 1000)
+       
