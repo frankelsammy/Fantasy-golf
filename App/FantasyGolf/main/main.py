@@ -10,7 +10,7 @@ from config import HOME_DIR, DATA_DIR
 from golf import rankings, results
 from league import League
 from teams import Team
-from results import create_player_dict
+from player import Player
 
 def main():
     # retrieve the rankings 
@@ -19,27 +19,28 @@ def main():
     # Update the leaderboard
     results_df = results()              #Dataframe: Name, Position, Status
 
-    # Calculate score for every player in the field, and create a dictionary of name to Player
+    competition = League()
 
-
-    # competition = League()
-
-    # teams = pd.read_csv("resources/teams.csv")
-    # # Reading the teams.csv file to upload all the teams rosters
-    # for index, row in teams.iterrows():
-    #     team = Team(row['teamName'])
-    #     team.add_player(row['p1'])
-    #     team.add_player(row['p2'])
-    #     team.add_player(row['p3'])
-    #     team.add_player(row['p4'])
-    #     team.add_player(row['p5'])
-    #     team.add_player(row['p6'])
-    #     team.add_player(row['p7'])
-    #     team.add_player(row['p8'])
-    #     competition.add_team(team)
+    teams = pd.read_csv("resources/teams.csv")
+    # Reading the teams.csv file to upload all the teams rosters
+    for index, row in teams.iterrows():
+        team = Team(row['teamName'])
+        for i in range(1,9):
+            player_name = row[f'p{i}']
+            rank = rankings_dict.get(player_name, 1000)
+            if player_name in results_df['Name'].values:
+                player_row = results_df[results_df['Name'] == player_name].iloc[0]
+                position = player_row['Position']
+                status = player_row['Status']
+                worst_player_top_25 = False
+                player = Player(player_name, rank, i == 1, i == 2, position, status, worst_player_top_25)
+                team.add_player(player)
+            else:
+                print(f"{player_name} not there")
+        competition.add_team(team)
     
-    # print(len(competition.teams))
-
+        print(team.list_player())
+        print(len(team.roster))
 
 if __name__ == "__main__":
     main()

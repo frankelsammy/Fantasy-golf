@@ -1,3 +1,4 @@
+from player import Player
 class Team:
     def __init__(self, name:str, score=0.0):
         """
@@ -7,17 +8,20 @@ class Team:
         """
         self.name = name  # Name of the team
         self.score = score  # Default value is 0.0
-        self.roster = []  # List of Players on the team
+        self.roster: List[Player]  = []  # List of Players on the team
         self.ALLCUT = False  # Boolean flag for if all players on the team made the cut
         self.WORST_IN_25 = False  # Boolean flag for if their team has the worst-ranked player to make the top 25
 
-    def add_player(self, player_name:str):
+    def add_player(self, player):
         """
         Add a player to the roster
-        :param player_name: full name of the player
         """
-        self.roster.append(player_name)
+        self.roster.append(player)
     
     def list_player(self):
         for p in self.roster:
             print(p)
+    def score(self):
+        for p in self.roster:
+            p.score()
+
