@@ -56,6 +56,14 @@ class Player:
 
     def get_made_cut(self):
         return self.made_cut
+
+    def JSONify(self):
+        obj = {}
+        obj["Name"] = self.name
+        obj["Cut"] = not self.made_cut
+        obj["Points scored"] = self.score
+        obj["Finish"] = int(self.finish)
+        return obj
     
     def __str__(self):
         return f"Player {self.name}({self.ranking}), position: {self.finish} score: {self.score}"

@@ -41,6 +41,18 @@ class Team:
     def get_score(self):
         return self.score
 
+    def get_name(self):
+        return self.name
+    
+    def get_worst_ranked(self):
+        return self.WORST_IN_25
+
+    def get_all_cut(self):
+        return self.ALLCUT
+
+    def get_roster(self):
+        return self.roster
+
     def __str__(self):
         return f"Team:{self.name}\n"  + '\n'.join(str(player) for player in self.roster) + f'\nTotal: {self.score}\n'
 

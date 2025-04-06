@@ -42,6 +42,33 @@ class League:
         formatted_date = now.strftime("%A, %B %d %-I:%M %p")
         data["Date"] = formatted_date
 
+        data['worstTop25'] = self.worst_player
+        
+        teams_objects = []
+        prev_score = -1
+        place = 0
+        for team in self.teams:
+            team_obj = {}
+            team_obj["Name"] = team.get_name()
+            team_obj["Total Score"]  = team.get_score()
+            team_obj["WorstRankedBonus"] = team.get_worst_ranked()
+            if team.get_score() != prev_score:
+                place += 1
+            team_obj["Place"] = place
+            prev_score = team.get_score()
+            team_obj["AllCut"] = team.get_all_cut()
+            teams_objects.append(team_obj)
+            roster = []
+            for player in team.get_roster():
+                roster.append(player.JSONify())
+            team_obj["Roster"] = roster
+        
+        data["Teams"] = teams_objects
+        
+        with open("resources/Results.json", "w") as f:
+            json.dump(data, f, indent=4)
+    
+
         
 
     
