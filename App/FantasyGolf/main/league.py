@@ -1,3 +1,6 @@
+import json
+from datetime import datetime
+
 from teams import Team
 class League:
 
@@ -26,6 +29,19 @@ class League:
         self.worst_player = worst
     
     def JSONify(self):
+        '''
+        Creates the JSON object with the results of the league to be sent to database
+        '''
+        # Sort teams by score 
+        self.teams = sorted(self.teams, key=lambda team:team.get_score())
+        
+        data = {}
+        data["title"] = "leaderboard"
+        
+        now = datetime.now()
+        formatted_date = now.strftime("%A, %B %d %-I:%M %p")
+        data["Date"] = formatted_date
+
         
 
     

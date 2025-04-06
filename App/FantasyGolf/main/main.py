@@ -49,9 +49,9 @@ def run_tournament():
     worst_player_top_25 = selected_players_in_top_25[0]
     competition.set_worst_player_in_top_25(worst_player_top_25)
     competition.calculate_score()
-    print(competition.teams[0])
     print(f"Lowest in top 25: {worst_player_top_25}")
-    return competition
+    
+    competition.JSONify()
     
 
 if __name__ == "__main__":
