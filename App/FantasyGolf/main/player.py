@@ -1,16 +1,20 @@
 class Player:
     
-    def __init__(self, name, ranking, first, second, finish, made_cut, worst_top_25):
+    def __init__(self, name, ranking, first, second, finish, status, worst_top_25):
         self.name = name
         self.ranking = ranking
         self.first = first
         self.second = second
         self.finish = finish 
-        self.made_cut = made_cut
+        if status == "cut" or status == "withdrawn":
+            self.made_cut = False
+        else:
+            self.made_cut = True
+
         self.score = 0.0
         self.worst_top_25 = worst_top_25
 
-    def score(self):
+    def calculate_score(self, worst_in_top_25):
         '''
         Calculates the total points this player got (not included bonus for first/second pick)
         '''
@@ -33,18 +37,28 @@ class Player:
         #top 10
         if self.finish <= 10:
             self.score += (11 - self.finish)
-
-        if self.worst_top_25:
+        
+        if self.finish == 1:
             self.score += 15
+
+        if self.name == worst_in_top_25:
+            self.worst_top_25 = True
         
         if self.first:
             self.score = self.score*2
         
         if self.second:
             self.score = self.score * 1.5
+
+
+    def get_score(self):
+        return self.score
+
+    def get_made_cut(self):
+        return self.made_cut
     
     def __str__(self):
-        return f"Player {self.name} is in position {self.finish} with a score of {self.score}"
+        return f"Player {self.name}({self.ranking}), position: {self.finish} score: {self.score}"
         
         
 

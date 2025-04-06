@@ -12,7 +12,7 @@ from league import League
 from teams import Team
 from player import Player
 
-def main():
+def run_tournament():
     # retrieve the rankings 
     rankings_dict = rankings()          # dict of player_name -> ranking
     
@@ -22,6 +22,8 @@ def main():
     competition = League()
 
     teams = pd.read_csv("resources/teams.csv")
+    
+    selected_players_in_top_25 = []
     # Reading the teams.csv file to upload all the teams rosters
     for index, row in teams.iterrows():
         team = Team(row['teamName'])
@@ -35,12 +37,22 @@ def main():
                 worst_player_top_25 = False
                 player = Player(player_name, rank, i == 1, i == 2, position, status, worst_player_top_25)
                 team.add_player(player)
+                if position <= 25:
+                    selected_players_in_top_25.append(player_name)
             else:
-                print(f"{player_name} not there")
+                print(f"{player_name} not in results")
         competition.add_team(team)
     
-        print(team.list_player())
-        print(len(team.roster))
+    # Sort selected_players by ranking
+    selected_players_in_top_25 = sorted(selected_players_in_top_25, key=lambda name:rankings_dict.get(name, 1000), reverse=True)
+
+    worst_player_top_25 = selected_players_in_top_25[0]
+    competition.set_worst_player_in_top_25(worst_player_top_25)
+    competition.calculate_score()
+    print(competition.teams[0])
+    print(f"Lowest in top 25: {worst_player_top_25}")
+    return competition
+    
 
 if __name__ == "__main__":
-    main()
+    run_tournament()
