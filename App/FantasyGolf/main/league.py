@@ -33,7 +33,7 @@ class League:
         Creates the JSON object with the results of the league to be sent to database
         '''
         # Sort teams by score 
-        self.teams = sorted(self.teams, key=lambda team:team.get_score())
+        self.teams = sorted(self.teams, key=lambda team:team.get_score(), reverse=True)
         
         data = {}
         data["title"] = "leaderboard"

@@ -2,6 +2,7 @@
 import os
 import sys
 sys.path.append('../../data') 
+sys.path.append('../../Database') 
 import subprocess
 import pandas as pd
 
@@ -11,6 +12,7 @@ from golf import rankings, results
 from league import League
 from teams import Team
 from player import Player
+from updateDB import upload
 
 def run_tournament():
     # retrieve the rankings 
@@ -50,6 +52,9 @@ def run_tournament():
     competition.set_worst_player_in_top_25(worst_player_top_25)
     competition.calculate_score()
     competition.JSONify()
+
+    #Upload results to Database
+    upload()
     
 
 if __name__ == "__main__":
