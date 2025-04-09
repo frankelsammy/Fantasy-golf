@@ -24,7 +24,7 @@ def run_tournament():
     competition = League()
 
     teams = pd.read_csv("resources/teams.csv")
-    
+    print(CURRENT_ROUND)
     selected_players_in_top_25 = []
     # Reading the teams.csv file to upload all the teams rosters
     for index, row in teams.iterrows():
