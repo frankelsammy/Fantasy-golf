@@ -8,7 +8,7 @@ class League:
     # Constructor to initialize the object
     def __init__(self, CURRENT_ROUND):
         self.teams = []
-        self.current-round = CURRENT_ROUND
+        self.current_round = CURRENT_ROUND
         self.worst_player = None    # Lowest ranked selected player to make top 25
         self.list_of_players = []
         self.player_scores = {}  # Dictionary to map player names to their scores
@@ -43,6 +43,7 @@ class League:
         now = datetime.now(ZoneInfo("America/New_York"))
         formatted_date = now.strftime("%A, %B %d %-I:%M %p")
         data["Date"] = formatted_date
+        data["CURRENT_ROUND"] = self.current_round
 
         data['worstTop25'] = self.worst_player
         
