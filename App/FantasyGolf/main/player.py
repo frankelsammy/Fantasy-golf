@@ -11,7 +11,7 @@ class Player:
         if status == "cut" or status == "withdrawn":
             self.made_cut = False
         else:
-            if CURRENT_ROUND == 1 or day_name == 2:
+            if CURRENT_ROUND == 1 or CURRENT_ROUND == 2:
                 if self.finish > 50:
                     self.made_cut = False
             self.made_cut = True
