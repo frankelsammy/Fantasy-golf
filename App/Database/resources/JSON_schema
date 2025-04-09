@@ -1,0 +1,24 @@
+{
+  "title": "leaderboard",
+  "Date", : date,
+  "worstTop25": worstTop25,
+  "teams" : [
+    {
+      "Name", Name,
+      "Total Score", score,
+      "Place", place,
+      "WorstRankedBonus", team.WORST_IN_25,
+      "Roster":
+      [
+        {
+          "Name": name
+          "Points scored": score
+          "Finish" : finish
+          "Cut" : missed the cut
+        }, ...
+      ],
+      "AllCut": bool
+      "Worst25": bool
+    },...
+  ]
+}

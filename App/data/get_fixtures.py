@@ -1,11 +1,11 @@
 import requests
-import json
+import SECRET
 
-url = "https://golf-leaderboard-data.p.rapidapi.com/fixtures/2/2022"
+url = "https://golf-leaderboard-data.p.rapidapi.com/fixtures/2/2025"
 
 headers = {
     'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
-    'x-rapidapi-key': "cd2f78eee0msh57d5ae1e1810fa2p1d0880jsn872939440f2c"
+    'x-rapidapi-key': SECRET.API_KEY
     }
 
 response = requests.request("GET", url, headers=headers)
