@@ -1,9 +1,13 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
-import SECRET
+
 import json
-user = SECRET.DB_USER
-password = SECRET.DB_PASSWORD
+import os
+from dotenv import load_dotenv
+
+load_dotenv() 
+user = os.getenv("DB_USER")
+password = os.getenv("DB_PASSWORD")
 def upload():
     cluster = MongoClient(f"mongodb+srv://{user}:{password}@cluster0.zbfrr36.mongodb.net/?retryWrites=true&w=majority")
     db = cluster["FantasyGolf"]

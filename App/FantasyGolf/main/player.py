@@ -1,3 +1,4 @@
+from datetime import datetime
 class Player:
     
     def __init__(self, name, ranking, first, second, finish, status, worst_top_25):
@@ -9,6 +10,14 @@ class Player:
         if status == "cut" or status == "withdrawn":
             self.made_cut = False
         else:
+            # Get today's date
+            today = datetime.today()
+
+            # Get day of week as string (e.g., 'Monday')
+            day_name = today.strftime("%A")
+            if day_name == 'Thursday' or day_name == 'Friday':
+                if self.finish > 50:
+                    self.made_cut = False
             self.made_cut = True
 
         self.score = 0.0

@@ -3,9 +3,11 @@
 
 import requests
 import pandas as pd
-import csv
-import json
-import SECRET
+import os
+from dotenv import load_dotenv
+
+load_dotenv() 
+API_KEY =  os.getenv("RAPID_API_KEY")
 
 # 2024 season tournament ID's
 # Masters 651
@@ -16,11 +18,10 @@ def results():
     ## Uncoment all this to actually pull from the API
 
     #change number at end of string to get results for specific tournament
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/746"
-
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/748"
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
-        'x-rapidapi-key': SECRET.API_KEY
+        'x-rapidapi-key': API_KEY
         }
 
     response = requests.request("GET", url, headers=headers)
@@ -73,7 +74,7 @@ def get_player_list():
     url = "https://golf-leaderboard-data.p.rapidapi.com/entry-list/748"
 
     headers = {
-        "x-rapidapi-key": SECRET.API_KEY,
+        "x-rapidapi-key": API_KEY,
         "x-rapidapi-host": "golf-leaderboard-data.p.rapidapi.com"
     }
 
@@ -82,10 +83,19 @@ def get_player_list():
     i = 0
     with open("../../data/listOfPlayers", "w") as outfile:
         for player in data:
-            outfile.write(f"{player['first_name']} {player['last_name']}\n")
+            last_name = player['last_name']
+            if last_name == "Åberg":
+                last_name = "Aberg"
+            if last_name == "Fitzpatrick":
+                first_name = "Matt"
+            if last_name == "Smith" and first_name == "Cam":
+                first_name = "Cameron"
+            if last_name == "Højgaard":
+                last_name = "Hojgaard"
+            outfile.write(f"{player['first_name']} {last_name}\n")
             
 
 #results()
 # rankings()
-#get_player_list()
+get_player_list()
 print("Done")
