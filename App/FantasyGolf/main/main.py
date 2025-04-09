@@ -21,7 +21,7 @@ def run_tournament():
     # Update the leaderboard
     results_df = results()              #Dataframe: Name, Position, Status
 
-    competition = League()
+    competition = League(CURRENT_ROUND)
 
     teams = pd.read_csv("resources/teams.csv")
     print(CURRENT_ROUND)
