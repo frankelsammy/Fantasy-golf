@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 load_dotenv() 
 API_KEY =  os.getenv("RAPID_API_KEY")
 
+CURRENT_ROUND = 1
+
 # 2024 season tournament ID's
 # Masters 651
 # PGA Championship 658
@@ -25,6 +27,9 @@ def results():
         }
 
     response = requests.request("GET", url, headers=headers)
+
+    # Find out what round is being played
+    CURRENT_ROUND = response.json()['results']['tournament']['live_details']['current_round']
 
     leaderboard = response.json()['results']['leaderboard']
 
