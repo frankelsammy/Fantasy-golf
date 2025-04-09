@@ -96,6 +96,6 @@ def get_player_list():
             
 
 #results()
-# rankings()
+#rankings()
 get_player_list()
 print("Done")
