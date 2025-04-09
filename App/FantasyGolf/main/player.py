@@ -2,7 +2,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 class Player:
     
-    def __init__(self, name, ranking, first, second, finish, status, worst_top_25):
+    def __init__(self, name, ranking, first, second, finish, status, worst_top_25, CURRENT_ROUND):
         self.name = name
         self.ranking = ranking
         self.first = first
@@ -11,12 +11,7 @@ class Player:
         if status == "cut" or status == "withdrawn":
             self.made_cut = False
         else:
-            # Get today's date
-            today = datetime.now(ZoneInfo("America/New_York"))
-
-            # Get day of week as string (e.g., 'Monday')
-            day_name = today.strftime("%A")
-            if day_name == 'Thursday' or day_name == 'Friday':
+            if CURRENT_ROUND == 1 or day_name == 2:
                 if self.finish > 50:
                     self.made_cut = False
             self.made_cut = True
