@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 from teams import Team
 class League:
@@ -38,7 +39,7 @@ class League:
         data = {}
         data["title"] = "leaderboard"
         
-        now = datetime.now()
+        now = datetime.now(ZoneInfo("America/New_York"))
         formatted_date = now.strftime("%A, %B %d %-I:%M %p")
         data["Date"] = formatted_date
 

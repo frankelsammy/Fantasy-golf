@@ -1,4 +1,5 @@
 from datetime import datetime
+from zoneinfo import ZoneInfo
 class Player:
     
     def __init__(self, name, ranking, first, second, finish, status, worst_top_25):
@@ -11,7 +12,7 @@ class Player:
             self.made_cut = False
         else:
             # Get today's date
-            today = datetime.today()
+            today = datetime.now(ZoneInfo("America/New_York"))
 
             # Get day of week as string (e.g., 'Monday')
             day_name = today.strftime("%A")
