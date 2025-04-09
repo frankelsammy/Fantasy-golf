@@ -14,7 +14,10 @@ class Player:
             if CURRENT_ROUND == 1 or CURRENT_ROUND == 2:
                 if self.finish > 50:
                     self.made_cut = False
-            self.made_cut = True
+                else:
+                    self.made_cut = True
+            else:
+                self.made_cut = True
 
         self.score = 0.0
         self.worst_top_25 = worst_top_25
