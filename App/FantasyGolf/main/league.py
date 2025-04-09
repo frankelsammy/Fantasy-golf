@@ -6,8 +6,9 @@ from teams import Team
 class League:
 
     # Constructor to initialize the object
-    def __init__(self):
-        self.teams = [] 
+    def __init__(self, CURRENT_ROUND):
+        self.teams = []
+        self.current-round = CURRENT_ROUND
         self.worst_player = None    # Lowest ranked selected player to make top 25
         self.list_of_players = []
         self.player_scores = {}  # Dictionary to map player names to their scores
