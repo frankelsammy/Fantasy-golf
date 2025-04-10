@@ -48,13 +48,17 @@ class League:
         teams_objects = []
         prev_score = -1
         place = 0
+        numTies = 0
         for team in self.teams:
             team_obj = {}
             team_obj["Name"] = team.get_name()
             team_obj["Total Score"]  = team.get_score()
             team_obj["WorstRankedBonus"] = team.get_worst_ranked()
             if team.get_score() != prev_score:
-                place += 1
+                place += (1 + numTies)
+                numTies = 0
+            else:
+                numTies += 1
             team_obj["Place"] = place
             prev_score = team.get_score()
             team_obj["AllCut"] = team.get_all_cut()
