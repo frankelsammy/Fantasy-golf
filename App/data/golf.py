@@ -47,7 +47,7 @@ def results():
             last_name = "Hojgaard"
         if first_name == 'Joaquín':
             first_name = Joaquin
-        if first_name = 'J. T.':
+        if first_name == 'J. T.':
             first_name = 'J.T.'
         l.append([first_name, last_name, players['position'], players['status']])
     
