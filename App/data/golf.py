@@ -98,7 +98,6 @@ def get_player_list():
             if last_name == "Højgaard":
                 last_name = "Hojgaard"
             outfile.write(f"{player['first_name']} {last_name}\n")
-    #print(data)
             
 
 #results()

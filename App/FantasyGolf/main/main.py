@@ -6,13 +6,13 @@ sys.path.append('../../Database')
 import subprocess
 import pandas as pd
 
-from config import HOME_DIR, DATA_DIR
+import config
 # Python Modules
 from golf import rankings, results, CURRENT_ROUND
 from league import League
 from teams import Team
 from player import Player
-from updateDB import upload
+from updateDB import upload_to_db
 
 def run_tournament():
     # retrieve the rankings 
@@ -24,11 +24,12 @@ def run_tournament():
     competition = League()
 
     teams = pd.read_csv("resources/teams.csv")
-    print(CURRENT_ROUND)
+
     selected_players_in_top_25 = []
+
     # Reading the teams.csv file to upload all the teams rosters
     for index, row in teams.iterrows():
-        team = Team(row['teamName'])
+        team = Team(row['teamName'], row['Email'])
         for i in range(1,9):
             player_name = row[f'p{i}']
             rank = rankings_dict.get(player_name, 1000)
@@ -45,17 +46,17 @@ def run_tournament():
                 print(f"{player_name} not in results")
         competition.add_team(team)
     
-    # Sort selected_players by ranking
+    # Sort selected_players by ranking descending (higher ranked players first)
     selected_players_in_top_25 = sorted(selected_players_in_top_25, key=lambda name:rankings_dict.get(name, 1000), reverse=True)
-
     worst_player_top_25 = selected_players_in_top_25[0]
     competition.set_worst_player_in_top_25(worst_player_top_25)
+    
     competition.calculate_score()
+    
+    #Get JSON object of results
     competition.JSONify()
 
     #Upload results to Database
-    upload()
-    
-
+    upload_to_db()
 if __name__ == "__main__":
     run_tournament()

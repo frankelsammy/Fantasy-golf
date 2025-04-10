@@ -69,6 +69,18 @@ class League:
         with open("resources/Results.json", "w") as f:
             json.dump(data, f, indent=4)
     
+    # def make_overall_leaderboard(self):
+    #     data = {}
+    #     data["title"] = "overall"
+    #     teams_objects = []
+    #     prev_score = -1
+    #     place = 0
+    #     for team in self.teams:
+    #         masters = team.get
+
+        
+    #     data["Teams"] = teams_objects
+    
 
         
 

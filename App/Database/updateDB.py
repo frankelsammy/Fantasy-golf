@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv() 
 user = os.getenv("DB_USER")
 password = os.getenv("DB_PASSWORD")
-def upload():
+def upload_to_db():
     cluster = MongoClient(f"mongodb+srv://{user}:{password}@cluster0.zbfrr36.mongodb.net/?retryWrites=true&w=majority")
     db = cluster["FantasyGolf"]
     collection = db["League"]
@@ -19,7 +19,9 @@ def upload():
         json_data = json.load(file)
         
     # Remove the old leaderboard
-    result = collection.delete_many({})
+    # Remove the object with title "leaderboard"
+    result = collection.delete_many({"title": "leaderboard"})
+
 
     # Insert new JSON data into MongoDB
     result = collection.insert_one(json_data)
