@@ -56,6 +56,8 @@ def run_tournament():
     #Get JSON object of results
     competition.JSONify()
 
+    competition.make_overall_leaderboard()
+
     #Upload results to Database
     upload_to_db()
 if __name__ == "__main__":

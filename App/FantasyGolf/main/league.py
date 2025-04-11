@@ -43,6 +43,7 @@ class League:
         now = datetime.now(ZoneInfo("America/New_York"))
         formatted_date = now.strftime("%A, %B %d %-I:%M %p")
         data["Date"] = formatted_date
+        print(formatted_date)
         data["CURRENT_ROUND"] = config.CURRENT_ROUND
 
         data['worstTop25'] = self.worst_player
@@ -75,17 +76,35 @@ class League:
         with open("resources/Results.json", "w") as f:
             json.dump(data, f, indent=4)
     
-    # def make_overall_leaderboard(self):
-    #     data = {}
-    #     data["title"] = "overall"
-    #     teams_objects = []
-    #     prev_score = -1
-    #     place = 0
-    #     for team in self.teams:
-    #         masters = team.get
-
+    # If this is the masters, the overall leaderboard needs to be created
+    def make_overall_leaderboard(self):
+        data = {}
+        data["title"] = "overall"
+        teams_objects = []
+        prev_score = -1
+        numTies = 0
+        place = 0
+        for team in self.teams:
+            team_obj = {}
+            team_obj["name"] = team.get_name()
+            masters = team.get_score()
+            team_obj["masters"] = masters
+            team_obj["US"] = 0
+            team_obj["open"] = 0 
+            team_obj["pga"] = 0
+            team_obj["total"] = masters
+            if masters != prev_score:
+                place += (1 + numTies)
+                numTies = 0
+            else:
+                numTies = 1
+            team_obj["place"] = place
+            teams_objects.append(team_obj)
+            
+        data["Teams"] = teams_objects
+        with open("resources/Overall.json", "w") as f:
+            json.dump(data, f, indent=4)
         
-    #     data["Teams"] = teams_objects
     
 
         

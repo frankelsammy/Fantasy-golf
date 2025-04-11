@@ -14,22 +14,28 @@ def upload_to_db():
     collection = db["League"]
 
     # Load JSON data from file
-    json_file_path = 'resources/Results.json'  # Replace with the path to your JSON file
-    with open(json_file_path, 'r') as file:
-        json_data = json.load(file)
+    results_file_path = 'resources/Results.json' 
+    overall_file_path = 'resources/Overall.json'
+
+    with open(results_file_path, 'r') as file:
+        results = json.load(file)
+    
+    with open(overall_file_path, 'r') as file:
+        overall = json.load(file)
+    
         
     # Remove the old leaderboard
     # Remove the object with title "leaderboard"
-    result = collection.delete_many({"title": "leaderboard"})
+    result = collection.delete_many({})
 
 
     # Insert new JSON data into MongoDB
-    result = collection.insert_one(json_data)
+    result = collection.insert_many([results, overall])
 
 
     # Check the result
-    if result.inserted_id:
-        print(f"Data inserted successfully with document ID: {result.inserted_id}")
+    if result.inserted_ids:
+        print(f"Data inserted successfully with document ID: {result.inserted_ids}")
     else:
         print("Failed to insert data into MongoDB")
 
