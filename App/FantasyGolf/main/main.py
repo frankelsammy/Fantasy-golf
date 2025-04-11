@@ -8,7 +8,7 @@ import pandas as pd
 
 import config
 # Python Modules
-from golf import rankings, results, CURRENT_ROUND
+from golf import rankings, results
 from league import League
 from teams import Team
 from player import Player
@@ -38,7 +38,7 @@ def run_tournament():
                 position = player_row['Position']
                 status = player_row['Status']
                 worst_player_top_25 = False
-                player = Player(player_name, rank, i == 1, i == 2, position, status, worst_player_top_25, CURRENT_ROUND)
+                player = Player(player_name, rank, i == 1, i == 2, position, status, worst_player_top_25, config.CURRENT_ROUND)
                 team.add_player(player)
                 if position <= 25:
                     selected_players_in_top_25.append(player_name)

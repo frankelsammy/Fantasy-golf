@@ -4,12 +4,16 @@
 import requests
 import pandas as pd
 import os
+import sys
 from dotenv import load_dotenv
+
+import config
+
+sys.path.append('../FantasyGolf/main') 
 
 load_dotenv() 
 API_KEY =  os.getenv("RAPID_API_KEY")
 
-CURRENT_ROUND = 1
 
 # 2024 season tournament ID's
 # Masters 651
@@ -29,7 +33,7 @@ def results():
     response = requests.request("GET", url, headers=headers)
 
     # Find out what round is being played
-    CURRENT_ROUND = response.json()['results']['tournament']['live_details']['current_round']
+    config.CURRENT_ROUND = response.json()['results']['tournament']['live_details']['current_round']
 
     leaderboard = response.json()['results']['leaderboard']
 

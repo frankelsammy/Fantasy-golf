@@ -8,3 +8,5 @@ class TOURNAMENT(Enum):
 
 #Select which tournament is currently being run
 current_tournament = TOURNAMENT.MASTERS
+
+CURRENT_ROUND = 1

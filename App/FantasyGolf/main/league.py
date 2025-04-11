@@ -3,6 +3,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from teams import Team
+import config
 class League:
 
     # Constructor to initialize the object
@@ -42,6 +43,7 @@ class League:
         now = datetime.now(ZoneInfo("America/New_York"))
         formatted_date = now.strftime("%A, %B %d %-I:%M %p")
         data["Date"] = formatted_date
+        data["CURRENT_ROUND"] = config.CURRENT_ROUND
 
         data['worstTop25'] = self.worst_player
         
