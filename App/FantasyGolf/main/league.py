@@ -100,6 +100,7 @@ class League:
                 numTies = 1
             team_obj["place"] = place
             teams_objects.append(team_obj)
+            prev_score = masters
             
         data["Teams"] = teams_objects
         with open("resources/Overall.json", "w") as f:
