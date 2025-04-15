@@ -12,7 +12,7 @@ from golf import rankings, results
 from league import League
 from teams import Team
 from player import Player
-from updateDB import upload_to_db
+from updateDB import upload_to_db, retrieve_overall
 
 def run_tournament():
     # retrieve the rankings 
@@ -56,7 +56,11 @@ def run_tournament():
     #Get JSON object of results
     competition.JSONify()
 
-    competition.make_overall_leaderboard()
+    if config.CURRENT_ROUND != config.TOURNAMENT.MASTERS:
+        overall_leaderbaord = retrieve_overall()
+        competition.update_overall(overall_leaderbaord)
+    else:
+        competition.make_overall_leaderboard()
 
     #Upload results to Database
     upload_to_db()

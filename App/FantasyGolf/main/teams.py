@@ -45,6 +45,9 @@ class Team:
     def get_name(self):
         return self.name
     
+    def get_email(self):
+        return self.email
+    
     def get_worst_ranked(self):
         return self.WORST_IN_25
 
