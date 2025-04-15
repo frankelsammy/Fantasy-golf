@@ -2,265 +2,265 @@
     "title": "overall",
     "Teams": [
         {
-            "name": "Daniel Bland",
-            "masters": 165.0,
+            "name": "George Monastra",
+            "masters": 169.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 165.0,
+            "total": 169.0,
             "place": 1
         },
         {
-            "name": "George Monastra",
-            "masters": 153.5,
+            "name": "Noam Itzhak",
+            "masters": 167.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 153.5,
+            "total": 167.0,
             "place": 2
         },
         {
-            "name": "Noam Itzhak",
-            "masters": 144.5,
+            "name": "Daniel Bland",
+            "masters": 160.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 144.5,
+            "total": 160.0,
             "place": 3
         },
         {
-            "name": "Douglas Ducray",
-            "masters": 140.5,
+            "name": "Mike Mike",
+            "masters": 152.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 140.5,
+            "total": 152.0,
             "place": 4
         },
         {
-            "name": "john Chronley",
-            "masters": 140.0,
+            "name": "Peter Aaron",
+            "masters": 150.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 140.0,
+            "total": 150.0,
             "place": 5
         },
         {
-            "name": "A J Robinson",
-            "masters": 126.5,
+            "name": "Sammy Frankel",
+            "masters": 148.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 126.5,
+            "total": 148.0,
             "place": 6
         },
         {
-            "name": "Searle Videlefsky",
-            "masters": 121.5,
+            "name": "David Scoular",
+            "masters": 143.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 121.5,
+            "total": 143.0,
             "place": 7
         },
         {
-            "name": "Josh & Shaun",
-            "masters": 120.5,
+            "name": "Douglas Ducray",
+            "masters": 142.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 120.5,
+            "total": 142.0,
             "place": 8
         },
         {
-            "name": "Danny Frankel",
-            "masters": 118.5,
+            "name": "Ari and Micah",
+            "masters": 136.5,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 118.5,
+            "total": 136.5,
             "place": 9
         },
         {
-            "name": "Mike Mike",
-            "masters": 116.5,
+            "name": "Searle Videlefsky",
+            "masters": 136.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 116.5,
+            "total": 136.0,
             "place": 10
         },
         {
-            "name": "Sammy Frankel",
-            "masters": 115.0,
+            "name": "A J Robinson",
+            "masters": 128.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 115.0,
+            "total": 128.0,
             "place": 11
         },
         {
-            "name": "Noah + Joey 2024 Masters 1st Place, 2024 1st Place Overall",
-            "masters": 114.5,
+            "name": "Don Campbell",
+            "masters": 128.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 114.5,
-            "place": 12
+            "total": 128.0,
+            "place": 11
         },
         {
-            "name": "David Scoular",
+            "name": "Danny Frankel",
+            "masters": 128.0,
+            "US": 0,
+            "open": 0,
+            "pga": 0,
+            "total": 128.0,
+            "place": 11
+        },
+        {
+            "name": "Hayden Brauer",
+            "masters": 125.5,
+            "US": 0,
+            "open": 0,
+            "pga": 0,
+            "total": 125.5,
+            "place": 13
+        },
+        {
+            "name": "john Chronley",
+            "masters": 125.0,
+            "US": 0,
+            "open": 0,
+            "pga": 0,
+            "total": 125.0,
+            "place": 14
+        },
+        {
+            "name": "Noah + Joey 2024 Masters 1st Place, 2024 1st Place Overall",
+            "masters": 122.0,
+            "US": 0,
+            "open": 0,
+            "pga": 0,
+            "total": 122.0,
+            "place": 15
+        },
+        {
+            "name": "Ed Hetherington",
+            "masters": 122.0,
+            "US": 0,
+            "open": 0,
+            "pga": 0,
+            "total": 122.0,
+            "place": 15
+        },
+        {
+            "name": "Paul Costa",
+            "masters": 120.0,
+            "US": 0,
+            "open": 0,
+            "pga": 0,
+            "total": 120.0,
+            "place": 17
+        },
+        {
+            "name": "Bill Mayer",
+            "masters": 118.0,
+            "US": 0,
+            "open": 0,
+            "pga": 0,
+            "total": 118.0,
+            "place": 18
+        },
+        {
+            "name": "Neill Videlefsky",
+            "masters": 117.0,
+            "US": 0,
+            "open": 0,
+            "pga": 0,
+            "total": 117.0,
+            "place": 19
+        },
+        {
+            "name": "Welch Wolfe",
+            "masters": 116.0,
+            "US": 0,
+            "open": 0,
+            "pga": 0,
+            "total": 116.0,
+            "place": 20
+        },
+        {
+            "name": "Josh & Shaun",
             "masters": 113.5,
             "US": 0,
             "open": 0,
             "pga": 0,
             "total": 113.5,
-            "place": 13
-        },
-        {
-            "name": "Paul Costa",
-            "masters": 112.5,
-            "US": 0,
-            "open": 0,
-            "pga": 0,
-            "total": 112.5,
-            "place": 14
+            "place": 21
         },
         {
             "name": "Jake Maziar",
-            "masters": 112.0,
+            "masters": 113.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 112.0,
-            "place": 15
+            "total": 113.0,
+            "place": 22
         },
         {
             "name": "David Frankel",
-            "masters": 110.5,
-            "US": 0,
-            "open": 0,
-            "pga": 0,
-            "total": 110.5,
-            "place": 16
-        },
-        {
-            "name": "Ari and Micah",
-            "masters": 110.0,
-            "US": 0,
-            "open": 0,
-            "pga": 0,
-            "total": 110.0,
-            "place": 17
-        },
-        {
-            "name": "Peter Aaron",
             "masters": 109.5,
             "US": 0,
             "open": 0,
             "pga": 0,
             "total": 109.5,
-            "place": 18
-        },
-        {
-            "name": "Don Campbell",
-            "masters": 102.5,
-            "US": 0,
-            "open": 0,
-            "pga": 0,
-            "total": 102.5,
-            "place": 19
-        },
-        {
-            "name": "Welch Wolfe",
-            "masters": 100.5,
-            "US": 0,
-            "open": 0,
-            "pga": 0,
-            "total": 100.5,
-            "place": 20
-        },
-        {
-            "name": "Bill Mayer",
-            "masters": 98.5,
-            "US": 0,
-            "open": 0,
-            "pga": 0,
-            "total": 98.5,
-            "place": 21
-        },
-        {
-            "name": "Neill Videlefsky",
-            "masters": 92.5,
-            "US": 0,
-            "open": 0,
-            "pga": 0,
-            "total": 92.5,
-            "place": 22
-        },
-        {
-            "name": "Z F",
-            "masters": 90.0,
-            "US": 0,
-            "open": 0,
-            "pga": 0,
-            "total": 90.0,
             "place": 23
         },
         {
-            "name": "Ed Hetherington",
-            "masters": 84.5,
+            "name": "Chad Yoshinaka",
+            "masters": 101.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 84.5,
+            "total": 101.0,
             "place": 24
         },
         {
-            "name": "Hayden Brauer",
-            "masters": 81.0,
+            "name": "Z F",
+            "masters": 88.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 81.0,
+            "total": 88.0,
             "place": 25
         },
         {
-            "name": "Ralston Welch",
-            "masters": 75.5,
+            "name": "Micharl Young",
+            "masters": 87.5,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 75.5,
+            "total": 87.5,
             "place": 26
         },
         {
-            "name": "Micharl Young",
-            "masters": 66.0,
+            "name": "Ralston Welch",
+            "masters": 86.0,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 66.0,
+            "total": 86.0,
             "place": 27
         },
         {
             "name": "Jacques mosseri",
-            "masters": 65.0,
+            "masters": 66.5,
             "US": 0,
             "open": 0,
             "pga": 0,
-            "total": 65.0,
+            "total": 66.5,
             "place": 28
-        },
-        {
-            "name": "Chad Yoshinaka",
-            "masters": 64.5,
-            "US": 0,
-            "open": 0,
-            "pga": 0,
-            "total": 64.5,
-            "place": 29
         }
     ]
 }
