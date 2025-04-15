@@ -1,7 +1,6 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-from bson import ObjectId
 import json
 import os
 from dotenv import load_dotenv
