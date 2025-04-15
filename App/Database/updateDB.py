@@ -1,6 +1,7 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
+from bson import ObjectId
 import json
 import os
 from dotenv import load_dotenv
@@ -39,3 +40,12 @@ def upload_to_db():
     else:
         print("Failed to insert data into MongoDB")
 
+def retrieve_overall():
+    cluster = MongoClient(f"mongodb+srv://{user}:{password}@cluster0.zbfrr36.mongodb.net/?retryWrites=true&w=majority")
+    db = cluster["FantasyGolf"]
+    collection = db["League"]
+    document = collection.find_one({"title": "overall"})
+    #remove the id
+    document.pop('_id', None)
+    
+    return document
