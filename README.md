@@ -14,12 +14,14 @@ Check out the live application [here](https://golf-competition-193e590fabff.hero
 
 ## Project Structure
 - App/FantasyGolf
-  - Java code for calculating the scores for the tournament
+  - Python code that contains the majority of the competition logic
   - Reads the teams from a csv file and creates the league
   - Reads the leaderboard and caulculates scores
-  - Main method found in Data.java
+  - Main method found in main.py
 - App/Database
   - Code for interacting with the MongoDB database
+  - Reads the current overall learderboard for the compeition
+  - Uploads results for the current Major
 - App/data
   - Python code for reading in the golf power rankings and gettin real-time updates in the leaderboard for golf tournaments
 - App/FantasyGolfServer
@@ -28,7 +30,7 @@ Check out the live application [here](https://golf-competition-193e590fabff.hero
   
 ## Technologies Used
 ### Backend
-- Java and Python: Used for backend processing and API integrations to fetch real-time data.
+- Python: Used for backend processing and API integrations to fetch real-time data.
 - APIs: Used golf leaderboard data API on RAPIDAPI to get live updates during tournaments 
 ### Frontend
 - Node.js and Express: For server-side scripting and handling API routes.
