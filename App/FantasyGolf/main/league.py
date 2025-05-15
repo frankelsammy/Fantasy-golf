@@ -121,7 +121,7 @@ class League:
                     matching_team = comp_team
                     break
             if matching_team == None:
-                print(f"no matching team for email: {team.get("email")}")
+                print(f"no matching team for email: {team.get('email')}")
                 return
             total = 0
             if config.current_tournament == config.TOURNAMENT.PGA:

@@ -24,23 +24,27 @@ def results():
     ## Uncoment all this to actually pull from the API
 
     #change number at end of string to get results for specific tournament
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/755"
+    url = "https://live-golf-data.p.rapidapi.com/leaderboard"
+    querystring = {"orgId":"1","tournId":"033","year":"2025"}
+    # url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/755"
     headers = {
-        'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
-        'x-rapidapi-key': API_KEY
-        }
+	"x-rapidapi-key": "cd2f78eee0msh57d5ae1e1810fa2p1d0880jsn872939440f2c",
+	"x-rapidapi-host": "live-golf-data.p.rapidapi.com"
+}
 
-    response = requests.request("GET", url, headers=headers)
+    response = requests.get(url, headers=headers, params=querystring)
+    leaderboard = response.json()['leaderboardRows']
 
     # Find out what round is being played
     #config.CURRENT_ROUND = response.json()['results']['tournament']['live_details']['current_round']
 
-    leaderboard = response.json()['results']['leaderboard']
+#     leaderboard = response.json()['results']['leaderboard']
 
     l = []
     for players in leaderboard:
-        last_name = players["last_name"]
-        first_name = players["first_name"]
+        last_name = players["lastName"]
+        first_name = players["firstName"]
+        position = 1000
         if last_name == "Åberg":
             last_name = "Aberg"
         if last_name == "Fitzpatrick":
@@ -53,7 +57,11 @@ def results():
             first_name = 'Joaquin'
         if first_name == 'J. T.':
             first_name = 'J.T.'
-        l.append([first_name, last_name, players['position'], players['status']])
+        if players['position'] == '-':
+            position = 100
+        elif players['position'].lower()[0] == 't':
+            position = int(players['position'][1:])
+        l.append([first_name, last_name, position, players['status']])
     
     with open("../../data/leaderboard.csv", "w") as outfile:
         outfile.write("Name,Position,Status\n")
@@ -109,6 +117,8 @@ def get_player_list():
             
 
 #results()
+# rankings()
+# #get_player_list()
 rankings()
 #get_player_list()
 print("Done")
