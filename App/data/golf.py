@@ -36,8 +36,8 @@ def results():
     leaderboard = response.json()['leaderboardRows']
 
     # Find out what round is being played
-    config.CURRENT_ROUND = int(response.json()['roundId'])
-    print(configu.CURRENT_ROUND)
+    #config.CURRENT_ROUND = int(response.json()['roundId'])
+    #print(config.CURRENT_ROUND)
 
 #     leaderboard = response.json()['results']['leaderboard']
 
