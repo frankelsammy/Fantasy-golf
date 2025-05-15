@@ -7,6 +7,6 @@ class TOURNAMENT(Enum):
     PGA = 4
 
 #Select which tournament is currently being run
-current_tournament = TOURNAMENT.MASTERS
+current_tournament = TOURNAMENT.PGA
 
 CURRENT_ROUND = 1
