@@ -58,7 +58,7 @@ def results():
         if first_name == 'J. T.':
             first_name = 'J.T.'
         if players['position'] == '-':
-            position = 100
+            position = 1000
         elif players['position'].lower()[0] == 't':
             position = int(players['position'][1:])
         l.append([first_name, last_name, position, players['status']])
