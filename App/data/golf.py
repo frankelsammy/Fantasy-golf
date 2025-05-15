@@ -26,6 +26,7 @@ def results():
     #change number at end of string to get results for specific tournament
     url = "https://live-golf-data.p.rapidapi.com/leaderboard"
     querystring = {"orgId":"1","tournId":"033","year":"2025"}
+    # url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/755"
     headers = {
 	"x-rapidapi-key": "cd2f78eee0msh57d5ae1e1810fa2p1d0880jsn872939440f2c",
 	"x-rapidapi-host": "live-golf-data.p.rapidapi.com"
@@ -118,4 +119,6 @@ def get_player_list():
 #results()
 # rankings()
 # #get_player_list()
+rankings()
+#get_player_list()
 print("Done")
