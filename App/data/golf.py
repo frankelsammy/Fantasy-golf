@@ -7,10 +7,10 @@ import os
 import sys
 from dotenv import load_dotenv
 
-import config
+# import config
 
 sys.path.append('../FantasyGolf/main') 
-
+#from FantasyGolf.main import config
 load_dotenv() 
 API_KEY =  os.getenv("RAPID_API_KEY")
 
@@ -24,7 +24,7 @@ def results():
     ## Uncoment all this to actually pull from the API
 
     #change number at end of string to get results for specific tournament
-    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/748"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/755"
     headers = {
         'x-rapidapi-host': "golf-leaderboard-data.p.rapidapi.com",
         'x-rapidapi-key': API_KEY
@@ -33,7 +33,7 @@ def results():
     response = requests.request("GET", url, headers=headers)
 
     # Find out what round is being played
-    config.CURRENT_ROUND = response.json()['results']['tournament']['live_details']['current_round']
+    #config.CURRENT_ROUND = response.json()['results']['tournament']['live_details']['current_round']
 
     leaderboard = response.json()['results']['leaderboard']
 
@@ -84,7 +84,7 @@ def rankings():
     print("Updated Rankings")
 
 def get_player_list():
-    url = "https://golf-leaderboard-data.p.rapidapi.com/entry-list/748"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/entry-list/755"
 
     headers = {
         "x-rapidapi-key": API_KEY,
@@ -109,6 +109,6 @@ def get_player_list():
             
 
 #results()
-#rankings()
+rankings()
 #get_player_list()
 print("Done")
