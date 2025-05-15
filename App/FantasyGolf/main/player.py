@@ -12,7 +12,7 @@ class Player:
             self.made_cut = False
         else:
             if CURRENT_ROUND == 1 or CURRENT_ROUND == 2:
-                if self.finish > 50:
+                if self.finish > 70:
                     self.made_cut = False
                 else:
                     self.made_cut = True
