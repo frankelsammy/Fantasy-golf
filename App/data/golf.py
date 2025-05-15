@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 # import config
 
 sys.path.append('../FantasyGolf/main') 
-
+#from FantasyGolf.main import config
 load_dotenv() 
 API_KEY =  os.getenv("RAPID_API_KEY")
 
@@ -33,7 +33,7 @@ def results():
     response = requests.request("GET", url, headers=headers)
 
     # Find out what round is being played
-    config.CURRENT_ROUND = response.json()['results']['tournament']['live_details']['current_round']
+    #config.CURRENT_ROUND = response.json()['results']['tournament']['live_details']['current_round']
 
     leaderboard = response.json()['results']['leaderboard']
 
