@@ -63,6 +63,6 @@ def run_tournament():
         competition.make_overall_leaderboard()
 
     #Upload results to Database
-   #upload_to_db()
+    upload_to_db()
 if __name__ == "__main__":
     run_tournament()
