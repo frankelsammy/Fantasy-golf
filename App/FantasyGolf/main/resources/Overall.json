@@ -2,84 +2,14 @@
     "title": "overall",
     "Teams": [
         {
-            "name": "Noam Itzhak",
-            "email": "noamnitzhak@gmail.com",
-            "masters": 167.0,
-            "US": 0,
-            "open": 0,
-            "pga": 32.0,
-            "total": 199.0,
-            "place": 1
-        },
-        {
-            "name": "Searle Videlefsky",
-            "email": "searlevcvg@gmail.com",
-            "masters": 136.0,
-            "US": 0,
-            "open": 0,
-            "pga": 57.5,
-            "total": 193.5,
-            "place": 2
-        },
-        {
             "name": "George Monastra",
             "email": "george.monastra@pnc.com",
             "masters": 169.0,
             "US": 0,
             "open": 0,
-            "pga": 24.0,
-            "total": 193.0,
-            "place": 3
-        },
-        {
-            "name": "Daniel Bland",
-            "email": "danielcbland@gmail.com",
-            "masters": 160.0,
-            "US": 0,
-            "open": 0,
-            "pga": 27.0,
-            "total": 187.0,
-            "place": 4
-        },
-        {
-            "name": "Mike Mike",
-            "email": "mmalone@leasedirect.com",
-            "masters": 152.0,
-            "US": 0,
-            "open": 0,
-            "pga": 24.0,
-            "total": 176.0,
-            "place": 5
-        },
-        {
-            "name": "Welch Wolfe",
-            "email": "dwelch@hawkfin.com",
-            "masters": 116.0,
-            "US": 0,
-            "open": 0,
-            "pga": 51.0,
-            "total": 167.0,
-            "place": 6
-        },
-        {
-            "name": "Bill Mayer",
-            "email": "phillywill@icloud.com",
-            "masters": 118.0,
-            "US": 0,
-            "open": 0,
-            "pga": 45.0,
-            "total": 163.0,
-            "place": 7
-        },
-        {
-            "name": "Chad Yoshinaka",
-            "email": "chadyoshinaka@hotmail.com",
-            "masters": 101.0,
-            "US": 0,
-            "open": 0,
-            "pga": 59.0,
-            "total": 160.0,
-            "place": 8
+            "pga": 119.0,
+            "total": 288.0,
+            "place": 1
         },
         {
             "name": "Sammy Frankel",
@@ -87,9 +17,39 @@
             "masters": 148.0,
             "US": 0,
             "open": 0,
-            "pga": 10.0,
-            "total": 158.0,
-            "place": 9
+            "pga": 104.0,
+            "total": 252.0,
+            "place": 2
+        },
+        {
+            "name": "Daniel Bland",
+            "email": "danielcbland@gmail.com",
+            "masters": 160.0,
+            "US": 0,
+            "open": 0,
+            "pga": 83.0,
+            "total": 243.0,
+            "place": 3
+        },
+        {
+            "name": "Mike Mike",
+            "email": "mmalone@leasedirect.com",
+            "masters": 152.0,
+            "US": 0,
+            "open": 0,
+            "pga": 84.0,
+            "total": 236.0,
+            "place": 4
+        },
+        {
+            "name": "Noam Itzhak",
+            "email": "noamnitzhak@gmail.com",
+            "masters": 167.0,
+            "US": 0,
+            "open": 0,
+            "pga": 57.0,
+            "total": 224.0,
+            "place": 5
         },
         {
             "name": "Peter Aaron",
@@ -97,49 +57,9 @@
             "masters": 150.0,
             "US": 0,
             "open": 0,
-            "pga": 0.0,
-            "total": 150.0,
-            "place": 10
-        },
-        {
-            "name": "Danny Frankel",
-            "email": "dannyfrankel@comcast.net",
-            "masters": 128.0,
-            "US": 0,
-            "open": 0,
-            "pga": 20.0,
-            "total": 148.0,
-            "place": 11
-        },
-        {
-            "name": "David Scoular",
-            "email": "scoular@mindspring.com",
-            "masters": 143.0,
-            "US": 0,
-            "open": 0,
-            "pga": 5.0,
-            "total": 148.0,
-            "place": 11
-        },
-        {
-            "name": "Douglas Ducray",
-            "email": "douglas.ducray@53.com",
-            "masters": 142.0,
-            "US": 0,
-            "open": 0,
-            "pga": 5.0,
-            "total": 147.0,
-            "place": 13
-        },
-        {
-            "name": "Don Campbell",
-            "email": "dcampbell@auxcap.com",
-            "masters": 128.0,
-            "US": 0,
-            "open": 0,
-            "pga": 19.0,
-            "total": 147.0,
-            "place": 13
+            "pga": 73.0,
+            "total": 223.0,
+            "place": 6
         },
         {
             "name": "Hayden Brauer",
@@ -147,89 +67,9 @@
             "masters": 125.5,
             "US": 0,
             "open": 0,
-            "pga": 19.0,
-            "total": 144.5,
-            "place": 15
-        },
-        {
-            "name": "Neill Videlefsky",
-            "email": "nvidele@mindspring.com",
-            "masters": 117.0,
-            "US": 0,
-            "open": 0,
-            "pga": 24.0,
-            "total": 141.0,
-            "place": 16
-        },
-        {
-            "name": "Jake Maziar",
-            "email": "jakemaziar@gmail.com",
-            "masters": 113.0,
-            "US": 0,
-            "open": 0,
-            "pga": 27.5,
-            "total": 140.5,
-            "place": 17
-        },
-        {
-            "name": "john Chronley",
-            "email": "jchronley@netscape.net",
-            "masters": 125.0,
-            "US": 0,
-            "open": 0,
-            "pga": 15.0,
-            "total": 140.0,
-            "place": 18
-        },
-        {
-            "name": "Ari and Micah",
-            "email": "mgill318@gmail.com",
-            "masters": 136.5,
-            "US": 0,
-            "open": 0,
-            "pga": 0.0,
-            "total": 136.5,
-            "place": 19
-        },
-        {
-            "name": "Ralston Welch",
-            "email": "ralstonkwelch@gmail.com",
-            "masters": 86.0,
-            "US": 0,
-            "open": 0,
-            "pga": 50.0,
-            "total": 136.0,
-            "place": 20
-        },
-        {
-            "name": "A J Robinson",
-            "email": "aj@atlantadowntown.com",
-            "masters": 128.0,
-            "US": 0,
-            "open": 0,
-            "pga": 5.0,
-            "total": 133.0,
-            "place": 21
-        },
-        {
-            "name": "Paul Costa",
-            "email": "plcosta@yahoo.com",
-            "masters": 120.0,
-            "US": 0,
-            "open": 0,
-            "pga": 10.0,
-            "total": 130.0,
-            "place": 22
-        },
-        {
-            "name": "Ed Hetherington",
-            "email": "edhetherington@cs.com",
-            "masters": 122.0,
-            "US": 0,
-            "open": 0,
-            "pga": 5.0,
-            "total": 127.0,
-            "place": 23
+            "pga": 97.0,
+            "total": 222.5,
+            "place": 7
         },
         {
             "name": "Noah + Joey",
@@ -237,8 +77,158 @@
             "masters": 122.0,
             "US": 0,
             "open": 0,
-            "pga": 5.0,
-            "total": 127.0,
+            "pga": 98.0,
+            "total": 220.0,
+            "place": 8
+        },
+        {
+            "name": "Douglas Ducray",
+            "email": "douglas.ducray@53.com",
+            "masters": 142.0,
+            "US": 0,
+            "open": 0,
+            "pga": 75.0,
+            "total": 217.0,
+            "place": 9
+        },
+        {
+            "name": "Searle Videlefsky",
+            "email": "searlevcvg@gmail.com",
+            "masters": 136.0,
+            "US": 0,
+            "open": 0,
+            "pga": 79.0,
+            "total": 215.0,
+            "place": 10
+        },
+        {
+            "name": "Bill Mayer",
+            "email": "phillywill@icloud.com",
+            "masters": 118.0,
+            "US": 0,
+            "open": 0,
+            "pga": 97.0,
+            "total": 215.0,
+            "place": 10
+        },
+        {
+            "name": "David Scoular",
+            "email": "scoular@mindspring.com",
+            "masters": 143.0,
+            "US": 0,
+            "open": 0,
+            "pga": 71.0,
+            "total": 214.0,
+            "place": 12
+        },
+        {
+            "name": "Chad Yoshinaka",
+            "email": "chadyoshinaka@hotmail.com",
+            "masters": 101.0,
+            "US": 0,
+            "open": 0,
+            "pga": 112.0,
+            "total": 213.0,
+            "place": 13
+        },
+        {
+            "name": "Welch Wolfe",
+            "email": "dwelch@hawkfin.com",
+            "masters": 116.0,
+            "US": 0,
+            "open": 0,
+            "pga": 95.0,
+            "total": 211.0,
+            "place": 14
+        },
+        {
+            "name": "A J Robinson",
+            "email": "aj@atlantadowntown.com",
+            "masters": 128.0,
+            "US": 0,
+            "open": 0,
+            "pga": 79.0,
+            "total": 207.0,
+            "place": 15
+        },
+        {
+            "name": "Ari and Micah",
+            "email": "mgill318@gmail.com",
+            "masters": 136.5,
+            "US": 0,
+            "open": 0,
+            "pga": 66.0,
+            "total": 202.5,
+            "place": 16
+        },
+        {
+            "name": "Don Campbell",
+            "email": "dcampbell@auxcap.com",
+            "masters": 128.0,
+            "US": 0,
+            "open": 0,
+            "pga": 71.0,
+            "total": 199.0,
+            "place": 17
+        },
+        {
+            "name": "Paul Costa",
+            "email": "plcosta@yahoo.com",
+            "masters": 120.0,
+            "US": 0,
+            "open": 0,
+            "pga": 78.0,
+            "total": 198.0,
+            "place": 18
+        },
+        {
+            "name": "Neill Videlefsky",
+            "email": "nvidele@mindspring.com",
+            "masters": 117.0,
+            "US": 0,
+            "open": 0,
+            "pga": 77.0,
+            "total": 194.0,
+            "place": 19
+        },
+        {
+            "name": "Ed Hetherington",
+            "email": "edhetherington@cs.com",
+            "masters": 122.0,
+            "US": 0,
+            "open": 0,
+            "pga": 68.0,
+            "total": 190.0,
+            "place": 20
+        },
+        {
+            "name": "Micharl Young",
+            "email": "michaelyoung527@gmail.com",
+            "masters": 87.5,
+            "US": 0,
+            "open": 0,
+            "pga": 102.0,
+            "total": 189.5,
+            "place": 21
+        },
+        {
+            "name": "john Chronley",
+            "email": "jchronley@netscape.net",
+            "masters": 125.0,
+            "US": 0,
+            "open": 0,
+            "pga": 62.0,
+            "total": 187.0,
+            "place": 22
+        },
+        {
+            "name": "Jake Maziar",
+            "email": "jakemaziar@gmail.com",
+            "masters": 113.0,
+            "US": 0,
+            "open": 0,
+            "pga": 67.0,
+            "total": 180.0,
             "place": 23
         },
         {
@@ -247,9 +237,9 @@
             "masters": 109.5,
             "US": 0,
             "open": 0,
-            "pga": 15.0,
-            "total": 124.5,
-            "place": 25
+            "pga": 65.0,
+            "total": 174.5,
+            "place": 24
         },
         {
             "name": "Josh & Shaun",
@@ -257,19 +247,19 @@
             "masters": 113.5,
             "US": 0,
             "open": 0,
-            "pga": 0.0,
-            "total": 113.5,
-            "place": 26
+            "pga": 56.0,
+            "total": 169.5,
+            "place": 25
         },
         {
-            "name": "Micharl Young",
-            "email": "michaelyoung527@gmail.com",
-            "masters": 87.5,
+            "name": "Danny Frankel",
+            "email": "dannyfrankel@comcast.net",
+            "masters": 128.0,
             "US": 0,
             "open": 0,
-            "pga": 19.0,
-            "total": 106.5,
-            "place": 27
+            "pga": 37.0,
+            "total": 165.0,
+            "place": 26
         },
         {
             "name": "Z F",
@@ -277,8 +267,18 @@
             "masters": 88.0,
             "US": 0,
             "open": 0,
-            "pga": 10.0,
-            "total": 98.0,
+            "pga": 68.0,
+            "total": 156.0,
+            "place": 27
+        },
+        {
+            "name": "Ralston Welch",
+            "email": "ralstonkwelch@gmail.com",
+            "masters": 86.0,
+            "US": 0,
+            "open": 0,
+            "pga": 62.0,
+            "total": 148.0,
             "place": 28
         },
         {
@@ -287,8 +287,8 @@
             "masters": 66.5,
             "US": 0,
             "open": 0,
-            "pga": 10.0,
-            "total": 76.5,
+            "pga": 44.0,
+            "total": 110.5,
             "place": 29
         }
     ]
