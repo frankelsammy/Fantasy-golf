@@ -5,9 +5,9 @@ App/FantasyGolf/src/main/resources/Teams\ Example.csv
 .env
 Results.json
 Results
-FantasyGolf.jar
-App/FantasyGolf/bin/main/*.class
 App/data/listOfPlayers
 App/data/leaderboard
 App/data/rankings
 App/data/listOfPlayers
+App/FantasyGolf/main/resources/Overall.json
+App/data/leaderboard.csv
