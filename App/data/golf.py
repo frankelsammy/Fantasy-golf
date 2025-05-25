@@ -7,7 +7,7 @@ import os
 import sys
 from dotenv import load_dotenv
 
-# import config
+import config
 
 import config
 load_dotenv() 
