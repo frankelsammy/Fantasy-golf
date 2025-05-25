@@ -9,8 +9,7 @@ from dotenv import load_dotenv
 
 import config
 
-sys.path.append('../FantasyGolf/main') 
-#from FantasyGolf.main import config
+import config
 load_dotenv() 
 API_KEY =  os.getenv("RAPID_API_KEY")
 
@@ -36,8 +35,8 @@ def results():
     leaderboard = response.json()['leaderboardRows']
 
     # Find out what round is being played
-    #config.CURRENT_ROUND = int(response.json()['roundId'])
-    #print(config.CURRENT_ROUND)
+    config.CURRENT_ROUND = int(response.json()['roundId']['$numberInt'])
+    print(config.CURRENT_ROUND)
 
 #     leaderboard = response.json()['results']['leaderboard']
 
@@ -58,10 +57,14 @@ def results():
             first_name = 'Joaquin'
         if first_name == 'J. T.':
             first_name = 'J.T.'
-        if players['position'] == "-":
-            position = 1000
+        if players['position'] == '-':
+            position = 100
         elif players['position'].lower()[0] == 't':
             position = int(players['position'][1:])
+        elif players['position'] == "CUT" or players['position'] == "WD":
+            position = 1000
+        else:
+            position = int(players['position'])
         l.append([first_name, last_name, position, players['status']])
     
     with open("../../data/leaderboard.csv", "w") as outfile:

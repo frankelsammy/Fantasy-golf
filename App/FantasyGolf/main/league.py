@@ -115,6 +115,8 @@ class League:
         '''
         #add the score from the current tournament to the overall leaderboard
         for team in overall["Teams"]:
+            if team['name'] == 'Noah + Joey 2024 Masters 1st Place, 2024 1st Place Overall':
+                team['name'] = 'Noah + Joey'
             matching_team = None
             for comp_team in self.teams:
                 if team.get("email") == comp_team.get_email():
