@@ -6,7 +6,6 @@ from teams import Team
 import config
 class League:
 
-    # Constructor to initialize the object
     def __init__(self):
         self.teams = [] 
         self.worst_player = None    # Lowest ranked selected player to make top 25

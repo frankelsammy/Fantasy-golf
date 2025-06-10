@@ -7,9 +7,6 @@ import os
 import sys
 from dotenv import load_dotenv
 
-import config
-
-import config
 load_dotenv() 
 API_KEY =  os.getenv("RAPID_API_KEY")
 
@@ -96,7 +93,7 @@ def rankings():
     print("Updated Rankings")
 
 def get_player_list():
-    url = "https://golf-leaderboard-data.p.rapidapi.com/entry-list/755"
+    url = "https://golf-leaderboard-data.p.rapidapi.com/entry-list/759"
 
     headers = {
         "x-rapidapi-key": API_KEY,
@@ -123,6 +120,6 @@ def get_player_list():
 #results()
 # rankings()
 # #get_player_list()
-rankings()
-#get_player_list()
+#rankings()
+get_player_list()
 print("Done")
