@@ -6,7 +6,11 @@ import pandas as pd
 import os
 import sys
 from dotenv import load_dotenv
+import random
 
+import config
+
+# import config
 load_dotenv() 
 API_KEY =  os.getenv("RAPID_API_KEY")
 
@@ -21,8 +25,9 @@ def results():
 
     #change number at end of string to get results for specific tournament
     url = "https://live-golf-data.p.rapidapi.com/leaderboard"
-    querystring = {"orgId":"1","tournId":"033","year":"2025"}
-    # url = "https://golf-leaderboard-data.p.rapidapi.com/leaderboard/755"
+
+    querystring = {"orgId":"1","tournId":"026","year":"2025"}
+
     headers = {
 	"x-rapidapi-key": "cd2f78eee0msh57d5ae1e1810fa2p1d0880jsn872939440f2c",
 	"x-rapidapi-host": "live-golf-data.p.rapidapi.com"
@@ -35,13 +40,13 @@ def results():
     config.CURRENT_ROUND = int(response.json()['roundId']['$numberInt'])
     print(config.CURRENT_ROUND)
 
-#     leaderboard = response.json()['results']['leaderboard']
 
     l = []
     for players in leaderboard:
         last_name = players["lastName"]
         first_name = players["firstName"]
         position = 1000
+        #Philip Barbaree, Jr.
         if last_name == "Åberg":
             last_name = "Aberg"
         if last_name == "Fitzpatrick":
@@ -54,6 +59,9 @@ def results():
             first_name = 'Joaquin'
         if first_name == 'J. T.':
             first_name = 'J.T.'
+        if last_name == 'Barbaree, Jr.':
+            last_name = 'Barbaree'
+
         if players['position'] == '-':
             position = 100
         elif players['position'].lower()[0] == 't':
@@ -62,6 +70,8 @@ def results():
             position = 1000
         else:
             position = int(players['position'])
+        # If you want to simulate results
+        # position = random.randint(1, 157)
         l.append([first_name, last_name, position, players['status']])
     
     with open("../../data/leaderboard.csv", "w") as outfile:
