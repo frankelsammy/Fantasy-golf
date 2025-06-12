@@ -2,7 +2,7 @@ name: run main.py
 
 on: 
   schedule:
-    - cron: '*/6 11-23 12-15 5 *'
+    - cron: '*/5 11-23 12-15 6 *'
   workflow_dispatch:
 
 jobs:
