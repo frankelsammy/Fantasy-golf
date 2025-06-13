@@ -17,6 +17,7 @@ from updateDB import upload_to_db, retrieve_overall
 def run_tournament():
     # retrieve the rankings 
     rankings_dict = rankings()          # dict of player_name -> ranking
+    print(rankings_dict)
     
     # Update the leaderboard
     results_df = results()              #Dataframe: Name, Position, Status
