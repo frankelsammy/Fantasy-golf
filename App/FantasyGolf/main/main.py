@@ -17,13 +17,13 @@ from updateDB import upload_to_db, retrieve_overall
 def run_tournament():
     # retrieve the rankings 
     rankings_dict = rankings()          # dict of player_name -> ranking
-    print(rankings_dict)
-    
+
     # Update the leaderboard
     results_df = results()              #Dataframe: Name, Position, Status
 
     competition = League()
 
+    #read in the teams 
     teams = pd.read_csv("resources/teams.csv")
 
     selected_players_in_top_25 = []
@@ -31,6 +31,7 @@ def run_tournament():
     # Reading the teams.csv file to upload all the teams rosters
     for index, row in teams.iterrows():
         team = Team(row['teamName'], row['Email'])
+        # Create a player for each player in the team
         for i in range(1,9):
             player_name = row[f'p{i}']
             rank = rankings_dict.get(player_name, 1000)
@@ -42,6 +43,7 @@ def run_tournament():
                 player = Player(player_name, rank, i == 1, i == 2, position, status, worst_player_top_25, config.CURRENT_ROUND)
                 team.add_player(player)
                 if position <= 25:
+                    # add player to list of top 25 players
                     selected_players_in_top_25.append(player_name)
             else:
                 print(f"{player_name} not in results")
