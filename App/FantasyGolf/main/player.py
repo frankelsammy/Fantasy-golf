@@ -27,7 +27,7 @@ class Player:
         Calculates the total points this player got (not included bonus for first/second pick)
         '''
         # points for making the cut if ranked > 5
-        if self.made_cut and self.ranking >= 5:
+        if self.made_cut and self.ranking > 5:
             self.score += 5
 
         #top 25
