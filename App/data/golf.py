@@ -131,5 +131,5 @@ def get_player_list():
 # rankings()
 # #get_player_list()
 #rankings()
-get_player_list()
+#get_player_list()
 print("Done")
