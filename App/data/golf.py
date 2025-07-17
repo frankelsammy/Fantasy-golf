@@ -12,28 +12,30 @@ import config
 
 # import config
 load_dotenv() 
-API_KEY =  os.getenv("RAPID_API_KEY")
+API_KEY =  os.getenv("API_KEY")
 
 
 # 2024 season tournament ID's
 # Masters 651
 # PGA Championship 658
 # US open 662
-# Open championship: 701
+# Open championship: 701:
+
 def results():
     ## Uncoment all this to actually pull from the API
 
     #change number at end of string to get results for specific tournament
     url = "https://live-golf-data.p.rapidapi.com/leaderboard"
 
-    querystring = {"orgId":"1","tournId":"026","year":"2025"}
+    querystring = {"orgId":"1","tournId":"100","year":"2025"}
 
     headers = {
-	"x-rapidapi-key": "cd2f78eee0msh57d5ae1e1810fa2p1d0880jsn872939440f2c",
-	"x-rapidapi-host": "live-golf-data.p.rapidapi.com"
-}
+        "x-rapidapi-key": "cd2f78eee0msh57d5ae1e1810fa2p1d0880jsn872939440f2c",
+        "x-rapidapi-host": "live-golf-data.p.rapidapi.com"
+    }
 
     response = requests.get(url, headers=headers, params=querystring)
+    #print(response.json().keys())
     leaderboard = response.json()['leaderboardRows']
 
     # Find out what round is being played
@@ -63,7 +65,7 @@ def results():
             last_name = 'Barbaree'
 
         if players['position'] == '-':
-            position = 1000
+            position = 1001
         elif players['position'].lower()[0] == 't':
             position = int(players['position'][1:])
         elif players['position'] == "CUT" or players['position'] == "WD":
@@ -100,8 +102,6 @@ def rankings():
     rankings_df = rankings_df.rename(columns={"dg_rank": "rank"})
     return rankings_df.set_index("player_name")["rank"].to_dict()
 
-    print("Updated Rankings")
-
 def get_player_list():
     url = "https://golf-leaderboard-data.p.rapidapi.com/entry-list/759"
 
@@ -130,6 +130,6 @@ def get_player_list():
 #results()
 # rankings()
 # #get_player_list()
-#rankings()
+rankings()
 #get_player_list()
 print("Done")
