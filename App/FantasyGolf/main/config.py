@@ -7,6 +7,6 @@ class TOURNAMENT(Enum):
     PGA = 4
 
 #Select which tournament is currently being run
-current_tournament = TOURNAMENT.US_OPEN
+current_tournament = TOURNAMENT.OPEN_CHAMPIONSHIP
 
 CURRENT_ROUND = 1
