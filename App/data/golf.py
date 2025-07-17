@@ -12,7 +12,7 @@ import config
 
 # import config
 load_dotenv() 
-API_KEY =  os.getenv("RAPID_API_KEY")
+API_KEY =  os.getenv("API_KEY")
 
 
 # 2024 season tournament ID's
@@ -30,9 +30,9 @@ def results():
     querystring = {"orgId":"1","tournId":"100","year":"2025"}
 
     headers = {
-	"x-rapidapi-key": API_KEY,
-	"x-rapidapi-host": "live-golf-data.p.rapidapi.com"
-}
+        "x-rapidapi-key": "cd2f78eee0msh57d5ae1e1810fa2p1d0880jsn872939440f2c",
+        "x-rapidapi-host": "live-golf-data.p.rapidapi.com"
+    }
 
     response = requests.get(url, headers=headers, params=querystring)
     #print(response.json().keys())
@@ -65,7 +65,7 @@ def results():
             last_name = 'Barbaree'
 
         if players['position'] == '-':
-            position = 1000
+            position = 1001
         elif players['position'].lower()[0] == 't':
             position = int(players['position'][1:])
         elif players['position'] == "CUT" or players['position'] == "WD":

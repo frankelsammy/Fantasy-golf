@@ -59,13 +59,13 @@ def run_tournament():
     #Get JSON object of results
     competition.JSONify()
 
-    # if config.CURRENT_ROUND != config.TOURNAMENT.MASTERS:
-    #     overall_leaderbaord = retrieve_overall()
-    #     competition.update_overall(overall_leaderbaord)
-    # else:
-    #     competition.make_overall_leaderboard()
+    if config.CURRENT_ROUND != config.TOURNAMENT.MASTERS:
+        overall_leaderbaord = retrieve_overall()
+        competition.update_overall(overall_leaderbaord)
+    else:
+        competition.make_overall_leaderboard()
 
     #Upload results to Database
-    #upload_to_db()
+    upload_to_db()
 if __name__ == "__main__":
     run_tournament()
