@@ -23,7 +23,7 @@ jobs:
 
       - name: execute py script # run main.py
         env: # Or as an environment variable
-          RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
+          API_KEY: ${{ secrets.API_KEY }}
           DB_USER: ${{ secrets.DB_USER }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         run: python main.py
