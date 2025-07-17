@@ -30,7 +30,7 @@ def results():
     querystring = {"orgId":"1","tournId":"100","year":"2025"}
 
     headers = {
-        "x-rapidapi-key": "cd2f78eee0msh57d5ae1e1810fa2p1d0880jsn872939440f2c",
+        "x-rapidapi-key": API_KEY,
         "x-rapidapi-host": "live-golf-data.p.rapidapi.com"
     }
 
