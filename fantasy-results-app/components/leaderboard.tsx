@@ -80,7 +80,7 @@ export default function LeaderboardTable() {
                         {users.map((user: any, index) => (
                             <Tr
                                 key={index}
-                                bg={user.AllCut ? "yellow.200" : index % 2 === 0 ? "gray.50" : "white"}
+                                bg={user.AllCut ? "yellow.200" : "white"}
                                 _hover={{ bg: "gray.200" }}
                             >
                                 <Td border="1px solid" borderColor="gray.300" textAlign="center" color="blue.800">{user.Place}</Td>

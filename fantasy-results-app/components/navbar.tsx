@@ -11,13 +11,13 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-const Links = [
-    { label: "Home", href: "/" },
-    { label: "Overall Leaderboard", href: "/overall" },
-    { label: "Scoring", href: "/scoring" },
-];
+// const Links = [
+//     { label: "Home", href: "/" },
+//     { label: "Overall Leaderboard", href: "/overall" },
+//     { label: "Scoring", href: "/scoring" },
+// ];
 
-export default function Navbar() {
+export default function Navbar({Links : Links}: {Links: { label: string; href: string }[]}) {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
