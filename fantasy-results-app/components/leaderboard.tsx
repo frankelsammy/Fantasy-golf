@@ -31,8 +31,8 @@ export default function LeaderboardTable() {
             try {
                 const res = await fetch("/api/leaderboard");
                 const data = await res.json();
-                setLeaderboard(data); // full document
-                setUsers(data?.Teams || []); // extract teams for the table
+                setLeaderboard(data); 
+                setUsers(data?.Teams || []); 
             } catch (err) {
                 console.error("Failed to fetch leaderboard:", err);
             } finally {
@@ -62,7 +62,7 @@ export default function LeaderboardTable() {
     return (
         <div style={{ width: "100%", overflowX: "auto" }}>
             <TableContainer minWidth="100%">
-                <Table variant="simple" size="xs" sx={{ tableLayout: "auto" }}>
+                <Table variant="simple" size="xs" fontSize="sm" sx={{ tableLayout: "auto" }}>
                     <TableCaption placement="top" fontSize="lg" fontWeight="bold">
                         Teams highlighted yellow indicate everyone on the team made the cut (15 bonus points)
                         <br />

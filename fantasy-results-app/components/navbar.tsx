@@ -11,11 +11,6 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-// const Links = [
-//     { label: "Home", href: "/" },
-//     { label: "Overall Leaderboard", href: "/overall" },
-//     { label: "Scoring", href: "/scoring" },
-// ];
 
 export default function Navbar({ Links: Links }: { Links: { label: string; href: string }[] }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -46,6 +41,7 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
                             rounded="md"
                             _hover={{ bg: "blue.700" }}
                             href={link.href}
+                            isExternal={link.label === "World Power Rankings"}
                         >
                             {link.label}
                         </Link>

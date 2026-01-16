@@ -9,7 +9,9 @@ export async function GET() {
     const client = await clientPromise;
     const db = client.db("FantasyGolf");
     if (cachedLeaderboard && now - lastFetched < CACHE_TTL) {
+      console.log("Serving leaderboard from cache");
       return new Response(JSON.stringify(cachedLeaderboard), {
+        
         status: 200,
         headers: { "Content-Type": "application/json" },
       })
