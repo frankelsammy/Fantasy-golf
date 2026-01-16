@@ -1,7 +1,7 @@
 import clientPromise from "../../../lib/mongodb";
 let cachedLeaderboard: any = null;
 let lastFetched = 0;
-const CACHE_TTL = 100_000;
+const CACHE_TTL = 60000;
 export async function GET() {
   try {
     const now = Date.now();

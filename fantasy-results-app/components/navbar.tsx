@@ -17,7 +17,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 //     { label: "Scoring", href: "/scoring" },
 // ];
 
-export default function Navbar({Links : Links}: {Links: { label: string; href: string }[]}) {
+export default function Navbar({ Links: Links }: { Links: { label: string; href: string }[] }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
@@ -25,7 +25,15 @@ export default function Navbar({Links : Links}: {Links: { label: string; href: s
             <Flex h={16} alignItems="center" justifyContent="space-between">
                 {/* Logo / Brand */}
                 <Box fontWeight="bold" fontSize="xl">
-                    Fantasy Golf Competition
+                    <Link
+                        px={2}
+                        py={1}
+                        rounded="md"
+                        _hover={{ bg: "blue.700" }}
+                        href="/"
+                    >
+                        Fantasy Golf  Competition
+                    </Link>
                 </Box>
 
                 {/* Desktop Links */}

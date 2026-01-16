@@ -9,7 +9,7 @@ import {
     Td,
     TableContainer,
     TableCaption,
-    Spinner,
+    Spinner
 } from "@chakra-ui/react";
 
 export default function LeaderboardTable() {
@@ -25,6 +25,8 @@ export default function LeaderboardTable() {
     };
 
     useEffect(() => {
+        let intervalId;
+
         async function fetchLeaderboard() {
             try {
                 const res = await fetch("/api/leaderboard");
@@ -37,7 +39,15 @@ export default function LeaderboardTable() {
                 setLoading(false);
             }
         }
+
+        // Initial fetch
         fetchLeaderboard();
+
+        // Set interval to fetch every 2 minutes (120000 ms)
+        intervalId = setInterval(fetchLeaderboard, 120000);
+
+        // Cleanup interval on unmount
+        return () => clearInterval(intervalId);
     }, []);
 
     if (loading)
@@ -84,7 +94,7 @@ export default function LeaderboardTable() {
                                 _hover={{ bg: "gray.200" }}
                             >
                                 <Td border="1px solid" borderColor="gray.300" textAlign="center" color="blue.800">{user.Place}</Td>
-                                <Td border="1px solid" borderColor="gray.300" textAlign="center" color="blue.800">{user.Name}</Td>
+                                <Td border="1px solid" borderColor="gray.300" textAlign="center" color="blue.800"><strong>{user.Name}</strong></Td>
                                 {user.Roster?.map((player: any, i: number) => (
                                     <React.Fragment key={i}>
                                         <Td border="1px solid" borderColor="gray.300" textAlign="center" color="blue.800">{getName(player.Name, player.Finish)}</Td>
