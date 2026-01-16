@@ -65,14 +65,14 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
                     <Stack as="nav" spacing={4}>
                         {Links.map((link) => (
                             <Link
-                                key={link}
+                                key={link.label}
                                 px={2}
                                 py={1}
                                 rounded="md"
                                 _hover={{ bg: "blue.700" }}
-                                href={`/${link.toLowerCase()}`}
+                                href={`/${link.label.toLowerCase()}`}
                             >
-                                {link}
+                                {link.label}
                             </Link>
                         ))}
                     </Stack>
