@@ -27,8 +27,9 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
     }, []);
 
     return (
-        <Box bg={scrolled ? "transparent" : "blue.800"} 
-            transition="background-color 0.3s ease-in-out"
+        <Box bg={scrolled ? "rgba(44, 82, 130, 0.4)" : "blue.800"} 
+             transition="background-color 0.5s ease"
+            backdropFilter={scrolled ? "blur(10px)" : "none"}
             px={4} color="yellow.400" position="sticky" top={0} zIndex="sticky">
             <Flex h={16} alignItems="center" justifyContent="space-between">
                 {/* Logo / Brand */}
