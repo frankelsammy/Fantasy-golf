@@ -16,7 +16,7 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
-        <Box bg="blue.800" px={4} color="yellow.400">
+        <Box bg="blue.800" px={4} color="yellow.400" position="sticky" top={0} zIndex="sticky">
             <Flex h={16} alignItems="center" justifyContent="space-between">
                 {/* Logo / Brand */}
                 <Box fontWeight="bold" fontSize="xl">
