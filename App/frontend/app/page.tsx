@@ -1,5 +1,6 @@
 import { Box, Divider, Flex, HStack, Link, IconButton, useDisclosure, Stack } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { getLeaderboardData } from "@/lib/getLeaderboardData";
 import LeaderboardTable from "@/components/leaderboard";
 import Navbar from "@/components/navbar";
 
@@ -12,9 +13,7 @@ const Links = [
 ];
 
 const page = async () => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/leaderboard`);
-  
-  const data = await response.json();
+  const data = await getLeaderboardData();
   return (
     <div>
       <Navbar Links={Links} />
