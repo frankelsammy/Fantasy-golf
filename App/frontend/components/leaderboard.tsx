@@ -1,5 +1,6 @@
 'use client';
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useSWR from 'swr';
 import {
     Table,
     Thead,
@@ -12,10 +13,21 @@ import {
     Spinner
 } from "@chakra-ui/react";
 
-export default function LeaderboardTable() {
-    const [leaderboard, setLeaderboard] = useState<any>(null);
-    const [users, setUsers] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+interface LeaderboardProps {
+    initialData?: any;
+}
+
+export default function LeaderboardTable({ initialData }: LeaderboardProps) {
+
+    const { data: leaderboard, error, isLoading } = useSWR('/api/leaderboard', fetcher, {
+        fallbackData: initialData, // Uses server data immediately
+        refreshInterval: 120000,   // Polls every 2 minutes
+        revalidateOnFocus: true    // Auto-updates when you click back onto the tab
+    });
+
+    const users = leaderboard?.Teams || [];
 
     const getName = (fullName: string, finish: number) => {
         const lastName = fullName?.split(" ").pop() || "";
@@ -24,40 +36,15 @@ export default function LeaderboardTable() {
         return lastName + finishText;
     };
 
-    useEffect(() => {
-        let intervalId;
-
-        async function fetchLeaderboard() {
-            try {
-                const res = await fetch("/api/leaderboard");
-                const data = await res.json();
-                setLeaderboard(data); 
-                setUsers(data?.Teams || []); 
-            } catch (err) {
-                console.error("Failed to fetch leaderboard:", err);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        // Initial fetch
-        fetchLeaderboard();
-
-        // Set interval to fetch every 2 minutes (120000 ms)
-        intervalId = setInterval(fetchLeaderboard, 120000);
-
-        // Cleanup interval on unmount
-        return () => clearInterval(intervalId);
-    }, []);
-
-    if (loading)
+    if (isLoading && !leaderboard)
         return (
             <div style={{ display: "flex", justifyContent: "center", margin: 20 }}>
                 <Spinner size="xl" />
             </div>
         );
 
-    if (!users.length) return <p>No users found.</p>;
+    if (error) return <p style={{ textAlign: 'center', color: 'red' }}>Failed to load leaderboard.</p>;
+    if (!users.length) return <p style={{ textAlign: 'center', marginTop: '20px' }}>No users found.</p>;
 
     return (
         <div style={{ width: "100%", overflowX: "auto" }}>
@@ -70,7 +57,6 @@ export default function LeaderboardTable() {
                         <br />
                         Last Updated: {leaderboard?.Date}
                     </TableCaption>
-
 
                     <Thead bg="blue.800">
                         <Tr>
@@ -87,7 +73,7 @@ export default function LeaderboardTable() {
                     </Thead>
 
                     <Tbody>
-                        {users.map((user: any, index) => (
+                        {users.map((user: any, index: number) => (
                             <Tr
                                 key={index}
                                 bg={user.AllCut ? "yellow.200" : "white"}
