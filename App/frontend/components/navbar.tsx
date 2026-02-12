@@ -41,7 +41,7 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
                         _hover={{ bg: "blue.700" }}
                         href="/"
                     >
-                        Fantasy Golf  Competition
+                        Fantasy Golf Competition
                     </Link>
                 </Box>
 
@@ -84,7 +84,8 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
                                 py={1}
                                 rounded="md"
                                 _hover={{ bg: "blue.700" }}
-                                href={`/${link.label.toLowerCase()}`}
+                                href={link.href}
+                                isExternal={link.label === "World Power Rankings"}
                             >
                                 {link.label}
                             </Link>
