@@ -11,7 +11,7 @@ class MODE(Enum):
     TESTING = 2
 
 #Select which tournament is currently being run
-current_tournament = TOURNAMENT.OPEN_CHAMPIONSHIP
+current_tournament = TOURNAMENT.MASTERS
 
 CURRENT_ROUND = 1
 

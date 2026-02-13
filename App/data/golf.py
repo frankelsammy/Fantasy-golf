@@ -100,8 +100,8 @@ def format_name(name):
 
 #return a dictionary of name to ranking
 def rankings():
-    if congig.CURRENT_MODE == config.MODE.TESTING:
-        rankings_df = pd.read_cvs("resources/testPowerRankings.csv
+    if config.CURRENT_MODE == config.MODE.TESTING:
+        rankings_df = pd.read_csv("resources/testPowerRankings.csv")
     else:
         rankings_df = pd.read_csv("resources/powerRankings.csv")
 

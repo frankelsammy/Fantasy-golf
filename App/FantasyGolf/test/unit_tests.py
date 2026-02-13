@@ -35,11 +35,5 @@ class TestCalculateScore(unittest.TestCase):
         p.calculate_score(None)
         self.assertEqual(p.get_score(), 25)
 
-class Competition(unittest.TestCase):
-    def testingProgram(self):
-        self.assertEqual(1,1)
-
-
-
 if __name__ == "__main__":
     unittest.main()
