@@ -2,7 +2,6 @@
 import React from 'react'
 import { useBreakpointValue } from '@chakra-ui/react';
 
-import LeaderboardTable from "@/components/Leaderboard";
 import MobileLeaderboardTable from "@/components/MobileLeaderboard";
 interface LeaderboardProps {
     initialData?: any;
