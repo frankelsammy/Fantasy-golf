@@ -23,6 +23,7 @@ export default function LeaderboardTable({ initialData }: LeaderboardProps) {
             if (place === 1) return "1st";
             if (place === 2) return "2nd";
             if (place === 3) return "3rd";
+            if (place === 1000) return "CUT";
             return place + "th";
         }
     const users = leaderboard?.Teams || [];
@@ -31,12 +32,7 @@ export default function LeaderboardTable({ initialData }: LeaderboardProps) {
     const toggle = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
-    const getName = (fullName: string, finish: number) => {
-        const lastName = fullName?.split(" ").pop() || "";
-        const finishText =
-            finish === 1000 ? " (CUT)" : finish ? ` (${finish})` : "";
-        return lastName + finishText;
-    };
+
     const worstInTop25 = leaderboard?.worstTop25 || "";
 
     return (
