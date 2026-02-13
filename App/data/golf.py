@@ -27,7 +27,10 @@ def results():
     #change number at end of string to get results for specific tournament
     url = "https://live-golf-data.p.rapidapi.com/leaderboard"
 
-    querystring = {"orgId":"1","tournId":"100","year":"2025"}
+    if config.CURRENT_MODE == config.MODE.TESTING:
+        querystring = {"orgId":"1","tournId":"014","year":"2025"}
+    else:
+        querystring = {"orgId":"1","tournId":"100","year":"2025"}
 
     headers = {
         "x-rapidapi-key": API_KEY,
@@ -97,7 +100,11 @@ def format_name(name):
 
 #return a dictionary of name to ranking
 def rankings():
-    rankings_df = pd.read_csv("resources/powerRankings.csv")
+    if config.CURRENT_MODE == config.MODE.TESTING:
+        rankings_df = pd.read_csv("resources/testPowerRankings.csv")
+    else:
+        rankings_df = pd.read_csv("resources/powerRankings.csv")
+
     rankings_df["player_name"] = rankings_df["player_name"].apply(format_name)
     rankings_df = rankings_df.rename(columns={"dg_rank": "rank"})
     return rankings_df.set_index("player_name")["rank"].to_dict()

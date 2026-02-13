@@ -17,14 +17,16 @@ from updateDB import upload_to_db, retrieve_overall
 def run_tournament():
     # retrieve the rankings 
     rankings_dict = rankings()          # dict of player_name -> ranking
-
     # Update the leaderboard
     results_df = results()              #Dataframe: Name, Position, Status
 
     competition = League()
 
     #read in the teams 
-    teams = pd.read_csv("resources/teams.csv")
+    if config.CURRENT_MODE == config.MODE.TESTING:
+        teams = pd.read_csv("resources/test_teams.csv")
+    else:   
+        teams = pd.read_csv("resources/teams.csv")
 
     selected_players_in_top_25 = []
 
@@ -59,13 +61,14 @@ def run_tournament():
     #Get JSON object of results
     competition.JSONify()
 
-    if config.CURRENT_ROUND != config.TOURNAMENT.MASTERS:
+    if config.current_tournament != config.TOURNAMENT.MASTERS:
         overall_leaderbaord = retrieve_overall()
         competition.update_overall(overall_leaderbaord)
     else:
         competition.make_overall_leaderboard()
 
     #Upload results to Database
-    upload_to_db()
+    if config.CURRENT_MODE == config.MODE.PROD:
+        upload_to_db()
 if __name__ == "__main__":
     run_tournament()
