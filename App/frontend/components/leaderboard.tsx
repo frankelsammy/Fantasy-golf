@@ -20,7 +20,6 @@ interface LeaderboardProps {
 }
 
 export default function LeaderboardTable({ initialData }: LeaderboardProps) {
-
     const { data: leaderboard, error, isLoading } = useSWR('/api/leaderboard', fetcher, {
         fallbackData: initialData, // Uses server data immediately
         refreshInterval: 120000,   // Polls every 2 minutes
