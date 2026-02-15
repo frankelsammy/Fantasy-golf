@@ -91,45 +91,45 @@ export default function LeaderboardTable({ initialData }: LeaderboardProps) {
 
                     {/* Expandable Section */}
                     <Collapse in={openIndex === index} animateOpacity>
-<Box px={4} pb={3}>
-  <VStack align="stretch" spacing={0} px={0}>
-    {user.Roster.map((player: any, i: number) => (
-      <React.Fragment key={i}>
-        <Flex
-          p={2}
-          align="center"
-          justify="space-between"
-          gap={2}
-        >
-          {/* Left: Name + icons */}
-          <Flex align="center" gap={1}>
-            {player.Finish === 1 && "🏆"}
-            <Text fontWeight="medium">{player.Name}</Text>
-            {player.Name === worstInTop25 && (
-              <Badge colorScheme="red" fontSize="0.6em" borderRadius="full">
-                LOWEST TOP 25
-              </Badge>
-            )}
-          </Flex>
+                        <Box px={4} pb={3}>
+                            <VStack align="stretch" spacing={0} px={0}>
+                                {user.Roster.map((player: any, i: number) => (
+                                    <React.Fragment key={i}>
+                                        <Flex
+                                            p={2}
+                                            align="center"
+                                            justify="space-between"
+                                            gap={2}
+                                        >
+                                            {/* Left: Name + icons */}
+                                            <Flex align="center" gap={1}>
+                                                {player.Finish === 1 && "🏆"}
+                                                <Text fontWeight="medium">{player.Name}</Text>
+                                                <Text fontSize="sm" color="gray.600">
+                                                    ({getToastPlace(player.Finish)})
+                                                </Text>
+                                                {player.Name === worstInTop25 && (
+                                                    <Badge colorScheme="red" fontSize="0.6em" borderRadius="full">
+                                                        LOWEST TOP 25
+                                                    </Badge>
+                                                )}
+                                            </Flex>
 
-          {/* Right: Finish + points */}
-          <Flex align="center" gap={1}>
-            <Text fontSize="sm" color="gray.600">
-              ({getToastPlace(player.Finish)})
-            </Text>
-            <Text fontSize="sm" fontWeight="bold">
-              {player["Points scored"]} pts
-            </Text>
-          </Flex>
-        </Flex>
+                                            {/* Right: Finish + points */}
+                                            <Flex align="center" gap={1}>
+                                                <Text fontSize="sm" fontWeight="bold">
+                                                    {player["Points scored"]} pts
+                                                </Text>
+                                            </Flex>
+                                        </Flex>
 
-        {/* Divider after each player except the last one */}
-        {i < user.Roster.length - 1 && <Divider />}
-      </React.Fragment>
-    ))}
-  </VStack>
-</Box>
-                        
+                                        {/* Divider after each player except the last one */}
+                                        {i < user.Roster.length - 1 && <Divider />}
+                                    </React.Fragment>
+                                ))}
+                            </VStack>
+                        </Box>
+
                     </Collapse>
                 </Box>
             ))}
