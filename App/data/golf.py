@@ -79,10 +79,9 @@ def results():
         # position = random.randint(1, 157)
         l.append([first_name, last_name, position, players['status']])
     
+
     with open("../../data/leaderboard.csv", "w") as outfile:
         outfile.write("Name,Position,Status\n")
-
-    with open("../../data/leaderboard.csv", "a") as outfile:
         for item in l:
             outfile.write(
                 item[0] + " " + item[1] +  "," + str(item[2]) + "," + item[3] + "\n"
