@@ -32,6 +32,9 @@ const ChevronDownIcon = () => (
 );
 
 const OverallLeaderboard = () => {
+    const primaryColor: string = "rgb(251, 243, 8)";
+    const secondaryColor: string = "rgb(2, 89, 57)";
+
     const [teams, setTeams] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [sortField, setSortField] = useState<string>("total");
@@ -94,8 +97,8 @@ const OverallLeaderboard = () => {
         <Box p={{ base: 2, md: 6 }} maxW="1200px" mx="auto">
             {/* Header Section */}
             <Box mb={6} textAlign="center">
-                <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="black" color="blue.800">
-                    2025 Overall Results
+                <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="black" color={secondaryColor}>
+                    2026 Overall Results
                 </Text>
             </Box>
 
@@ -107,7 +110,7 @@ const OverallLeaderboard = () => {
                             <MenuButton 
                                 as={Button} 
                                 rightIcon={<ChevronDownIcon />} 
-                                colorScheme="blue" 
+                                colorScheme={secondaryColor} 
                                 variant="solid"
                                 boxShadow="md"
                                 width="full"
@@ -136,13 +139,15 @@ const OverallLeaderboard = () => {
                                 boxShadow="sm"
                             >
                                 <Flex justify="space-between" align="center">
-                                    <Badge colorScheme="blue" borderRadius="full" px={3} py={1}>
+                                    <Badge colorScheme={secondaryColor} borderRadius="full" px={3} py={1}>
                                         #{user.place}
                                     </Badge>
-                                    <Text fontWeight="bold" fontSize="lg" color="blue.900">{user.name}</Text>
+                                    <Text fontWeight="bold" fontSize="lg" color={secondaryColor}>
+                                        {user.name}
+                                    </Text>
                                     <Box textAlign="right">
                                         <Text fontSize="10px" fontWeight="bold" color="gray.400">TOTAL</Text>
-                                        <Text fontSize="xl" fontWeight="black" color="blue.600">{user.total}</Text>
+                                        <Text fontSize="xl" fontWeight="black" color="rgb(134, 38, 51)">{user.total}</Text>
                                     </Box>
                                 </Flex>
                                 
@@ -162,14 +167,14 @@ const OverallLeaderboard = () => {
                 /* --- DESKTOP LAYOUT --- */
                 <TableContainer bg="white" boxShadow="xl" borderRadius="lg" border="1px solid" borderColor="gray.200">
                     <Table variant="simple" size="md">
-                        <Thead bg="blue.800">
+                        <Thead bg={secondaryColor}>
                             <Tr>
-                                <Th color="yellow.400" textAlign="center">Rank</Th>
-                                <Th color="yellow.400">Team Name</Th>
+                                <Th color={primaryColor} textAlign="center">Rank</Th>
+                                <Th color={primaryColor}>Team Name</Th>
                                 {["masters", "pga", "US", "open", "total"].map((header) => (
                                     <Th 
                                         key={header}
-                                        color="yellow.400" 
+                                        color={primaryColor} 
                                         textAlign="center" 
                                         cursor="pointer" 
                                         onClick={() => handleSort(header)}
@@ -184,12 +189,12 @@ const OverallLeaderboard = () => {
                             {sortedTeams.map((user: any, index) => (
                                 <Tr key={index} _hover={{ bg: "gray.50" }} transition="0.2s">
                                     <Td textAlign="center" fontWeight="bold">{user.place}</Td>
-                                    <Td color="blue.800" fontWeight="extrabold">{user.name}</Td>
+                                    <Td color={secondaryColor} fontWeight="extrabold">{user.name}</Td>
                                     <Td textAlign="center">{user.masters}</Td>
                                     <Td textAlign="center">{user.pga}</Td>
                                     <Td textAlign="center">{user.US}</Td>
                                     <Td textAlign="center">{user.open}</Td>
-                                    <Td textAlign="center" fontWeight="black" color="blue.600" bg="blue.50">{user.total}</Td>
+                                    <Td textAlign="center" fontWeight="black" color={primaryColor} bg={secondaryColor}>{user.total}</Td>
                                 </Tr>
                             ))}
                         </Tbody>

@@ -13,6 +13,8 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 
 export default function Navbar({ Links: Links }: { Links: { label: string; href: string }[] }) {
+    const secondaryColor: string = "rgb(2, 89, 57)";
+    const primaryColor: string = "rgb(251, 243, 8)";    
     const { isOpen, onOpen, onClose } = useDisclosure();
     
     const [scrolled, setScrolled] = useState(false);
@@ -27,10 +29,10 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
     }, []);
 
     return (
-        <Box bg={scrolled ? "rgba(44, 82, 130, 0.4)" : "blue.800"} 
+        <Box bg={scrolled ? "rgba(2, 89, 57, 0.75)" : secondaryColor} 
              transition="background-color 0.5s ease"
             backdropFilter={scrolled ? "blur(10px)" : "none"}
-            px={4} color="yellow.400" position="sticky" top={0} zIndex="sticky">
+            px={4} color={primaryColor} position="sticky" top={0} zIndex="sticky">
             <Flex h={16} alignItems="center" justifyContent="space-between">
                 {/* Logo / Brand */}
                 <Box fontWeight="bold" fontSize="xl">
@@ -38,7 +40,7 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
                         px={2}
                         py={1}
                         rounded="md"
-                        _hover={{ bg: "blue.700" }}
+                        _hover={{ bg: secondaryColor }}
                         href="/"
                     >
                         Fantasy Golf Competition
@@ -53,7 +55,7 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
                             px={2}
                             py={1}
                             rounded="md"
-                            _hover={{ bg: "blue.700" }}
+                            _hover={{ bg: secondaryColor }}
                             href={link.href}
                             isExternal={link.label === "World Power Rankings"}
                         >
@@ -83,7 +85,7 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
                                 px={2}
                                 py={1}
                                 rounded="md"
-                                _hover={{ bg: "blue.700" }}
+                                _hover={{ bg: secondaryColor }}
                                 href={link.href}
                                 isExternal={link.label === "World Power Rankings"}
                             >
