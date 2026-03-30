@@ -1,41 +1,40 @@
 # Fantasy Golf Competition
-Welcome to the Fantasy Golf Competition! This project allows users to create teams by selecting golfers, with scores determined by their performance in real-life tournaments.
+Full-stack fantasy golf platform for the Majors, built with a Python scoring engine and Next.js frontend. Each team drafts a set roster of players, earning points based on tournament finishes — with bonuses for top picks, full-cut rosters, and players who significantly outperform their projections. Standings update automatically as the tournament progresses.
 
-## Project Overview
-The Fantasy Golf Competition is a web application where users can form fantasy teams consisting of real golfers. The scores of the teams are based on the golfers' actual performance in ongoing tournaments. The application provides real-time updates, leveraging APIs to fetch live scores and standings.
-
-Check out the live application [here](https://golf-competition-193e590fabff.herokuapp.com/)
+Check out the live application [here](https://fantasy-golf-neon.vercel.app)
 
 ## Features
 - Create and manage fantasy golf teams
-- Real-time updates of scores based on golfers' tournament performance
+- Real-time score updates based on golfers' tournament performance
 - Leaderboards to track team standings
 - Responsive and user-friendly interface
 
 ## Project Structure
 - App/FantasyGolf
-  - Python code that contains the majority of the competition logic
-  - Reads the teams from a csv file and creates the league
-  - Reads the leaderboard and caulculates scores
-  - Main method found in main.py
+  - Core competition logic
+  - Reads teams from a configuration file and creates the league
+  - Reads the leaderboard and calculates scores
+  - Entry point: main.py
 - App/Database
-  - Code for interacting with the MongoDB database
-  - Reads the current overall learderboard for the compeition
+  - MongoDB interaction layer
+  - Reads the current overall leaderboard
   - Uploads results for the current Major
 - App/data
-  - Python code for reading in the golf power rankings and gettin real-time updates in the leaderboard for golf tournaments
-- App/FantasyGolfServer
-  - Webserver for displaying the results on the webpage
-  - Interacts with the database and updates every minute
-  
+  - Fetches golf power rankings and real-time leaderboard updates
+- App/frontend
+  - Next.js (React) frontend deployed on Vercel
+  - Chakra UI component library
+  - Displays live standings, team scores, and leaderboards
+  - Queries the database and reflects the latest scoring results
+
 ## Technologies Used
 ### Backend
-- Python: Used for backend processing and API integrations to fetch real-time data.
-- APIs: Used golf leaderboard data API on RAPIDAPI to get live updates during tournaments 
+- Python: Core scoring engine and competition logic
+- RapidAPI: Golf leaderboard data for live tournament updates
+
 ### Frontend
-- Node.js and Express: For server-side scripting and handling API routes.
-- HTML/CSS: For structuring and styling the web pages.
+- Next.js: Frontend framework for displaying results and standings
+- Vercel: Frontend deployment and hosting
+
 ### Database
-- MongoDB database
-### Hosting
--Heroku: Used for deploying the application.
+- MongoDB
