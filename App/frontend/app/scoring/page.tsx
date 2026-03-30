@@ -28,7 +28,7 @@ const ScoringPage = () => {
 <Container maxW="container.md" py={10}>
   <VStack spacing={8} align="stretch" textAlign="left">
     <Heading as="h1" size="2xl" textAlign="center" mb={6}>
-      2025 Scoring System
+      2026 Scoring System
     </Heading>
 
     {/* Rules Box */}
