@@ -43,7 +43,7 @@ export default function LeaderboardTable({ initialData }: LeaderboardProps) {
         );
 
     if (error) return <p style={{ textAlign: 'center', color: 'red' }}>Failed to load leaderboard.</p>;
-    if (!users.length) return <p style={{ textAlign: 'center', marginTop: '20px' }}>No users found.</p>;
+    if (!users.length) return <p style={{ textAlign: 'center', marginTop: '20px' }}>Results coming soon.</p>;
 
     return (
         <div style={{ width: "100%", overflowX: "auto" }}>

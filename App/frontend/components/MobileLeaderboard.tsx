@@ -6,7 +6,14 @@ import { useState } from "react";
 import { Badge, Collapse, Spinner, Flex, Box, Text, VStack, Divider } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = async (url: string) => {
+    const res = await fetch(url);
+    if (!res.ok) {
+        const errorData = await res.json().catch(() => null);
+        throw new Error(errorData?.error || `Request failed with status ${res.status}`);
+    }
+    return res.json();
+};
 
 interface LeaderboardProps {
     initialData?: any;
@@ -32,6 +39,22 @@ export default function LeaderboardTable({ initialData }: LeaderboardProps) {
     const toggle = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
+
+    if (isLoading && !leaderboard) {
+        return (
+            <Flex justify="center" align="center" minH="200px">
+                <Spinner size="xl" />
+            </Flex>
+        );
+    }
+
+    if (error) {
+        return <Text textAlign="center" color="red.500" mt={4}>Failed to load leaderboard.</Text>;
+    }
+
+    if (!users.length) {
+        return <Text textAlign="center" mt={4}>Results coming soon.</Text>;
+    }
 
     const worstInTop25 = leaderboard?.worstTop25 || "";
 
