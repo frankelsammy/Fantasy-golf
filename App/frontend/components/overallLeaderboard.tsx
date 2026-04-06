@@ -110,7 +110,8 @@ const OverallLeaderboard = () => {
                             <MenuButton 
                                 as={Button} 
                                 rightIcon={<ChevronDownIcon />} 
-                                colorScheme={secondaryColor} 
+                                bg={secondaryColor}
+                                color="white"
                                 variant="solid"
                                 boxShadow="md"
                                 width="full"
