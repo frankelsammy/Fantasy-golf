@@ -1,25 +1,34 @@
 # Includes pythod functions to get live leaderboard of any given tournament, as well
 # as current world rankings. Uploads results to text files
 
+from pathlib import Path
+
 import requests
 import pandas as pd
 import os
 import sys
 from dotenv import load_dotenv
-import random
 
+import random
+# Get the main directory
+main_dir = Path(__file__).parent.parent / 'FantasyGolf' / 'main'
+
+# Change to the main directory so relative paths work
+os.chdir(main_dir)
+# Add the main directory to the path so all imports work correctly
+sys.path.insert(0, str(main_dir))
+sys.path.append('../../data') 
 import config
 
 # import config
 load_dotenv() 
 API_KEY =  os.getenv("API_KEY")
 
-
-# 2024 season tournament ID's
-# Masters 651
-# PGA Championship 658
-# US open 662
-# Open championship: 701:
+# 2026 season tournament ID's
+# Masters 014
+# PGA Championship 843
+# US open 848
+# Open championship: TBD
 
 def results():
     ## Uncoment all this to actually pull from the API
@@ -30,7 +39,7 @@ def results():
     if config.CURRENT_MODE == config.MODE.TESTING:
         querystring = {"orgId":"1","tournId":"014","year":"2025"}
     else:
-        querystring = {"orgId":"1","tournId":"100","year":"2025"}
+        querystring = {"orgId":"1","tournId":"014","year":"2026"}
 
     headers = {
         "x-rapidapi-key": API_KEY,
@@ -38,7 +47,7 @@ def results():
     }
 
     response = requests.get(url, headers=headers, params=querystring)
-    #print(response.json().keys())
+    print(response.json())
     leaderboard = response.json()['leaderboardRows']
 
     # Find out what round is being played
@@ -51,7 +60,7 @@ def results():
         last_name = players["lastName"]
         first_name = players["firstName"]
         position = 1000
-        #Philip Barbaree, Jr.
+
         if last_name == "Åberg":
             last_name = "Aberg"
         if last_name == "Fitzpatrick":
@@ -133,9 +142,6 @@ def get_player_list():
             outfile.write(f"{player['first_name']} {last_name}\n")
             
 
-#results()
-# rankings()
-# #get_player_list()
-rankings()
-#get_player_list()
-print("Done")
+if __name__ == "__main__":
+    results()
+    print("Done")
