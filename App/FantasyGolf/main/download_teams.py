@@ -78,6 +78,8 @@ def get_submissions():
                     first_name = 'J.T.'
                 if last_name == 'Barbaree, Jr.':
                     last_name = 'Barbaree'
+                if last_name == "García":
+                    last_name = "Garcia"
                 res = first_name + " " + last_name
                 
             if field_name in FIELD_MAP:
@@ -87,11 +89,12 @@ def get_submissions():
         rows.append(row)
 
     fieldnames = ["teamName", "Email", "p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"]
-    with open("submissions.csv", "w", newline="") as f:
+    with open(os.path.join(os.path.dirname(__file__), "resources", "teams.csv"), "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore", quoting=csv.QUOTE_ALL)
         f.write(",".join(fieldnames) + "\n")  # unquoted header
         writer.writerows(rows)
 
-    print(f"Saved {len(rows)} submissions to submissions.csv")
+    print(f"Saved {len(rows)} submissions to teams.csv")
 
-get_submissions()
+if __name__ == "__main__":
+    get_submissions()

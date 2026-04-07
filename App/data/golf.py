@@ -47,7 +47,6 @@ def results():
     }
 
     response = requests.get(url, headers=headers, params=querystring)
-    print(response.json())
     leaderboard = response.json()['leaderboardRows']
 
     # Find out what round is being played

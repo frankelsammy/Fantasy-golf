@@ -89,6 +89,15 @@ export default function LeaderboardTable({ initialData }: LeaderboardProps) {
                                             ALL CUT
                                         </Badge>
                                     )}
+                                     {user.WorstRankedBonus && (
+                                        <Badge
+                                            colorScheme="red"
+                                            fontSize="0.6em"
+                                            borderRadius="full"
+                                        >
+                                            HIGHEST RANKED IN TOP 25
+                                        </Badge>
+                                    )}
                                 </Flex>
 
                                 <Text fontSize="sm" color="gray.500">
@@ -133,7 +142,7 @@ export default function LeaderboardTable({ initialData }: LeaderboardProps) {
                                                 </Text>
                                                 {player.Name === worstInTop25 && (
                                                     <Badge colorScheme="red" fontSize="0.6em" borderRadius="full">
-                                                        LOWEST TOP 25
+                                                        WORST RANKED TOP 25
                                                     </Badge>
                                                 )}
                                             </Flex>
