@@ -13,8 +13,11 @@ from league import League
 from teams import Team
 from player import Player
 from updateDB import upload_to_db, retrieve_overall
+import download_teams
+from datetime import datetime
 
 def run_tournament():
+    
     # retrieve the rankings 
     rankings_dict = rankings()          # dict of player_name -> ranking
     # Update the leaderboard
@@ -70,5 +73,8 @@ def run_tournament():
     #Upload results to Database
     if config.CURRENT_MODE == config.MODE.PROD:
         upload_to_db()
+
 if __name__ == "__main__":
+    if datetime.today().weekday() == 3: # Only run on Thursdays
+        download_teams.get_submissions()
     run_tournament()
