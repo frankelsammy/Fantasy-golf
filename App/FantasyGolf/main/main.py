@@ -75,4 +75,6 @@ def run_tournament():
         upload_to_db()
 
 if __name__ == "__main__":
+    if datetime.today().weekday() == 3: # Only run on Thursdays
+        download_teams.get_submissions()
     run_tournament()
