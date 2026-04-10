@@ -2,7 +2,7 @@
 import React from 'react'
 import { useBreakpointValue } from '@chakra-ui/react';
 
-import MobileLeaderboardTable from "@/components/MobileLeaderboard";
+import TournamentLeaderboard from "@/components/TournamentLeaderboard";
 interface LeaderboardProps {
     initialData?: any;
 }
@@ -11,7 +11,7 @@ const LeaderboardChooser = ({ initialData }: LeaderboardProps) => {
     console.log("You are using a " + (isMobile ? "mobile" : "desktop") + " device.");
   return (
     <div>
-      {isMobile ? <MobileLeaderboardTable initialData={initialData} /> : <MobileLeaderboardTable initialData={initialData} />}
+      {isMobile ? <TournamentLeaderboard initialData={initialData} /> : <TournamentLeaderboard initialData={initialData} />}
     </div>
   )
 }

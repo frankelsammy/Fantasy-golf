@@ -78,6 +78,8 @@ def get_submissions():
                     first_name = 'J.T.'
                 if last_name == 'Barbaree, Jr.':
                     last_name = 'Barbaree'
+                if last_name == "García":
+                    last_name = "Garcia"
                 res = first_name + " " + last_name
                 
             if field_name in FIELD_MAP:
