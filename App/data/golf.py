@@ -51,6 +51,7 @@ def results():
 
     # Find out what round is being played
     config.CURRENT_ROUND = int(response.json()['roundId']['$numberInt'])
+    print(config.current_tournament)
     print(config.CURRENT_ROUND)
 
 

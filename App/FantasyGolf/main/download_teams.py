@@ -96,5 +96,11 @@ def get_submissions():
 
     print(f"Saved {len(rows)} submissions to teams.csv")
 
+def get_emails():
+    with open(os.path.join(os.path.dirname(__file__), "resources", "teams.csv"), "r") as f:
+        reader = csv.DictReader(f)
+        emails = [row["Email"] for row in reader if row["Email"]]
+    return emails
+
 if __name__ == "__main__":
-    get_submissions()
+    print(len(get_emails()))

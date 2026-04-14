@@ -6,6 +6,9 @@ class TOURNAMENT(Enum):
     OPEN_CHAMPIONSHIP = 3
     PGA = 4
 
+    def __str__(self):
+        return self.name
+
 class MODE(Enum):
     PROD = 1
     TESTING = 2
