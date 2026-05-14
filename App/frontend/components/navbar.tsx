@@ -19,7 +19,7 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
 
     const [scrolled, setScrolled] = useState(false);
 
-    useEffect((x) => {
+    useEffect(() => {
         const handleScroll = () => {
             // Change background after scrolling 50px
             setScrolled(window.scrollY > 50);
