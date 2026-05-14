@@ -82,7 +82,9 @@ export default function LeaderboardTable({ initialData }: LeaderboardProps) {
                                 <Td border="1px solid" borderColor="gray.300" textAlign="center" color="blue.800"><strong>{user.Name}</strong></Td>
                                 {user.Roster?.map((player: any, i: number) => (
                                     <React.Fragment key={i}>
-                                        <Td border="1px solid" borderColor="gray.300" textAlign="center" color="blue.800">{getName(player.Name, player.Finish)}</Td>
+                                        <Td border="1px solid" borderColor="gray.300" textAlign="center" color="blue.800">
+                                            {player.Finish == 1001 ? "N/A" : getName(player.Name, player.Finish)}
+                                        </Td>
                                         <Td border="1px solid" borderColor="gray.300" textAlign="center" color="blue.800">{player["Points scored"] ?? "N/A"}</Td>
                                     </React.Fragment>
                                 ))}

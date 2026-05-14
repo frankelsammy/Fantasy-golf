@@ -1,5 +1,6 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
+import config
 class Player:
     
     def __init__(self, name, ranking, first, second, finish, status, worst_top_25, CURRENT_ROUND):
@@ -12,7 +13,10 @@ class Player:
             self.made_cut = False
         else:
             if CURRENT_ROUND == 1 or CURRENT_ROUND == 2:
-                if self.finish > 50:
+                cut_line = 70
+                if config.current_tournament == config.TOURNAMENT.MASTERS:
+                    cut_line = 50
+                if self.finish > cut_line:
                     self.made_cut = False
                 else:
                     self.made_cut = True

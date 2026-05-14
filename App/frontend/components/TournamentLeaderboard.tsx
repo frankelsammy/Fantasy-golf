@@ -89,7 +89,7 @@ export default function LeaderboardTable({ initialData }: LeaderboardProps) {
                                             ALL CUT
                                         </Badge>
                                     )}
-                                     {user.WorstRankedBonus && (
+                                    {user.WorstRankedBonus && (
                                         <Badge
                                             colorScheme="red"
                                             fontSize="0.6em"
@@ -138,7 +138,7 @@ export default function LeaderboardTable({ initialData }: LeaderboardProps) {
                                                 {player.Finish === 1 && "🏆"}
                                                 <Text fontWeight="medium">{player.Name}</Text>
                                                 <Text fontSize="sm" color="gray.600">
-                                                    ({getToastPlace(player.Finish)})
+                                                    ({player.Finish === 1001 ? "N/A" : getToastPlace(player.Finish)})
                                                 </Text>
                                                 {player.Name === worstInTop25 && (
                                                     <Badge colorScheme="red" fontSize="0.6em" borderRadius="full">

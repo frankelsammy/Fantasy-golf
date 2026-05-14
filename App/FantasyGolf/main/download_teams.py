@@ -66,8 +66,6 @@ def get_submissions():
                 last_name = " ".join(player_name[1:])   
                 if last_name == "Åberg":
                     last_name = "Aberg"
-                if last_name == "Fitzpatrick":
-                    first_name = "Matt"
                 if last_name == "Smith" and first_name == "Cam":
                     first_name = "Cameron"
                 if last_name == "Højgaard":
