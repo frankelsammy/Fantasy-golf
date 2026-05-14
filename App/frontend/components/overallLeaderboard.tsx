@@ -32,8 +32,8 @@ const ChevronDownIcon = () => (
 );
 
 const OverallLeaderboard = () => {
-    const primaryColor: string = "rgb(251, 243, 8)";
-    const secondaryColor: string = "rgb(2, 89, 57)";
+    const secondaryColor: string = "rgb(37, 50, 85)";
+    const primaryColor: string = "rgb(183, 149, 90)";
 
     const [teams, setTeams] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);

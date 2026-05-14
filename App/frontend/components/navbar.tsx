@@ -13,8 +13,8 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 
 export default function Navbar({ Links: Links }: { Links: { label: string; href: string }[] }) {
-    const secondaryColor: string = "rgb(2, 89, 57)";
-    const primaryColor: string = "rgb(251, 243, 8)";    
+    const secondaryColor: string = "rgb(183, 149, 90)";
+    const primaryColor: string = "rgb(37, 50, 85)";    
     const { isOpen, onOpen, onClose } = useDisclosure();
     
     const [scrolled, setScrolled] = useState(false);

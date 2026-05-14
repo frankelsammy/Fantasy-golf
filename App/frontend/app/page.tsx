@@ -18,7 +18,7 @@ const page = async () => {
   return (
     <div>
       <Navbar Links={Links} />
-      <img src='/logos/masters.png' alt='Open' style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '30%', paddingTop: '20px' }} />
+      <img src='/logos/pga.png' alt='Open' style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '30%', paddingTop: '20px' }} />
       <Divider mt={4} borderColor="gray.700" borderWidth="1px"/>
       <LeaderboardChooser initialData={data} />
     </div>
