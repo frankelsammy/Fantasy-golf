@@ -39,7 +39,7 @@ def results():
     if config.CURRENT_MODE == config.MODE.TESTING:
         querystring = {"orgId":"1","tournId":"014","year":"2025"}
     else:
-        querystring = {"orgId":"1","tournId":"014","year":"2026"}
+        querystring = {"orgId":"1","tournId":"033","year":"2026"}
 
     headers = {
         "x-rapidapi-key": API_KEY,

@@ -103,4 +103,4 @@ def get_emails():
     return emails
 
 if __name__ == "__main__":
-    print(len(get_emails()))
+    get_submissions()

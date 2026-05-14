@@ -14,12 +14,12 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function Navbar({ Links: Links }: { Links: { label: string; href: string }[] }) {
     const secondaryColor: string = "rgb(183, 149, 90)";
-    const primaryColor: string = "rgb(37, 50, 85)";    
+    const primaryColor: string = "rgb(37, 50, 85)";
     const { isOpen, onOpen, onClose } = useDisclosure();
-    
+
     const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
+    useEffect((x) => {
         const handleScroll = () => {
             // Change background after scrolling 50px
             setScrolled(window.scrollY > 50);
@@ -29,8 +29,8 @@ export default function Navbar({ Links: Links }: { Links: { label: string; href:
     }, []);
 
     return (
-        <Box bg={scrolled ? "rgba(2, 89, 57, 0.75)" : secondaryColor} 
-             transition="background-color 0.5s ease"
+        <Box bg={scrolled ? "rgba(183, 149, 90, 0.5)" : secondaryColor}
+            transition="background-color 0.5s ease"
             backdropFilter={scrolled ? "blur(10px)" : "none"}
             px={4} color={primaryColor} position="sticky" top={0} zIndex="sticky">
             <Flex h={16} alignItems="center" justifyContent="space-between">
