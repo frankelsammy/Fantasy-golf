@@ -10,7 +10,7 @@ const Links = [
   { label: "Home", href: "/" },
   { label: "Overall Leaderboard", href: "/overall" },
   { label: "Scoring", href: "/scoring" },
-  { label: "World Power Rankings", href : "https://datagolf.com/datagolf-rankings" },
+  { label: "World Power Rankings", href: "https://datagolf.com/datagolf-rankings" },
 ];
 
 const page = async () => {
@@ -18,8 +18,8 @@ const page = async () => {
   return (
     <div>
       <Navbar Links={Links} />
-      <img src='/logos/pga.png' alt='Open' style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '30%', paddingTop: '20px' }} />
-      <Divider mt={4} borderColor="gray.700" borderWidth="1px"/>
+      <img src='/logos/us-open.avif' alt='Open' style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', width: '30%', paddingTop: '20px' }} />
+      <Divider mt={4} borderColor="gray.700" borderWidth="1px" />
       <LeaderboardChooser initialData={data} />
     </div>
   )

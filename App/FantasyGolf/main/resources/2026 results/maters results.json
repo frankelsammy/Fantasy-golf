@@ -1,0 +1,2063 @@
+{
+  "_id": {
+    "$oid": "69dc22c64d50e88b824ae394"
+  },
+  "title": "leaderboard",
+  "Date": "Sunday, April 12 6:55 PM",
+  "CURRENT_ROUND": 4,
+  "worstTop25": "Max Homa",
+  "Teams": [
+    {
+      "Name": "Wolfe Welch",
+      "Total Score": 174.5,
+      "WorstRankedBonus": false,
+      "Place": 1,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 34.5,
+          "Finish": 12
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 1
+        },
+        {
+          "Name": "Sepp Straka",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 41
+        },
+        {
+          "Name": "Tyrrell Hatton",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        }
+      ]
+    },
+    {
+      "Name": "Daniel Bland",
+      "Total Score": 171.5,
+      "WorstRankedBonus": false,
+      "Place": 2,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 46.5,
+          "Finish": 3
+        },
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Viktor Hovland",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 18
+        },
+        {
+          "Name": "Chris Gotterup",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 24
+        },
+        {
+          "Name": "Brooks Koepka",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Jordan Spieth",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Hideki Matsuyama",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 12
+        }
+      ]
+    },
+    {
+      "Name": "Bill Mayer",
+      "Total Score": 165,
+      "WorstRankedBonus": false,
+      "Place": 3,
+      "AllCut": true,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 48,
+          "Finish": 1
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Hideki Matsuyama",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 12
+        },
+        {
+          "Name": "Corey Conners",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 49
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Patrick Cantlay",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 12
+        },
+        {
+          "Name": "Russell Henley",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        }
+      ]
+    },
+    {
+      "Name": "Ari and Micah",
+      "Total Score": 159,
+      "WorstRankedBonus": false,
+      "Place": 4,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 48,
+          "Finish": 1
+        },
+        {
+          "Name": "Jordan Spieth",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Akshay Bhatia",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        }
+      ]
+    },
+    {
+      "Name": "AJ Robinson",
+      "Total Score": 155.5,
+      "WorstRankedBonus": false,
+      "Place": 5,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 13.5,
+          "Finish": 9
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 1
+        },
+        {
+          "Name": "Adam Scott",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 24
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        }
+      ]
+    },
+    {
+      "Name": "Ed Hetherington",
+      "Total Score": 155,
+      "WorstRankedBonus": false,
+      "Place": 6,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 48,
+          "Finish": 1
+        },
+        {
+          "Name": "Chris Gotterup",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 24
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Sungjae Im",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 46
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        }
+      ]
+    },
+    {
+      "Name": "Searle Videlefsky",
+      "Total Score": 154.5,
+      "WorstRankedBonus": true,
+      "Place": 7,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Brooks Koepka",
+          "Cut": false,
+          "Points scored": 34.5,
+          "Finish": 12
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Daniel Berger",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Max Homa",
+          "Cut": false,
+          "Points scored": 25,
+          "Finish": 9
+        }
+      ]
+    },
+    {
+      "Name": "George Monastra",
+      "Total Score": 152,
+      "WorstRankedBonus": false,
+      "Place": 8,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 48,
+          "Finish": 1
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        },
+        {
+          "Name": "Si Woo Kim",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 47
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        }
+      ]
+    },
+    {
+      "Name": "Stuart Rosenthal",
+      "Total Score": 143.5,
+      "WorstRankedBonus": false,
+      "Place": 9,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Collin Morikawa",
+          "Cut": false,
+          "Points scored": 44,
+          "Finish": 7
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 13.5,
+          "Finish": 9
+        },
+        {
+          "Name": "Hideki Matsuyama",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 12
+        },
+        {
+          "Name": "Adam Scott",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 24
+        },
+        {
+          "Name": "Patrick Cantlay",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 12
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        },
+        {
+          "Name": "Akshay Bhatia",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Nicolai Hojgaard",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        }
+      ]
+    },
+    {
+      "Name": "Paul Costa",
+      "Total Score": 141,
+      "WorstRankedBonus": false,
+      "Place": 10,
+      "AllCut": true,
+      "Roster": [
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 21
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 24,
+          "Finish": 2
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 1
+        },
+        {
+          "Name": "Corey Conners",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 49
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Collin Morikawa",
+          "Cut": false,
+          "Points scored": 22,
+          "Finish": 7
+        },
+        {
+          "Name": "Hideki Matsuyama",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 12
+        }
+      ]
+    },
+    {
+      "Name": "Neill Videlefsky",
+      "Total Score": 138,
+      "WorstRankedBonus": false,
+      "Place": 11,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 48,
+          "Finish": 1
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Daniel Berger",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Collin Morikawa",
+          "Cut": false,
+          "Points scored": 22,
+          "Finish": 7
+        },
+        {
+          "Name": "Sergio Garcia",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 52
+        }
+      ]
+    },
+    {
+      "Name": "Nate Robinson",
+      "Total Score": 137,
+      "WorstRankedBonus": false,
+      "Place": 12,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 40,
+          "Finish": 3
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        },
+        {
+          "Name": "Jake Knapp",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 11
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        }
+      ]
+    },
+    {
+      "Name": "David Frankel",
+      "Total Score": 129,
+      "WorstRankedBonus": false,
+      "Place": 13,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 46,
+          "Finish": 12
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 30,
+          "Finish": 3
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Casey Jarvis",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 1
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        },
+        {
+          "Name": "Shane Lowry",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 30
+        }
+      ]
+    },
+    {
+      "Name": "Danny Frankel",
+      "Total Score": 125,
+      "WorstRankedBonus": false,
+      "Place": 14,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Akshay Bhatia",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Jacob Bridgeman",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 41
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        },
+        {
+          "Name": "Collin Morikawa",
+          "Cut": false,
+          "Points scored": 22,
+          "Finish": 7
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 1
+        },
+        {
+          "Name": "Adam Scott",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 24
+        }
+      ]
+    },
+    {
+      "Name": "Luke Colley",
+      "Total Score": 122,
+      "WorstRankedBonus": false,
+      "Place": 15,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Russell Henley",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Adam Scott",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 24
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Jake Knapp",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 11
+        },
+        {
+          "Name": "Corey Conners",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 49
+        }
+      ]
+    },
+    {
+      "Name": "Ralston Welch",
+      "Total Score": 121,
+      "WorstRankedBonus": false,
+      "Place": 16,
+      "AllCut": true,
+      "Roster": [
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 18
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 12,
+          "Finish": 21
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        },
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Corey Conners",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 49
+        },
+        {
+          "Name": "Jacob Bridgeman",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 41
+        }
+      ]
+    },
+    {
+      "Name": "Mike Mike",
+      "Total Score": 120.5,
+      "WorstRankedBonus": false,
+      "Place": 17,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 46.5,
+          "Finish": 3
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Jacob Bridgeman",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 41
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        }
+      ]
+    },
+    {
+      "Name": "Jacques Mosseri",
+      "Total Score": 120,
+      "WorstRankedBonus": false,
+      "Place": 18,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Tyrrell Hatton",
+          "Cut": false,
+          "Points scored": 62,
+          "Finish": 3
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 12,
+          "Finish": 18
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Maverick McNealy",
+          "Cut": false,
+          "Points scored": 14,
+          "Finish": 18
+        },
+        {
+          "Name": "Chris Gotterup",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 24
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        },
+        {
+          "Name": "Sungjae Im",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 46
+        },
+        {
+          "Name": "Min Woo Lee",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        }
+      ]
+    },
+    {
+      "Name": "Z Machine",
+      "Total Score": 116,
+      "WorstRankedBonus": false,
+      "Place": 19,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Akshay Bhatia",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 30,
+          "Finish": 3
+        },
+        {
+          "Name": "Viktor Hovland",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 18
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 1
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Patrick Cantlay",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 12
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        }
+      ]
+    },
+    {
+      "Name": "Matt Akins",
+      "Total Score": 113,
+      "WorstRankedBonus": false,
+      "Place": 20,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 12,
+          "Finish": 21
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 1
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        }
+      ]
+    },
+    {
+      "Name": "jude skove",
+      "Total Score": 106,
+      "WorstRankedBonus": false,
+      "Place": 21,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 21
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 1
+        },
+        {
+          "Name": "J.J. Spaun",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Chris Gotterup",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 24
+        },
+        {
+          "Name": "Viktor Hovland",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 18
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        }
+      ]
+    },
+    {
+      "Name": "Sammy Frankel",
+      "Total Score": 106,
+      "WorstRankedBonus": false,
+      "Place": 21,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Akshay Bhatia",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Viktor Hovland",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 18
+        },
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        }
+      ]
+    },
+    {
+      "Name": "Noam Itzhak",
+      "Total Score": 105,
+      "WorstRankedBonus": false,
+      "Place": 23,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 12,
+          "Finish": 18
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 1
+        }
+      ]
+    },
+    {
+      "Name": "Jake Maziar",
+      "Total Score": 99,
+      "WorstRankedBonus": false,
+      "Place": 24,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        },
+        {
+          "Name": "Ben Griffin",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 33
+        },
+        {
+          "Name": "Brooks Koepka",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Akshay Bhatia",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        }
+      ]
+    },
+    {
+      "Name": "Michael Young",
+      "Total Score": 97,
+      "WorstRankedBonus": false,
+      "Place": 25,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 9
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 12,
+          "Finish": 21
+        },
+        {
+          "Name": "Akshay Bhatia",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        }
+      ]
+    },
+    {
+      "Name": "Ezra Weener",
+      "Total Score": 96,
+      "WorstRankedBonus": false,
+      "Place": 26,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Chris Gotterup",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 24
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        }
+      ]
+    },
+    {
+      "Name": "Alex Khalaf",
+      "Total Score": 92,
+      "WorstRankedBonus": false,
+      "Place": 27,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 24,
+          "Finish": 2
+        },
+        {
+          "Name": "Akshay Bhatia",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Sepp Straka",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 41
+        },
+        {
+          "Name": "Justin Rose",
+          "Cut": false,
+          "Points scored": 31,
+          "Finish": 3
+        },
+        {
+          "Name": "Corey Conners",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 49
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Jake Knapp",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 11
+        }
+      ]
+    },
+    {
+      "Name": "Shaun Stoll",
+      "Total Score": 82,
+      "WorstRankedBonus": false,
+      "Place": 28,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 24,
+          "Finish": 2
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Min Woo Lee",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        },
+        {
+          "Name": "Collin Morikawa",
+          "Cut": false,
+          "Points scored": 22,
+          "Finish": 7
+        }
+      ]
+    },
+    {
+      "Name": "John Chronley",
+      "Total Score": 79,
+      "WorstRankedBonus": false,
+      "Place": 29,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Min Woo Lee",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Rory McIlroy",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 1
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        },
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Cameron Smith",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        }
+      ]
+    },
+    {
+      "Name": "Cullen Welch",
+      "Total Score": 76,
+      "WorstRankedBonus": false,
+      "Place": 30,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 21
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 12,
+          "Finish": 18
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Jacob Bridgeman",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 41
+        },
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Robert MacIntyre",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Akshay Bhatia",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        }
+      ]
+    },
+    {
+      "Name": "Chad Yoshinaka",
+      "Total Score": 69,
+      "WorstRankedBonus": false,
+      "Place": 31,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 32,
+          "Finish": 2
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Cameron Young",
+          "Cut": false,
+          "Points scored": 20,
+          "Finish": 3
+        },
+        {
+          "Name": "Robert MacIntyre",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        }
+      ]
+    },
+    {
+      "Name": "Noah Joey",
+      "Total Score": 65,
+      "WorstRankedBonus": false,
+      "Place": 32,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 12,
+          "Finish": 21
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        },
+        {
+          "Name": "Nicolai Hojgaard",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Si Woo Kim",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 47
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        }
+      ]
+    },
+    {
+      "Name": "Donald Campbell",
+      "Total Score": 61,
+      "WorstRankedBonus": false,
+      "Place": 33,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Patrick Reed",
+          "Cut": false,
+          "Points scored": 23,
+          "Finish": 12
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Sepp Straka",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 41
+        }
+      ]
+    },
+    {
+      "Name": "David Scoular",
+      "Total Score": 56.5,
+      "WorstRankedBonus": false,
+      "Place": 34,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 13.5,
+          "Finish": 9
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Robert MacIntyre",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Chris Gotterup",
+          "Cut": false,
+          "Points scored": 19,
+          "Finish": 24
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        }
+      ]
+    },
+    {
+      "Name": "Douglas Ducray",
+      "Total Score": 52,
+      "WorstRankedBonus": false,
+      "Place": 35,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 18,
+          "Finish": 9
+        },
+        {
+          "Name": "Jon Rahm",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 38
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        },
+        {
+          "Name": "Nicolai Hojgaard",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Robert MacIntyre",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        },
+        {
+          "Name": "Jacob Bridgeman",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 41
+        },
+        {
+          "Name": "Si Woo Kim",
+          "Cut": false,
+          "Points scored": 5,
+          "Finish": 47
+        }
+      ]
+    },
+    {
+      "Name": "Josh and jimmy Shizgal",
+      "Total Score": 41,
+      "WorstRankedBonus": false,
+      "Place": 36,
+      "AllCut": false,
+      "Roster": [
+        {
+          "Name": "J.J. Spaun",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Bryson DeChambeau",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Tommy Fleetwood",
+          "Cut": false,
+          "Points scored": 0,
+          "Finish": 33
+        },
+        {
+          "Name": "Nicolai Hojgaard",
+          "Cut": true,
+          "Points scored": 0,
+          "Finish": 1000
+        },
+        {
+          "Name": "Xander Schauffele",
+          "Cut": false,
+          "Points scored": 9,
+          "Finish": 9
+        },
+        {
+          "Name": "Ludvig Aberg",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 21
+        },
+        {
+          "Name": "Scottie Scheffler",
+          "Cut": false,
+          "Points scored": 16,
+          "Finish": 2
+        },
+        {
+          "Name": "Matt Fitzpatrick",
+          "Cut": false,
+          "Points scored": 8,
+          "Finish": 18
+        }
+      ]
+    }
+  ]
+}
