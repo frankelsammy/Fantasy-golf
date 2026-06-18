@@ -141,6 +141,6 @@ def get_player_list():
             
 
 if __name__ == "__main__":
-    #results()
-    get_player_list()
+    results()
+    #get_player_list()
     print("Done")
