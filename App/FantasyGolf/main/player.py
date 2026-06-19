@@ -13,7 +13,7 @@ class Player:
             self.made_cut = False
         else:
             if CURRENT_ROUND == 1 or CURRENT_ROUND == 2:
-                cut_line = 70
+                cut_line = 60
                 if config.current_tournament == config.TOURNAMENT.MASTERS:
                     cut_line = 50
                 if self.finish > cut_line:
