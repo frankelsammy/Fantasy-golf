@@ -1,6 +1,8 @@
 # Utilities
+from collections import defaultdict
 import os
 import sys
+
 sys.path.append('../../data') 
 sys.path.append('../../Database') 
 import subprocess
@@ -12,7 +14,7 @@ from golf import rankings, results
 from league import League
 from teams import Team
 from player import Player
-from updateDB import upload_to_db, retrieve_overall
+from updateDB import upload_to_db, retrieve_overall, upload_player_counts
 import download_teams
 from datetime import datetime
 
@@ -22,6 +24,8 @@ def run_tournament():
     rankings_dict = rankings()          # dict of player_name -> ranking
     # Update the leaderboard
     results_df = results()              #Dataframe: Name, Position, Status
+    
+    players_counts = defaultdict(int)
 
     competition = League()
 
@@ -39,6 +43,7 @@ def run_tournament():
         # Create a player for each player in the team
         for i in range(1,9):
             player_name = row[f'p{i}']
+            players_counts[player_name] += 1
             rank = rankings_dict.get(player_name, 1000)
             if player_name in results_df['Name'].values:
                 player_row = results_df[results_df['Name'] == player_name].iloc[0]
@@ -73,8 +78,11 @@ def run_tournament():
     #Upload results to Database
     if config.CURRENT_MODE == config.MODE.PROD:
         upload_to_db()
+        # only upload player counts to the database on the first round
+        upload_player_counts(players_counts)    
 
 if __name__ == "__main__":
     if datetime.today().weekday() == 3: # Only run on Thursdays
         download_teams.get_submissions()
     run_tournament()
+    

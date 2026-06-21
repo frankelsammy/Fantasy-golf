@@ -48,3 +48,13 @@ def retrieve_overall():
     document.pop('_id', None)
     
     return document
+
+def upload_player_counts(player_counts):
+    cluster = MongoClient(f"mongodb+srv://{user}:{password}@cluster0.zbfrr36.mongodb.net/?retryWrites=true&w=majority")
+    db = cluster["FantasyGolf"]
+    collection = db["League"]
+    result = collection.insert_one({
+    "title": "player_counts",
+    "player_counts": player_counts
+    })
+    return result.inserted_id
